@@ -1,4 +1,6 @@
-package tp04;
+package Maze;
+
+import Interface.VertexInterface;
 
 public abstract class MBox implements VertexInterface {
 	

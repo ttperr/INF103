@@ -1,5 +1,9 @@
-package tp04;
+package Maze;
 
-public class EBox {
+public class EBox extends MBox {
+
+	public EBox(int i, int j, Maze maze) {
+		super(i, j, maze);
+	}
 
 }

@@ -1,6 +1,7 @@
-package tp04;
+package Maze;
 
 import java.util.ArrayList;
+import Interface.GraphInterface;
 
 public final class Maze implements GraphInterface {
 	private ArrayList<ArrayList<MBox>> boxes;

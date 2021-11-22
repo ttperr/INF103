@@ -1,4 +1,4 @@
-package tp04;
+package Maze;
 
 public final class ABox extends MBox{
 

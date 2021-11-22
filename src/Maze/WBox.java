@@ -1,4 +1,4 @@
-package tp04;
+package Maze;
 
 public class WBox extends MBox{
 
