@@ -2,6 +2,7 @@ package Maze;
 
 import java.util.ArrayList;
 import Interface.GraphInterface;
+import Interface.VertexInterface;
 
 public final class Maze implements GraphInterface {
 	private ArrayList<ArrayList<MBox>> boxes;

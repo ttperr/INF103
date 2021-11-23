@@ -1,5 +1,7 @@
 package Maze;
 
+import java.util.ArrayList;
+
 import Interface.VertexInterface;
 
 public abstract class MBox implements VertexInterface {
@@ -29,4 +31,8 @@ public abstract class MBox implements VertexInterface {
 		return "(" + getRow() + "," + getColumn() + ")";
 	}
 	
+	public Double getWeight(VertexInterface src, VertexInterface dst) {
+		ArrayList<VertexInterface> srcSuccessors = maze.getSuccessors(src);
+		return (srcSuccessors.contains(dst)) ? 1 : Double.POSITIVE_INFINITY;
+	}
 }
