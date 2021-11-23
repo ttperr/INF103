@@ -19,7 +19,7 @@ public class Dijkstra {
 		
 		for (int j = 1; j < n; j++) {
 			for (VertexInterface y : g.getSuccessors(pivot)) {
-				if (Boolean.FALSE.equals((y.isInA(a)))) {
+				if (Boolean.FALSE.equals((a.containsVertex(y)))) {
 					if ( (pi.getPi(pivot) + g.getWeight(pivot, y)) < pi.getPi(y) ) {
 						pi.setPi(y, pi.getPi(pivot) + g.getWeight(pivot, y));
 						previous.setPrevious(y, pivot);
@@ -31,7 +31,7 @@ public class Dijkstra {
 			VertexInterface nextPivot = null ;
 			
 			for (VertexInterface y : vertexArrayList) {
-				if (Boolean.FALSE.equals((y.isInA(a))) && (minPi > pi.getPi(y))) {
+				if (Boolean.FALSE.equals((a.containsVertex(y))) && (minPi > pi.getPi(y))) {
 					minPi = pi.getPi(y) ;
 					nextPivot = y ;
 				}

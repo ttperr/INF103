@@ -1,4 +1,4 @@
-package Maze;
+package maze;
 
 public final class ABox extends MBox{
 

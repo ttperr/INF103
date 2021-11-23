@@ -7,5 +7,8 @@ public interface ASetInterface {
 	
 	// add a vertex to A
 	public void addVertex(VertexInterface vertex) ;
+	
+	// return true if vertex is in A 
+	public Boolean containsVertex(VertexInterface vertex) ;
 
 }

@@ -1,4 +1,6 @@
-package Maze;
+package maze;
+
+import Interface.ASetInterface;
 
 public class EBox extends MBox {
 

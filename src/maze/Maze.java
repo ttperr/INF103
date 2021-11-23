@@ -1,4 +1,4 @@
-package Maze;
+package maze;
 
 import java.util.ArrayList;
 import Interface.GraphInterface;
@@ -25,7 +25,7 @@ public final class Maze implements GraphInterface {
 	
 	public ArrayList<VertexInterface> getSuccessors(VertexInterface vertex) {
 		ArrayList<VertexInterface> successors = new ArrayList<VertexInterface>();
-		MBox box = (MBox)vertex ;
+		MBox box = (MBox)vertex;
 		int row = box.getRow();
 		
 		for(MBox succBox: boxes.get(row)) {

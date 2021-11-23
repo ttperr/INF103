@@ -1,4 +1,4 @@
-package Maze;
+package maze;
 
 import java.util.ArrayList;
 
@@ -28,11 +28,17 @@ public abstract class MBox implements VertexInterface {
 	}
 	
 	public String getLabel() {
-		return "(" + getRow() + "," + getColumn() + ")";
+		return "(" + row + "," + column + ")";
 	}
 	
 	public Double getWeight(VertexInterface src, VertexInterface dst) {
 		ArrayList<VertexInterface> srcSuccessors = maze.getSuccessors(src);
 		return (srcSuccessors.contains(dst)) ? 1 : Double.POSITIVE_INFINITY;
 	}
+	
+	public Boolean isEqualTo(VertexInterface vertex) {
+		MBox box = (MBox)vertex;
+		return row == box.getRow() && column == box.getColumn();
+	}
+	
 }
