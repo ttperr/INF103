@@ -1,7 +1,5 @@
 package maze;
 
-import Interface.ASetInterface;
-
 public class EBox extends MBox {
 
 	public EBox(int i, int j, Maze maze) {
