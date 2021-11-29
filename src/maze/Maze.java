@@ -50,6 +50,7 @@ public final class Maze implements GraphInterface {
 		return (srcBox.getLabel().equals("W") || dstBox.getLabel().equals("W")) ? Double.POSITIVE_INFINITY : 1;
 	} // return 1 if src and dst are neighbors, infinity if not
 	
+	
 	public final void initFromTextFile(String fileName) {
 		try
 	    {    

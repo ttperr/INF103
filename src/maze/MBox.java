@@ -29,7 +29,6 @@ public abstract class MBox implements VertexInterface {
 	public String getLabel() {
 		return label;
 	}
-
 	
 	public Boolean isEqualTo(VertexInterface vertex) { 
 		MBox box = (MBox)vertex;
