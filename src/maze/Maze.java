@@ -51,24 +51,55 @@ public final class Maze implements GraphInterface {
 	} // return 1 if src and dst are neighbors, infinity if not
 	
 	
-	public final void initFromTextFile(String fileName) {
+	public final void initFromTextFile(String fileName) throws MazeReadingException {
 		try
 	    {    
 	      BufferedReader br = new BufferedReader(new FileReader(fileName));  
-	      StringBuffer sb = new StringBuffer();    
+	      // StringBuffer sb = new StringBuffer();    
 	      String line;
-	      while((line = br.readLine()) != null)
-	      {
-	        sb.append(line);      
-	        sb.append("\n");     
+	      int row = 0;
+	      while((line = br.readLine()) != null) {
+	    	  ArrayList<MBox> boxesLine = null;
+	    	  for(int column = 0; column < line.length(); column++) {
+	    		  switch(line.charAt(column)) {
+	    		  case 'E':
+	    			  boxesLine.add(new EBox(row,column));
+	    			  break;
+	    		  
+	    		  case 'W':
+	    			  boxesLine.add(new WBox(row,column));
+	    			  break;
+	    			  
+	    		  case 'A':
+	    			  boxesLine.add(new ABox(row,column));
+	    			  break;
+	    			  
+	    		  case 'D':
+	    			  boxesLine.add(new DBox(row,column));
+	    			  break;
+	    			  
+	    		  default:
+	    				throw new MazeReadingException(fileName, row, column, "Unknown character readed");
+	    		  }
+	    	  }
+	        // sb.append(line);      
+	        // sb.append("\n");
+	    	  boxes.add(boxesLine);  
+	    	  row++;
 	      }
 	      br.close();
-	      System.out.println(sb.toString());  
+	      // System.out.println(sb.toString());  
 	    }
 	    catch(IOException e)
 	    {
 	      e.printStackTrace();
 	    }
+	
 	}
+	
+	public final void saveToTextFile(String fileName) {
+		
+	}
+	
 	
 }
