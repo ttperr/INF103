@@ -1,6 +1,10 @@
 package maze;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+
 import Interface.GraphInterface;
 import Interface.VertexInterface;
 
@@ -38,12 +42,32 @@ public final class Maze implements GraphInterface {
 		}
 		
 		return successors;
-	}
-	
-	public Double getWeight(VertexInterface src, VertexInterface dst) { // return 1 if src and dst are neighbors, infinity if not
+	} // return the successors of the ArrayList of the successors of the vertex vertex
+
+	public Double getWeight(VertexInterface src, VertexInterface dst) { 
 		MBox srcBox = (MBox)src;
 		MBox dstBox = (MBox)dst;
 		return (srcBox.getLabel().equals("W") || dstBox.getLabel().equals("W")) ? Double.POSITIVE_INFINITY : 1;
+	} // return 1 if src and dst are neighbors, infinity if not
+	
+	public final void initFromTextFile(String fileName) {
+		try
+	    {    
+	      BufferedReader br = new BufferedReader(new FileReader(fileName));  
+	      StringBuffer sb = new StringBuffer();    
+	      String line;
+	      while((line = br.readLine()) != null)
+	      {
+	        sb.append(line);      
+	        sb.append("\n");     
+	      }
+	      br.close();
+	      System.out.println(sb.toString());  
+	    }
+	    catch(IOException e)
+	    {
+	      e.printStackTrace();
+	    }
 	}
 	
 }
