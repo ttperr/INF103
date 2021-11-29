@@ -2,8 +2,10 @@ package maze;
 
 public class WBox extends MBox{
 
-	public WBox(int i, int j, Maze maze) {
-		super(i, j, maze);
+	public final String label = "W";
+	
+	public WBox(int i, int j) {
+		super(i, j);
 	}
 
 }

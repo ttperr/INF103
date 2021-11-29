@@ -7,7 +7,7 @@ public interface PiInterface {
 
 	// return the value of the function Pi for a Vertex
 	public Double getPi(VertexInterface x) ;
-
+	
 }
 
 

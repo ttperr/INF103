@@ -5,7 +5,7 @@ import Interface.GraphInterface;
 import Interface.VertexInterface;
 
 public final class Maze implements GraphInterface {
-	private ArrayList<ArrayList<MBox>> boxes;
+	private ArrayList<ArrayList<MBox>> boxes; // create the object boxes
 	
 	public MBox getBox(int i, int j) {
 		return boxes.get(i).get(j);
@@ -40,8 +40,10 @@ public final class Maze implements GraphInterface {
 		return successors;
 	}
 	
-	public Double getWeight(VertexInterface src,VertexInterface dst) {
-		return null;
+	public Double getWeight(VertexInterface src, VertexInterface dst) { // return 1 if src and dst are neighbors, infinity if not
+		MBox srcBox = (MBox)src;
+		MBox dstBox = (MBox)dst;
+		return (srcBox.getLabel().equals("W") || dstBox.getLabel().equals("W")) ? Double.POSITIVE_INFINITY : 1;
 	}
 	
 }

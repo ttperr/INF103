@@ -1,18 +1,17 @@
 package maze;
 
-import java.util.ArrayList;
-
 import Interface.VertexInterface;
 
 public abstract class MBox implements VertexInterface {
 	
-	private final Maze maze;
 	private final int row, column;
+	protected String label;
 	
-	public MBox(int i, int j, Maze maze) {
-		this.maze = maze;
+	
+	public MBox(int i, int j) { // set the MBox(i,j)
 		row = i;
 		column = j;
+		label = Integer.toString(i) + Integer.toString(j);
 	}
 	
 	public int getRow() {
@@ -23,20 +22,16 @@ public abstract class MBox implements VertexInterface {
 		return column;
 	}
 	
-	public Maze getMaze() {
-		return maze;
+	public void setLabel(String label) {
+		this.label = label;
 	}
 	
 	public String getLabel() {
-		return "(" + row + "," + column + ")";
+		return label;
 	}
+
 	
-	public Double getWeight(VertexInterface src, VertexInterface dst) {
-		ArrayList<VertexInterface> srcSuccessors = maze.getSuccessors(src);
-		return (srcSuccessors.contains(dst)) ? 1 : Double.POSITIVE_INFINITY;
-	}
-	
-	public Boolean isEqualTo(VertexInterface vertex) {
+	public Boolean isEqualTo(VertexInterface vertex) { 
 		MBox box = (MBox)vertex;
 		return row == box.getRow() && column == box.getColumn();
 	}
