@@ -11,7 +11,7 @@ public abstract class MBox implements VertexInterface {
 	public MBox(int i, int j) { // set the MBox(i,j)
 		row = i;
 		column = j;
-		label = Integer.toString(i) + Integer.toString(j);
+		label = "M";
 	}
 	
 	public int getRow() {

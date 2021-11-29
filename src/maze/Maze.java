@@ -3,13 +3,14 @@ package maze;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import Interface.GraphInterface;
 import Interface.VertexInterface;
 
 public final class Maze implements GraphInterface {
-	private ArrayList<ArrayList<MBox>> boxes; // create the object boxes
+	private ArrayList<ArrayList<MBox>> boxes = new ArrayList<ArrayList<MBox>>(); // create the object boxes
 	
 	public MBox getBox(int i, int j) {
 		return boxes.get(i).get(j);
@@ -59,7 +60,7 @@ public final class Maze implements GraphInterface {
 	      String line;
 	      int row = 0;
 	      while((line = br.readLine()) != null) {
-	    	  ArrayList<MBox> boxesLine = null;
+	    	  ArrayList<MBox> boxesLine = new ArrayList<MBox>();
 	    	  for(int column = 0; column < line.length(); column++) {
 	    		  switch(line.charAt(column)) {
 	    		  case 'E':
@@ -98,7 +99,19 @@ public final class Maze implements GraphInterface {
 	}
 	
 	public final void saveToTextFile(String fileName) {
-		
+		try {
+			PrintWriter textF = new PrintWriter(fileName);
+			for (ArrayList<MBox> listMBox : boxes) {
+				for(MBox box : listMBox) {
+					if (box != null) { textF.print(box.getLabel()); }
+					else textF.print(" ");
+				}
+				textF.print("\n");
+			}
+			textF.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	
