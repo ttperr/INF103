@@ -1,6 +1,6 @@
 package maze;
 
-import Interface.VertexInterface;
+import dijkstra.VertexInterface;
 
 public abstract class MBox implements VertexInterface {
 	

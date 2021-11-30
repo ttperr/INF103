@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
-import Interface.GraphInterface;
-import Interface.VertexInterface;
+import dijkstra.GraphInterface;
+import dijkstra.VertexInterface;
 
 public final class Maze implements GraphInterface {
 	private ArrayList<ArrayList<MBox>> boxes = new ArrayList<ArrayList<MBox>>(); // create the object boxes

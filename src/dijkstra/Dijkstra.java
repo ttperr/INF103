@@ -1,4 +1,4 @@
-package Interface;
+package dijkstra;
 
 import java.util.ArrayList;
 
