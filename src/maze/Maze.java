@@ -11,7 +11,10 @@ import dijkstra.VertexInterface;
 
 public final class Maze implements GraphInterface {
 	// create the object boxes
-	private ArrayList<ArrayList<MBox>> boxes = new ArrayList<ArrayList<MBox>>();
+	private final ArrayList<ArrayList<MBox>> boxes = new ArrayList<ArrayList<MBox>>();
+	
+	// create the boxes where path boxes are labeled by a point
+	private final ArrayList<ArrayList<MBox>> endBoxes = new ArrayList<ArrayList<MBox>>();
 	
 	// MBox getter
 	public MBox getBox(int i, int j) {
@@ -132,10 +135,10 @@ public final class Maze implements GraphInterface {
 	public final void saveToTextFile(String fileName) {
 		try {
 			PrintWriter textF = new PrintWriter(fileName);
-			for (ArrayList<MBox> listMBox : boxes) {
+			for (ArrayList<MBox> listMBox : endBoxes) {
 				for(MBox box : listMBox) {
 					if (box != null) { textF.print(box.getLabel()); }
-					else textF.print(" ");
+					else textF.print(".");
 				}
 				textF.print("\n");
 			}
