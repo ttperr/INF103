@@ -31,19 +31,44 @@ public final class Maze implements GraphInterface {
 		return vertices;
 	}
 	
+	private void addSuccessors(ArrayList<VertexInterface> successors, VertexInterface vertex, VertexInterface nextVertex) {
+		Double posInf = Double.POSITIVE_INFINITY;
+		Double weight = getWeight(vertex, nextVertex);
+		if (weight < posInf) {
+			successors.add(nextVertex);
+		}
+	}
+	
 	// return the successors of the ArrayList of the successors of the vertex vertex
 	public ArrayList<VertexInterface> getSuccessors(VertexInterface vertex) {
 		ArrayList<VertexInterface> successors = new ArrayList<VertexInterface>();
+		
 		MBox box = (MBox)vertex;
 		int row = box.getRow();
+		int column = box.getColumn();
 		
-		for(MBox succBox: boxes.get(row)) {
-			VertexInterface succVertex = (VertexInterface)succBox;
-			Double weight = getWeight(vertex, succVertex);
-			Double posInf = Double.POSITIVE_INFINITY ;
-			if (weight < posInf) {
-				successors.add(succVertex);
-			}
+		int rowMax = boxes.size();
+		int columnMax = boxes.get(0).size();
+	
+		if (column - 1 >= 0) {
+			MBox nextVertexLeft = boxes.get(row).get(column - 1);	
+			addSuccessors(successors, box, nextVertexLeft);
+		}
+		
+		if (column + 1 < columnMax) {
+			MBox nextVertexRight = boxes.get(row).get(column + 1);
+			addSuccessors(successors, box, nextVertexRight);
+		}
+		
+		if (row - 1 >= 0) {
+			MBox nextVertexUp = boxes.get(row - 1).get(column);
+			addSuccessors(successors, box, nextVertexUp);
+			
+		}
+		
+		if (row + 1 < rowMax) {
+			MBox nextVertexDown = boxes.get(row + 1).get(column);	
+			addSuccessors(successors, box, nextVertexDown);
 		}
 		
 		return successors;
@@ -53,7 +78,11 @@ public final class Maze implements GraphInterface {
 	public Double getWeight(VertexInterface src, VertexInterface dst) {
 		MBox srcBox = (MBox)src;
 		MBox dstBox = (MBox)dst;
-		return (srcBox.getLabel().equals("W") || dstBox.getLabel().equals("W")) ? Double.POSITIVE_INFINITY : 1;
+		
+		int dstRowLength = Math.abs(srcBox.getRow() - dstBox.getRow());
+		int dstColumnLength = Math.abs(srcBox.getColumn() - srcBox.getColumn());
+		
+		return (srcBox.getLabel().equals("W") || dstBox.getLabel().equals("W") || dstRowLength > 1 || dstColumnLength > 1 || (dstBox.getColumn() == srcBox.getColumn() && dstBox.getRow() == srcBox.getRow())) ? Double.POSITIVE_INFINITY : 1;
 	}
 	
 	// initialize maze from filename
