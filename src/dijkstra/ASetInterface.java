@@ -1,5 +1,7 @@
 package dijkstra;
 
+import java.util.HashSet;
+
 public interface ASetInterface {
 	
 	// return true if A is empty, false if not
@@ -11,4 +13,6 @@ public interface ASetInterface {
 	// return true if vertex is in A 
 	public Boolean containsVertex(VertexInterface vertex) ;
 
+	
+	
 }
