@@ -1,7 +1,5 @@
 package dijkstra;
 
-import java.util.HashSet;
-
 public interface ASetInterface {
 	
 	// return true if A is empty, false if not
