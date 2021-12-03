@@ -7,8 +7,8 @@ public abstract class MBox implements VertexInterface {
 	private final int row, column;
 	protected String label;
 	
-	
-	public MBox(int i, int j) { // set the MBox(i,j)
+	// build MBox(i,j)
+	public MBox(int i, int j) { 
 		row = i;
 		column = j;
 		label = "M";
