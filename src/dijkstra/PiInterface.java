@@ -3,10 +3,10 @@ package dijkstra;
 public interface PiInterface {
 	
 	// set the value c of the function Pi for a Vertex x
-	public void setPi(VertexInterface x, Double c) ;
+	public void setPi(VertexInterface x, Integer c) ;
 
 	// return the value of the function Pi for a Vertex
-	public Double getPi(VertexInterface x) ;
+	public Integer getPi(VertexInterface x) ;
 	
 }
 

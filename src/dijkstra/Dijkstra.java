@@ -3,15 +3,19 @@ package dijkstra;
 import java.util.ArrayList;
 
 public class Dijkstra {
-	public PreviousInterface dijkstra(GraphInterface g, VertexInterface r, ASetInterface a, PiInterface pi, PreviousInterface previous) {
+	public PreviousInterface dijkstra(GraphInterface g, VertexInterface r) {
+		ASet a = new ASet();
+		Pi pi = new Pi();
+		Previous previous = new Previous();
+		
 		a.addVertex(r);
 		VertexInterface pivot = r;
-		pi.setPi(r, 0.0);
+		pi.setPi(r, (int) 0.0);
 		
 		ArrayList<VertexInterface> vertexArrayList = g.getAllVertices();
 		int n = vertexArrayList.size();
 		
-		Double posInf = Double.POSITIVE_INFINITY ;
+		Integer posInf = Integer.MAX_VALUE ;
 		
 		for (VertexInterface x : vertexArrayList) {
 			if (Boolean.FALSE.equals((x.isEqualTo(r))) ) pi.setPi(x, posInf);
@@ -21,13 +25,13 @@ public class Dijkstra {
 			for (VertexInterface y : g.getSuccessors(pivot)) {
 				if (Boolean.FALSE.equals((a.containsVertex(y)))) {
 					if ( (pi.getPi(pivot) + g.getWeight(pivot, y)) < pi.getPi(y) ) {
-						pi.setPi(y, pi.getPi(pivot) + g.getWeight(pivot, y));
+						pi.setPi(y, (int) (pi.getPi(pivot) + g.getWeight(pivot, y)));
 						previous.setPrevious(y, pivot);
 					}
 				}
 			}
 			
-			Double minPi = posInf ;
+			Integer minPi = posInf ;
 			VertexInterface nextPivot = null ;
 			
 			for (VertexInterface y : vertexArrayList) {
