@@ -3,7 +3,7 @@ package dijkstra;
 import java.util.ArrayList;
 
 public class Dijkstra {
-	public PreviousInterface dijkstra(GraphInterface g, VertexInterface r) {
+	public static PreviousInterface dijkstra(GraphInterface g, VertexInterface r) {
 		ASet a = new ASet();
 		Pi pi = new Pi();
 		Previous previous = new Previous();
