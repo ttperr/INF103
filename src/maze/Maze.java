@@ -167,6 +167,7 @@ public final class Maze implements GraphInterface {
 	 */
 	public final void initFromTextFile(String fileName) throws MazeReadingException {
 		try {
+			@SuppressWarnings("resource")
 			BufferedReader br = new BufferedReader(new FileReader(fileName));
 			String line = br.readLine();
 			int lineLength = line.length();
