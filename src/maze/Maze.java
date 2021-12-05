@@ -225,32 +225,35 @@ public final class Maze implements GraphInterface {
 
 	}
 
+	/**
+	 * Renvoie la liste [case départ, case d'arrivée] du labyrinthe
+	 * 
+	 * @return la liste faite de la case départ et de la case d'arrivée
+	 * @throws DepartureArrivalException
+	 */
 	public final MBox[] findStartAndEnd() throws DepartureArrivalException {
-		try {
-			MBox[] startAndEnd = new MBox[2];
-			for (MBox[] listMBox : maze) {
-				for (MBox box : listMBox) {
-					if (box.getLabel().equals("D")) {
-						if (startAndEnd[0] == null) {
-							startAndEnd[0] = box;
-						} else
-							throw new DepartureArrivalException(box.getRow(), box.getRow(), "More than one start box");
-					} else if (box.getLabel().equals("A")) {
-						if (startAndEnd[1] == null) {
-							startAndEnd[1] = box;
-						} else
-							throw new DepartureArrivalException(box.getRow(), box.getRow(), "More than one start box");
-					}
+		MBox[] startAndEnd = new MBox[2];
+		for (MBox[] listMBox : maze) {
+			for (MBox box : listMBox) {
+				if (box.getLabel().equals("D")) {
+					if (startAndEnd[0] == null) {
+						startAndEnd[0] = box;
+					} else
+						throw new DepartureArrivalException(box.getRow(), box.getRow(), "More than one start box");
+				} else if (box.getLabel().equals("A")) {
+					if (startAndEnd[1] == null) {
+						startAndEnd[1] = box;
+					} else
+						throw new DepartureArrivalException(box.getRow(), box.getRow(), "More than one end box");
 				}
 			}
-			if (startAndEnd[0] != null && startAndEnd[1] != null) {
-				return startAndEnd;
-			} else
-				throw new DepartureArrivalException(-1, -1, "More than one start box");
-		} catch (Exception e) {
-			e.printStackTrace();
 		}
-		return null;
+		if (startAndEnd[0] == null) {
+			throw new DepartureArrivalException(-1, -1, "No start box");
+		} else if (startAndEnd[0] == null) {
+			throw new DepartureArrivalException(-1, -1, "More than one start box");
+		}
+		return startAndEnd;
 	}
 
 	/**
