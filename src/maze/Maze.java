@@ -12,7 +12,7 @@ import dijkstra.VertexInterface;
 
 /** Classe des labyrinthes
  * 
- * Un labyrinthe est représenté par la matrice de ses cases (maze), ses dimensions (width,height) et une fonction pi.
+ * Un labyrinthe est reprï¿½sentï¿½ par la matrice de ses cases (maze), ses dimensions (width,height) et une fonction pi.
  * 
  * @author Tristan Perrot
  */
@@ -70,9 +70,9 @@ public final class Maze implements GraphInterface {
 		return vertices ;
 	}
 	
-	/** Ajoute à la liste successors un sommet nextVertex s'il est accessible depuis le sommet vertex
-	 * @param vertex Le sommet de départ
-	 * @param nextVertex Le sommet d'arrivée
+	/** Ajoute ï¿½ la liste successors un sommet nextVertex s'il est accessible depuis le sommet vertex
+	 * @param vertex Le sommet de dï¿½part
+	 * @param nextVertex Le sommet d'arrivï¿½e
 	 * @param successors La liste temporaire des voisins de vertex
 	 * @return La liste des voisins
 	 **/
@@ -118,10 +118,10 @@ public final class Maze implements GraphInterface {
 		return successors ;
 	}
 
-	/** Renvoie le poids dans le graphe de l'arête entre deux sommets
+	/** Renvoie le poids dans le graphe de l'arï¿½te entre deux sommets
 	 * @param src Le sommet d'origine
-	 * @param dst Le sommet d'arrivée
-	 * @return Le poids de l'arête src-dst 
+	 * @param dst Le sommet d'arrivï¿½e
+	 * @return Le poids de l'arï¿½te src-dst 
 	 **/
 	public final Double getWeight(VertexInterface src, VertexInterface dst) {
 		MBox srcBox = (MBox)src ;
@@ -133,9 +133,9 @@ public final class Maze implements GraphInterface {
 		return (srcBox.getLabel().equals("W") || dstBox.getLabel().equals("W") || dstRowLength > 1 || dstColumnLength > 1 || (dstBox.getColumn() == srcBox.getColumn() && dstBox.getRow() == srcBox.getRow())) ? Double.POSITIVE_INFINITY : 1 ;
 	}
 	
-	/** Initialise le labyrinthe à partir d'un fichier texte
+	/** Initialise le labyrinthe ï¿½ partir d'un fichier texte
 	 * @param fileName Adresse du fichier
-	 * @throws MazeReadingException Erreur liée à la lecture du fichier
+	 * @throws MazeReadingException Erreur liï¿½e ï¿½ la lecture du fichier
 	 */
 	public final void initFromTextFile(String fileName) throws MazeReadingException {
 		try {   
@@ -189,9 +189,29 @@ public final class Maze implements GraphInterface {
 	        e.printStackTrace() ;
 	    }
 	
-	} 
+	}
 	
-	/** Sauvegarde le labyrinthe dans un fichier texte après l'avoir résolu
+	public final MBox[] findStartAndEnd() throws MazeReadingException {
+		try {
+			MBox[] startAndEnd = new MBox[2] ;
+			for (MBox[] listMBox : maze) {
+				for (MBox box : listMBox) {
+					if (box.getLabel.equals("D")) {
+						if (MBox[0] == null) {startAndEnd[0] = box;}
+						else throw new MazeReadingException(fileName, row, column, "More than one start box") ;
+					} else if (box.getLabel.equals("A")) {
+						if (MBox[1] == null) {startAndEnd[1] = box;}
+						else throw new MazeReadingException(fileName, row, column, "More than one start box") ;
+					}
+				}
+			}
+			return startAndEnd ;
+		} catch (Exception e) {
+			e.printStackTrace() ;
+		}
+	}
+
+	/** Sauvegarde le labyrinthe dans un fichier texte aprï¿½s l'avoir rï¿½solu
 	 * @param fileName Adresse du fichier
 	 */
 	public final void saveToTextFile(String fileName) {
