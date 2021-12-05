@@ -9,14 +9,13 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import dijkstra.GraphInterface;
-import dijkstra.PiInterface;
 import dijkstra.VertexInterface;
 
 /**
  * Classe des labyrinthes
  * 
- * Un labyrinthe est reprï¿½sentï¿½ par la matrice de ses cases (maze), ses
- * dimensions (width,height) et une fonction pi.
+ * Un labyrinthe est représenté par la matrice de ses cases (maze), ses
+ * dimensions (width,height)
  * 
  * @author Tristan Perrot
  */
@@ -24,7 +23,6 @@ public final class Maze implements GraphInterface {
 	private MBox[][] maze;
 	private int width;
 	private int height;
-	private PiInterface pi;
 
 	public Maze(MBox[][] maze) {
 		this.maze = maze;
@@ -61,16 +59,12 @@ public final class Maze implements GraphInterface {
 		return height;
 	}
 
-	/**
-	 * Renvoie la fonction Pi
+	/** Renvoie la case de coordonées i,j
 	 * 
-	 * @return Fonction pi du graphe
+	 * @param i Numéro de ligne
+	 * @param j Numéro de colonne
+	 * @return La case de coordonnée i,j
 	 */
-	public final PiInterface getPi() {
-		return this.pi;
-	}
-
-	// MBox getter
 	public MBox getBox(int i, int j) {
 		return maze[i][j];
 	}
@@ -95,8 +89,8 @@ public final class Maze implements GraphInterface {
 	 * Ajoute ï¿½ la liste successors un sommet nextVertex s'il est accessible
 	 * depuis le sommet vertex
 	 * 
-	 * @param vertex     Le sommet de dï¿½part
-	 * @param nextVertex Le sommet d'arrivï¿½e
+	 * @param vertex     Le sommet de départ
+	 * @param nextVertex Le sommet d'arrivée
 	 * @param successors La liste temporaire des voisins de vertex
 	 * @return La liste des voisins
 	 **/
@@ -145,11 +139,11 @@ public final class Maze implements GraphInterface {
 	}
 
 	/**
-	 * Renvoie le poids dans le graphe de l'arï¿½te entre deux sommets
+	 * Renvoie le poids dans le graphe de l'arête entre deux sommets
 	 * 
 	 * @param src Le sommet d'origine
-	 * @param dst Le sommet d'arrivï¿½e
-	 * @return Le poids de l'arï¿½te src-dst
+	 * @param dst Le sommet d'arrivée
+	 * @return Le poids de l'arête src-dst
 	 **/
 	public final Double getWeight(VertexInterface src, VertexInterface dst) {
 		MBox srcBox = (MBox) src;
@@ -166,10 +160,10 @@ public final class Maze implements GraphInterface {
 	}
 
 	/**
-	 * Initialise le labyrinthe ï¿½ partir d'un fichier texte
+	 * Initialise le labyrinthe à partir d'un fichier texte
 	 * 
 	 * @param fileName Adresse du fichier
-	 * @throws MazeReadingException Erreur liï¿½e ï¿½ la lecture du fichier
+	 * @throws MazeReadingException Erreur liée à la lecture du fichier
 	 */
 	public final void initFromTextFile(String fileName) throws MazeReadingException {
 		try {
@@ -257,7 +251,7 @@ public final class Maze implements GraphInterface {
 	}
 
 	/**
-	 * Sauvegarde le labyrinthe dans un fichier texte aprï¿½s l'avoir rï¿½solu
+	 * Sauvegarde le labyrinthe dans un fichier texte après l'avoir résolu
 	 * 
 	 * @param fileName Adresse du fichier
 	 */

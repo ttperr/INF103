@@ -24,6 +24,8 @@ public class Main {
 		ArrayList<VertexInterface> path = previous.getShortestPathTo(end);
 		maze.showPath(path, "data/solution.txt");
 		
+		System.out.println("");
+		
 		Maze maze2 = new Maze(null);
 		maze2.initFromTextFile("data/labyrinthe2.txt");
 
