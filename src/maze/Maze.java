@@ -88,7 +88,6 @@ public final class Maze implements GraphInterface {
 				vertices.add(box);
 			}
 		}
-
 		return vertices;
 	}
 
@@ -142,7 +141,6 @@ public final class Maze implements GraphInterface {
 			MBox nextVertexDown = maze[row + 1][column];
 			addSuccessors(successors, box, nextVertexDown);
 		}
-
 		return successors;
 	}
 
@@ -277,29 +275,41 @@ public final class Maze implements GraphInterface {
 			e.printStackTrace();
 		}
 	}
-	
-	public final void showPath(ArrayList<VertexInterface> path) throws DepartureArrivalException, FileNotFoundException {
+
+	/**
+	 * Affiche le chemin sur la console et renvoie le résultat dans un fichier
+	 * 
+	 * @param path     Chemin du départ à l'arrivée
+	 * @param fileName Nom du fichier dans lequel la solution doit être sauvegardée
+	 * @throws DepartureArrivalException Erreur levé lorsqu'il n'y a pas qu'une
+	 *                                   entrée et qu'une sortie
+	 * @throws FileNotFoundException     Erreur levé lorsque le fichier n'est pas
+	 *                                   trouvé
+	 */
+	public final void showPath(ArrayList<VertexInterface> path, String fileName)
+			throws DepartureArrivalException, FileNotFoundException {
 		MBox[] startAndEnd = findStartAndEnd();
 		MBox start = startAndEnd[0];
 		MBox end = startAndEnd[1];
-		if(!(path.get(path.size() - 1).isEqualTo(start))) {
+		if (!(path.get(path.size() - 1).isEqualTo(start))) {
 			System.out.println("Erreur : le labyrinthe n'a pas de solution !");
-		}
-		
-		PrintWriter textF = new PrintWriter(new FileOutputStream("data/solution.txt"));
-		for (MBox[] listMBox : maze) {
-			for (MBox box : listMBox) {
-				System.out.print(box.getLabel());
-				textF.print(box.getLabel());
-				if(path.contains(box) && !(box.isEqualTo(end)) && !(box.isEqualTo(start))) {
-					System.out.print(".");
-					textF.print(".");
+		} else {
+			PrintWriter textF = new PrintWriter(new FileOutputStream(fileName));
+			for (MBox[] listMBox : maze) {
+				for (MBox box : listMBox) {
+					if (path.contains(box) && !(box.isEqualTo(end)) && !(box.isEqualTo(start))) {
+						System.out.print(".");
+						textF.print(".");
+					} else {
+						System.out.print(box.getLabel());
+						textF.print(box.getLabel());
+					}
 				}
+				System.out.print("\n");
+				textF.print("\n");
 			}
-			System.out.print("\n");
-			textF.print("\n");
+			textF.close();
 		}
-		textF.close();
 	}
 
 }

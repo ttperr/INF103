@@ -27,17 +27,17 @@ public final class Dijkstra {
 		VertexInterface pivot = r;
 		pi.setPi(r, (int) 0.0);
 
-		ArrayList<VertexInterface> vertexArrayList = g.getAllVertices();
-		int n = vertexArrayList.size();
+		ArrayList<VertexInterface> allVertices = g.getAllVertices();
 
 		Integer posInf = Integer.MAX_VALUE;
 
-		for (VertexInterface x : vertexArrayList) {
+		for (VertexInterface x : allVertices) {
 			if (Boolean.FALSE.equals((x.isEqualTo(r))))
 				pi.setPi(x, posInf);
 		}
 
-		for (int j = 1; j < n; j++) {
+		for (@SuppressWarnings("unused")
+		VertexInterface j : allVertices) {
 			for (VertexInterface y : g.getSuccessors(pivot)) {
 				if (Boolean.FALSE.equals((a.containsVertex(y)))) {
 					if ((pi.getPi(pivot) + g.getWeight(pivot, y)) < pi.getPi(y)) {
@@ -50,17 +50,19 @@ public final class Dijkstra {
 			Integer minPi = posInf;
 			VertexInterface nextPivot = null;
 
-			for (VertexInterface y : vertexArrayList) {
-				if (Boolean.FALSE.equals((a.containsVertex(y))) && (minPi > pi.getPi(y))) {
-					minPi = pi.getPi(y);
-					nextPivot = y;
+			for (VertexInterface vertex : allVertices) {
+				if (!(a.containsVertex(vertex)) && (minPi > pi.getPi(vertex))) {
+					minPi = pi.getPi(vertex);
+					nextPivot = vertex;
 				}
 			}
-
-			pivot = nextPivot;
-			a.addVertex(pivot);
+			if (nextPivot == null) {
+				break;
+			} else {
+				pivot = nextPivot;
+				a.addVertex(pivot);
+			}
 		}
-
 		return previous;
 
 	}
