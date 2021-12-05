@@ -1,11 +1,20 @@
 package dijkstra;
 
+/** Interface des sommets
+ * 
+ * @author Tristan Perrot
+ *
+ */
 public interface VertexInterface {
 	
-	// return true if this vertex is equal to vertex x, false if not
+	/** Renvoie le test d'égalité entre 2 sommet
+	 * @return Le test d'égalité entre 2 sommet
+	 */
 	public Boolean isEqualTo(VertexInterface vertex) ;
 	
-	//return the coordinates of a vertex like '(x,y)'
+	/** Renvoie le label du sommet
+	 * @return Le caractère correspondont au type de la case
+	 */
 	public String getLabel();
 	
 }

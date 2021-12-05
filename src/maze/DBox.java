@@ -1,11 +1,15 @@
 package maze;
 
+
+/** Classe de la cases de départ
+ * 
+ * @author Tristan Perrot
+ *
+ */
 public class DBox extends MBox{
 	
-	// start box
 	public DBox(int i, int j) {
-		super(i, j);
-		super.setLabel("D");
+		super(i, j, "D");
 	}
 
 }

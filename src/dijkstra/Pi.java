@@ -2,18 +2,34 @@ package dijkstra;
 
 import java.util.Hashtable;
 
-public class Pi implements PiInterface{
-	
-	private final Hashtable<VertexInterface, Integer> hashtable = new Hashtable<VertexInterface, Integer>() ;
 
-	// set the value c of the function Pi for a Vertex x
-	public void setPi(VertexInterface x, Integer c) {
-		hashtable.put(x, c);
+/** Classe de la fonction pi de l'algorithme de Dijkstra
+ * 
+ * @author Tristan Perrot
+ *
+ */
+public class Pi extends Hashtable<VertexInterface, Integer> implements PiInterface{
+	
+	private static final long serialVersionUID = 1L;
+
+	public Pi() {
+		super();
 	}
 	
-	// return the value of the function Pi for a Vertex
-	public Integer getPi(VertexInterface x) {
-		return hashtable.get(x);
+	/** Assigne une valeur de pi à un sommet
+	 * @param vertex Le sommet considéré
+	 * @param value La valeur donnée à pi(vertex)
+	**/
+	public void setPi(VertexInterface vertex, Integer value) {
+		this.put(vertex, value);
+	}
+	
+	/** Renvoie la valeur de pi pour un sommet
+	 * @param vertex Le sommet considéré
+	 * @return  La valeur de pi(vertex)
+	**/
+	public Integer getPi(VertexInterface vertex) {
+		return this.get(vertex);
 	}
 
 }

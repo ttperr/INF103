@@ -2,23 +2,32 @@ package dijkstra;
 
 import java.util.HashSet;
 
-public class ASet implements ASetInterface {
 
-	private final HashSet<VertexInterface> hashSet = new HashSet<VertexInterface>() ;
-	
-	// return true if A is empty, false if not
-	public Boolean isEmpty() {
-		return hashSet.isEmpty() ;
+/** Classe de l'ensemble A de l'algorithme de Dijkstra
+ * 
+ * @author Tristan Perrot
+ *
+ */
+public class ASet extends HashSet<VertexInterface>implements ASetInterface {
+
+	private static final long serialVersionUID = 1L;
+
+	public ASet() {
+		super();
 	}
 	
-	// add a vertex to A
+	/** Ajout un sommet à A
+	 * @param vertex Le sommet à ajouter à A
+	 */
 	public void addVertex(VertexInterface vertex) {
-		hashSet.add(vertex) ;
+		this.add(vertex) ;
 	}
 
-	// return true if vertex is in A 
+	/** Renvoie le test le booléen indiquant un sommet est dans A
+	 * @param vertex Le sommet considéré
+	 */
 	public Boolean containsVertex(VertexInterface vertex) {
-		return hashSet.contains(vertex) ;
+		return this.contains(vertex) ;
 	}
 	
 }

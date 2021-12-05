@@ -1,11 +1,15 @@
 package maze;
 
+
+/** Classe de la case d'arrivée
+ * 
+ * @author Tristan Perrot
+ *
+ */
 public final class ABox extends MBox{
 	
-	// finish box
 	public ABox(int i, int j) {
- 		super(i, j);
- 		super.setLabel("A");
+ 		super(i, j, "A");
 	}
 
 }

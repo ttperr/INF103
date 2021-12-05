@@ -10,6 +10,12 @@ import dijkstra.GraphInterface;
 import dijkstra.PiInterface;
 import dijkstra.VertexInterface;
 
+/** Classe des labyrinthes
+ * 
+ * Un labyrinthe est représenté par la matrice de ses cases (maze), ses dimensions (width,height) et une fonction pi.
+ * 
+ * @author Tristan Perrot
+ */
 public final class Maze implements GraphInterface {
 	private MBox[][] maze ;
 	private int width ;
@@ -25,25 +31,21 @@ public final class Maze implements GraphInterface {
 	}
 	
 	/** Renvoie la matrice des sommets
-	 * 
 	 * @return La matrice des sommets
 	 */
 	public final MBox[][] getMaze() {return maze;}
 	
 	/** Renvoie la largeur
-	 * 
 	 * @return Largeur du graphe
 	 */
 	public final int getWidth() {return width;}
 	
 	/** Renvoie la hauteur
-	 * 
 	 * @return Hauteur du graphe
 	 */
 	public final int getHeight() {return height;}
 	
 	/** Renvoie la fonction Pi
-	 * 
 	 * @return Fonction pi du graphe
 	 */
 	public final PiInterface getPi() {return this.pi ;}
@@ -132,7 +134,10 @@ public final class Maze implements GraphInterface {
 		return (srcBox.getLabel().equals("W") || dstBox.getLabel().equals("W") || dstRowLength > 1 || dstColumnLength > 1 || (dstBox.getColumn() == srcBox.getColumn() && dstBox.getRow() == srcBox.getRow())) ? Double.POSITIVE_INFINITY : 1;
 	}
 	
-	// initialize maze from filename
+	/** Initialise le labyrinthe à partir d'un fichier texte
+	 * @param fileName
+	 * @throws MazeReadingException
+	 */
 	public final void initFromTextFile(String fileName) throws MazeReadingException {
 		try
 	    {    
@@ -183,7 +188,9 @@ public final class Maze implements GraphInterface {
 	
 	} 
 	
-	// save the path solution for the maze
+	/** Sauvegarde le labyrinthe dans un fichier texte après l'avoir résolu
+	 * @param fileName
+	 */
 	public final void saveToTextFile(String fileName) {
 		try {
 			PrintWriter textF = new PrintWriter(fileName);

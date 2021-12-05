@@ -2,18 +2,33 @@ package dijkstra;
 
 import java.util.Hashtable;
 
-public class Previous implements PreviousInterface {
+/** Classe des pères des sommets
+ * 
+ * @author Tristan Perrot
+ *
+ */
+public class Previous extends Hashtable<VertexInterface,VertexInterface> implements PreviousInterface {
 
-	private final Hashtable<VertexInterface, VertexInterface> hashtable = new Hashtable<VertexInterface, VertexInterface>() ;
-	
-	// set the previous of a Vertex x
-	public void setPrevious(VertexInterface x, VertexInterface previous) {
-		hashtable.put(x, previous);		
+	private static final long serialVersionUID = 1L;
+
+	public Previous() {
+		super();
 	}
 	
-	// get the previous of a Vertex x
-	public VertexInterface getPrevious(VertexInterface x) {
-		return hashtable.get(x);
+	/** Définit le lien de succession entre deux sommets
+	 * @param vertex Le sommet fils
+	 * @param previous Le sommet père
+	 **/
+	public final void setPrevious(VertexInterface x, VertexInterface previous) {
+		this.put(x, previous);		
+	}
+	
+	/** Renvoie le père d'un vecteur.
+	 * @param vertex Le sommet fils
+	 * @return Le sommet père
+	 **/
+	public final VertexInterface getPrevious(VertexInterface x) {
+		return this.get(x);
 	}
 
 	

@@ -1,14 +1,21 @@
 package dijkstra;
 
+
+/** Interface de l'ensemble de A de l'algorithme de Dijkstra
+ * 
+ * @author Tristan Perrot
+ *
+ */
 public interface ASetInterface {
 	
-	// return true if A is empty, false if not
-	public Boolean isEmpty() ;
-	
-	// add a vertex to A
+	/** Ajout un sommet à A
+	 * @param vertex Le sommet à ajouter à A
+	 */
 	public void addVertex(VertexInterface vertex) ;
 	
-	// return true if vertex is in A 
+	/** Renvoie le test le booléen indiquant un sommet est dans A
+	 * @param vertex Le sommet considéré
+	 */
 	public Boolean containsVertex(VertexInterface vertex) ;
 
 	
