@@ -40,7 +40,7 @@ public class Previous extends Hashtable<VertexInterface, VertexInterface> implem
 	/**
 	 * Renvoie la liste représentant le plus court jusqu'à un sommet donné
 	 * 
-	 * @param vertex Le sommet d'arrivéd
+	 * @param vertex Le sommet d'arrivé
 	 * @return La liste des sommets formant le chemin jusqu'à vertex
 	 */
 	public ArrayList<VertexInterface> getShortestPathTo(VertexInterface vertex) {
