@@ -37,7 +37,9 @@ public class Previous extends Hashtable<VertexInterface, VertexInterface> implem
 		return this.get(x);
 	}
 
-	/** Renvoie la liste représentant le plus court jusqu'à un sommet donné
+	/**
+	 * Renvoie la liste représentant le plus court jusqu'à un sommet donné
+	 * 
 	 * @param vertex Le sommet d'arrivéd
 	 * @return La liste des sommets formant le chemin jusqu'à vertex
 	 */

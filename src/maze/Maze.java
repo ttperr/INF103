@@ -1,6 +1,8 @@
 package maze;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -274,6 +276,30 @@ public final class Maze implements GraphInterface {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public final void showPath(ArrayList<VertexInterface> path) throws DepartureArrivalException, FileNotFoundException {
+		MBox[] startAndEnd = findStartAndEnd();
+		MBox start = startAndEnd[0];
+		MBox end = startAndEnd[1];
+		if(!(path.get(path.size() - 1).isEqualTo(start))) {
+			System.out.println("Erreur : le labyrinthe n'a pas de solution !");
+		}
+		
+		PrintWriter textF = new PrintWriter(new FileOutputStream("data/solution.txt"));
+		for (MBox[] listMBox : maze) {
+			for (MBox box : listMBox) {
+				System.out.print(box.getLabel());
+				textF.print(box.getLabel());
+				if(path.contains(box) && !(box.isEqualTo(end)) && !(box.isEqualTo(start))) {
+					System.out.print(".");
+					textF.print(".");
+				}
+			}
+			System.out.print("\n");
+			textF.print("\n");
+		}
+		textF.close();
 	}
 
 }
