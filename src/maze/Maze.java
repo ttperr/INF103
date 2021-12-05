@@ -138,7 +138,7 @@ public final class Maze implements GraphInterface {
 	 * @throws MazeReadingException Erreur liée à la lecture du fichier
 	 */
 	public final void initFromTextFile(String fileName) throws MazeReadingException {
-		try {    
+		try {   
 			BufferedReader br = new BufferedReader(new FileReader(fileName)) ;
 	        String line = br.readLine() ;
     	    int lineLength = line.length() ;
@@ -170,14 +170,16 @@ public final class Maze implements GraphInterface {
 		    		    }
 	    	    	} else {throw new MazeReadingException(fileName, row, column, "Maze is not rectangular");}
 	    	    }
-	    	    arrayMaze.add(boxesLine);  
-	    	    row++;
+	    	    arrayMaze.add(boxesLine) ;  
+	    	    row++ ;
 	        	
-	        } while ((line = br.readLine()) != null);
-	        br.close();
-	        height = row;
-	        width = lineLength;
-	        maze = new MBox[height][width];
+	        } while ((line = br.readLine()) != null) ;
+	        
+	        br.close() ;
+	        height = row ;
+	        width = lineLength ;
+	        maze = new MBox[height][width] ;
+	        
 	        for (int i = 0 ; i < height ; i++) {
 	        	maze[i] = arrayMaze.get(i) ;
 	        }
