@@ -7,25 +7,59 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import dijkstra.GraphInterface;
+import dijkstra.PiInterface;
 import dijkstra.VertexInterface;
 
 public final class Maze implements GraphInterface {
-	// create the object boxes
-	private final ArrayList<ArrayList<MBox>> boxes = new ArrayList<ArrayList<MBox>>();
-	
-	// create the boxes where path boxes are labeled by a point
-	private final ArrayList<ArrayList<MBox>> endBoxes = new ArrayList<ArrayList<MBox>>();
-	
-	// MBox getter
-	public MBox getBox(int i, int j) {
-		return boxes.get(i).get(j);
+	private MBox[][] maze ;
+	private int width ;
+	private int height ;
+	private PiInterface pi ;
+
+	public Maze(MBox[][] maze) {
+		this.maze = maze;
+		if (maze != null) {
+			width= maze[0].length ;
+			height = maze.length ;
+		}
 	}
 	
-	// return all vertex of the maze
-	public ArrayList<VertexInterface> getAllVertices() {
+	/** Renvoie la matrice des sommets
+	 * 
+	 * @return La matrice des sommets
+	 */
+	public final MBox[][] getMaze() {return maze;}
+	
+	/** Renvoie la largeur
+	 * 
+	 * @return Largeur du graphe
+	 */
+	public final int getWidth() {return width;}
+	
+	/** Renvoie la hauteur
+	 * 
+	 * @return Hauteur du graphe
+	 */
+	public final int getHeight() {return height;}
+	
+	/** Renvoie la fonction Pi
+	 * 
+	 * @return Fonction pi du graphe
+	 */
+	public final PiInterface getPi() {return this.pi ;}
+
+	// MBox getter
+	public MBox getBox(int i, int j) {
+		return maze[i][j];
+	}
+	
+	/** Renvoie l'ensemble des sommets du graphe
+	 * @return la liste de tous les sommets
+	 **/
+	public final ArrayList<VertexInterface> getAllVertices() {
 		ArrayList<VertexInterface> vertices = new ArrayList<VertexInterface>();
 		
-		for (ArrayList<MBox> listMBox : boxes) {
+		for (MBox[] listMBox : maze) {
 			for(MBox box : listMBox) {
 				vertices.add(box);
 			}
@@ -34,7 +68,13 @@ public final class Maze implements GraphInterface {
 		return vertices;
 	}
 	
-	private void addSuccessors(ArrayList<VertexInterface> successors, VertexInterface vertex, VertexInterface nextVertex) {
+	/** Ajoute à la liste successors un sommet nextVertex s'il est accessible depuis le sommet vertex
+	 * @param vertex Le sommet de départ
+	 * @param nextVertex le sommet d'arrivée
+	 * @param successors la liste temporaire des voisins de vertex
+	 * @return La liste des voisins
+	 **/
+	private final void addSuccessors(ArrayList<VertexInterface> successors, VertexInterface vertex, VertexInterface nextVertex) {
 		Double posInf = Double.POSITIVE_INFINITY;
 		Double weight = getWeight(vertex, nextVertex);
 		if (weight < posInf) {
@@ -42,43 +82,47 @@ public final class Maze implements GraphInterface {
 		}
 	}
 	
-	// return the successors of the ArrayList of the successors of the vertex vertex
-	public ArrayList<VertexInterface> getSuccessors(VertexInterface vertex) {
+	/** Renvoie la liste des voisins d'un sommet dans le graphe
+	 * @param vertex Le sommet dont on cherche les voisins
+	 * @return La liste des voisins
+	 **/
+	public final ArrayList<VertexInterface> getSuccessors(VertexInterface vertex) {
 		ArrayList<VertexInterface> successors = new ArrayList<VertexInterface>();
 		
 		MBox box = (MBox)vertex;
 		int row = box.getRow();
 		int column = box.getColumn();
-		
-		int rowMax = boxes.size();
-		int columnMax = boxes.get(0).size();
 	
 		if (column - 1 >= 0) {
-			MBox nextVertexLeft = boxes.get(row).get(column - 1);	
+			MBox nextVertexLeft = maze[row][column - 1];	
 			addSuccessors(successors, box, nextVertexLeft);
 		}
 		
-		if (column + 1 < columnMax) {
-			MBox nextVertexRight = boxes.get(row).get(column + 1);
+		if (column + 1 < width) {
+			MBox nextVertexRight = maze[row][column + 1];
 			addSuccessors(successors, box, nextVertexRight);
 		}
 		
 		if (row - 1 >= 0) {
-			MBox nextVertexUp = boxes.get(row - 1).get(column);
+			MBox nextVertexUp = maze[row - 1][column];
 			addSuccessors(successors, box, nextVertexUp);
 			
 		}
 		
-		if (row + 1 < rowMax) {
-			MBox nextVertexDown = boxes.get(row + 1).get(column);	
+		if (row + 1 < height) {
+			MBox nextVertexDown = maze[row + 1][column];	
 			addSuccessors(successors, box, nextVertexDown);
 		}
 		
 		return successors;
 	}
 
-	// return 1 if src and dst are neighbors, infinity if not
-	public Double getWeight(VertexInterface src, VertexInterface dst) {
+	/** Renvoie le poids dans le graphe de l'arête entre deux sommets
+	 * @param src Le sommet d'origine
+	 * @param dst Le sommet d'arrivée
+	 * @return Le poids de l'arête src-dst 
+	 **/
+	public final Double getWeight(VertexInterface src, VertexInterface dst) {
 		MBox srcBox = (MBox)src;
 		MBox dstBox = (MBox)dst;
 		
@@ -93,36 +137,44 @@ public final class Maze implements GraphInterface {
 		try
 	    {    
 	      BufferedReader br = new BufferedReader(new FileReader(fileName));
-	        String line;
+	        String line = br.readLine();
+    	    int lineLength = line.length();
 	        int row = 0;
-	        while((line = br.readLine()) != null) {
-	    	    ArrayList<MBox> boxesLine = new ArrayList<MBox>();
-	    	    for(int column = 0; column < line.length(); column++) {
-	    		    switch(line.charAt(column)) {
-	    		    case 'E':
-	    			    boxesLine.add(new EBox(row,column));
-	    			    break;
-						
-	    		    case 'W':
-	    			    boxesLine.add(new WBox(row,column));
-	    			    break;
-
-	    		    case 'A':
-	    			    boxesLine.add(new ABox(row,column));
-	    			    break;
-
-	    		    case 'D':
-	    			    boxesLine.add(new DBox(row,column));
-	    			    break;
-
-	    		    default:
-	    				throw new MazeReadingException(fileName, row, column, "Unknown character readed");
-	    		    }
+	        ArrayList<MBox[]> arrayMaze = new ArrayList<MBox[]>() ;
+	        do {
+	    	    MBox[] boxesLine = new MBox[lineLength];
+	    	    for(int column = 0; column < lineLength; column++) {
+	    	    	if (line.length() == lineLength) {
+		    		    switch(line.charAt(column)) {
+		    		    case 'E':
+		    			    boxesLine[column] = new EBox(row,column);
+		    			    break;
+							
+		    		    case 'W':
+		    		    	boxesLine[column] = new WBox(row,column);
+		    			    break;
+	
+		    		    case 'A':
+		    		    	boxesLine[column] = new ABox(row,column);
+		    			    break;
+	
+		    		    case 'D':
+		    		    	boxesLine[column] = new DBox(row,column);
+		    			    break;
+	
+		    		    default:
+		    				throw new MazeReadingException(fileName, row, column, "Unknown character readed");
+		    		    }
+	    	    	} else {throw new MazeReadingException(fileName, row, column, "Maze is not rectangular");}
 	    	    }
-	    	    boxes.add(boxesLine);  
+	    	    arrayMaze.add(boxesLine);  
 	    	    row++;
-	        }
+	        	
+	        } while ((line = br.readLine()) != null);
 	        br.close();
+	        height = row;
+	        width = lineLength;
+	        maze = (MBox[][]) arrayMaze.toArray();
 	    }
 	    catch(IOException e)
 	    {
@@ -135,11 +187,8 @@ public final class Maze implements GraphInterface {
 	public final void saveToTextFile(String fileName) {
 		try {
 			PrintWriter textF = new PrintWriter(fileName);
-			for (ArrayList<MBox> listMBox : endBoxes) {
-				for(MBox box : listMBox) {
-					if (box != null) { textF.print(box.getLabel()); }
-					else textF.print(".");
-				}
+			for (MBox[] listMBox : maze) {
+				for(MBox box : listMBox) {textF.print(box.getLabel());}
 				textF.print("\n");
 			}
 			textF.close();
