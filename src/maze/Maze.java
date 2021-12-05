@@ -23,7 +23,7 @@ public final class Maze implements GraphInterface {
 	private PiInterface pi ;
 
 	public Maze(MBox[][] maze) {
-		this.maze = maze;
+		this.maze = maze ;
 		if (maze != null) {
 			width= maze[0].length ;
 			height = maze.length ;
@@ -48,39 +48,39 @@ public final class Maze implements GraphInterface {
 	/** Renvoie la fonction Pi
 	 * @return Fonction pi du graphe
 	 */
-	public final PiInterface getPi() {return this.pi ;}
+	public final PiInterface getPi() {return this.pi;}
 
 	// MBox getter
 	public MBox getBox(int i, int j) {
-		return maze[i][j];
+		return maze[i][j] ;
 	}
 	
 	/** Renvoie l'ensemble des sommets du graphe
-	 * @return la liste de tous les sommets
+	 * @return La liste de tous les sommets
 	 **/
 	public final ArrayList<VertexInterface> getAllVertices() {
-		ArrayList<VertexInterface> vertices = new ArrayList<VertexInterface>();
+		ArrayList<VertexInterface> vertices = new ArrayList<VertexInterface>() ;
 		
 		for (MBox[] listMBox : maze) {
 			for(MBox box : listMBox) {
-				vertices.add(box);
+				vertices.add(box) ;
 			}
 		}
 		
-		return vertices;
+		return vertices ;
 	}
 	
 	/** Ajoute à la liste successors un sommet nextVertex s'il est accessible depuis le sommet vertex
 	 * @param vertex Le sommet de départ
-	 * @param nextVertex le sommet d'arrivée
-	 * @param successors la liste temporaire des voisins de vertex
+	 * @param nextVertex Le sommet d'arrivée
+	 * @param successors La liste temporaire des voisins de vertex
 	 * @return La liste des voisins
 	 **/
 	private final void addSuccessors(ArrayList<VertexInterface> successors, VertexInterface vertex, VertexInterface nextVertex) {
-		Double posInf = Double.POSITIVE_INFINITY;
-		Double weight = getWeight(vertex, nextVertex);
+		Double posInf = Double.POSITIVE_INFINITY ;
+		Double weight = getWeight(vertex, nextVertex) ;
 		if (weight < posInf) {
-			successors.add(nextVertex);
+			successors.add(nextVertex) ;
 		}
 	}
 	
@@ -89,34 +89,33 @@ public final class Maze implements GraphInterface {
 	 * @return La liste des voisins
 	 **/
 	public final ArrayList<VertexInterface> getSuccessors(VertexInterface vertex) {
-		ArrayList<VertexInterface> successors = new ArrayList<VertexInterface>();
+		ArrayList<VertexInterface> successors = new ArrayList<VertexInterface>() ;
 		
-		MBox box = (MBox)vertex;
-		int row = box.getRow();
-		int column = box.getColumn();
+		MBox box = (MBox)vertex ;
+		int row = box.getRow() ;
+		int column = box.getColumn() ;
 	
 		if (column - 1 >= 0) {
-			MBox nextVertexLeft = maze[row][column - 1];	
-			addSuccessors(successors, box, nextVertexLeft);
+			MBox nextVertexLeft = maze[row][column - 1] ;	
+			addSuccessors(successors, box, nextVertexLeft) ;
 		}
 		
 		if (column + 1 < width) {
-			MBox nextVertexRight = maze[row][column + 1];
-			addSuccessors(successors, box, nextVertexRight);
+			MBox nextVertexRight = maze[row][column + 1] ;
+			addSuccessors(successors, box, nextVertexRight) ;
 		}
 		
 		if (row - 1 >= 0) {
 			MBox nextVertexUp = maze[row - 1][column];
-			addSuccessors(successors, box, nextVertexUp);
-			
+			addSuccessors(successors, box, nextVertexUp) ;
 		}
 		
 		if (row + 1 < height) {
-			MBox nextVertexDown = maze[row + 1][column];	
-			addSuccessors(successors, box, nextVertexDown);
+			MBox nextVertexDown = maze[row + 1][column] ;	
+			addSuccessors(successors, box, nextVertexDown) ;
 		}
 		
-		return successors;
+		return successors ;
 	}
 
 	/** Renvoie le poids dans le graphe de l'arête entre deux sommets
@@ -125,26 +124,25 @@ public final class Maze implements GraphInterface {
 	 * @return Le poids de l'arête src-dst 
 	 **/
 	public final Double getWeight(VertexInterface src, VertexInterface dst) {
-		MBox srcBox = (MBox)src;
-		MBox dstBox = (MBox)dst;
+		MBox srcBox = (MBox)src ;
+		MBox dstBox = (MBox)dst ;
 		
-		int dstRowLength = Math.abs(srcBox.getRow() - dstBox.getRow());
-		int dstColumnLength = Math.abs(srcBox.getColumn() - srcBox.getColumn());
+		int dstRowLength = Math.abs(srcBox.getRow() - dstBox.getRow()) ;
+		int dstColumnLength = Math.abs(srcBox.getColumn() - srcBox.getColumn()) ;
 		
-		return (srcBox.getLabel().equals("W") || dstBox.getLabel().equals("W") || dstRowLength > 1 || dstColumnLength > 1 || (dstBox.getColumn() == srcBox.getColumn() && dstBox.getRow() == srcBox.getRow())) ? Double.POSITIVE_INFINITY : 1;
+		return (srcBox.getLabel().equals("W") || dstBox.getLabel().equals("W") || dstRowLength > 1 || dstColumnLength > 1 || (dstBox.getColumn() == srcBox.getColumn() && dstBox.getRow() == srcBox.getRow())) ? Double.POSITIVE_INFINITY : 1 ;
 	}
 	
 	/** Initialise le labyrinthe à partir d'un fichier texte
-	 * @param fileName
-	 * @throws MazeReadingException
+	 * @param fileName Adresse du fichier
+	 * @throws MazeReadingException Erreur liée à la lecture du fichier
 	 */
 	public final void initFromTextFile(String fileName) throws MazeReadingException {
-		try
-	    {    
-	      BufferedReader br = new BufferedReader(new FileReader(fileName));
-	        String line = br.readLine();
-    	    int lineLength = line.length();
-	        int row = 0;
+		try {    
+			BufferedReader br = new BufferedReader(new FileReader(fileName)) ;
+	        String line = br.readLine() ;
+    	    int lineLength = line.length() ;
+	        int row = 0 ;
 	        ArrayList<MBox[]> arrayMaze = new ArrayList<MBox[]>() ;
 	        do {
 	    	    MBox[] boxesLine = new MBox[lineLength];
@@ -152,23 +150,23 @@ public final class Maze implements GraphInterface {
 	    	    	if (line.length() == lineLength) {
 		    		    switch(line.charAt(column)) {
 		    		    case 'E':
-		    			    boxesLine[column] = new EBox(row,column);
+		    			    boxesLine[column] = new EBox(row,column) ;
 		    			    break;
 							
 		    		    case 'W':
-		    		    	boxesLine[column] = new WBox(row,column);
-		    			    break;
+		    		    	boxesLine[column] = new WBox(row,column) ;
+		    			    break ;
 	
 		    		    case 'A':
-		    		    	boxesLine[column] = new ABox(row,column);
-		    			    break;
+		    		    	boxesLine[column] = new ABox(row,column) ;
+		    			    break ;
 	
 		    		    case 'D':
-		    		    	boxesLine[column] = new DBox(row,column);
-		    			    break;
+		    		    	boxesLine[column] = new DBox(row,column) ;
+		    			    break ;
 	
 		    		    default:
-		    				throw new MazeReadingException(fileName, row, column, "Unknown character readed");
+		    				throw new MazeReadingException(fileName, row, column, "Unknown character readed") ;
 		    		    }
 	    	    	} else {throw new MazeReadingException(fileName, row, column, "Maze is not rectangular");}
 	    	    }
@@ -179,28 +177,31 @@ public final class Maze implements GraphInterface {
 	        br.close();
 	        height = row;
 	        width = lineLength;
-	        maze = (MBox[][]) arrayMaze.toArray();
+	        maze = new MBox[height][width];
+	        for (int i = 0 ; i < height ; i++) {
+	        	maze[i] = arrayMaze.get(i) ;
+	        }
 	    }
 	    catch(IOException e)
 	    {
-	        e.printStackTrace();
+	        e.printStackTrace() ;
 	    }
 	
 	} 
 	
 	/** Sauvegarde le labyrinthe dans un fichier texte après l'avoir résolu
-	 * @param fileName
+	 * @param fileName Adresse du fichier
 	 */
 	public final void saveToTextFile(String fileName) {
 		try {
-			PrintWriter textF = new PrintWriter(fileName);
+			PrintWriter textF = new PrintWriter(fileName) ;
 			for (MBox[] listMBox : maze) {
 				for(MBox box : listMBox) {textF.print(box.getLabel());}
-				textF.print("\n");
+				textF.print("\n") ;
 			}
-			textF.close();
+			textF.close() ;
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.printStackTrace() ;
 		}
 	}
 	

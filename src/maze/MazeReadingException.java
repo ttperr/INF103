@@ -7,7 +7,7 @@ package maze;
  */
 public class MazeReadingException extends Exception {
 	
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L ;
 
 	/** Renvoie les informations liées à l'erreur levée telle que la position et la nature
 	 * @param fileName Adresse du fichier
@@ -16,6 +16,6 @@ public class MazeReadingException extends Exception {
 	 * @param error Nature de l'erreur
 	 */
 	public MazeReadingException(String fileName, int row, int column, String error) {
-		super("Erreur détectée pendant la lecture du labyrinthe dans " + fileName + "(" + row + "," + column + ") : " + error);
+		super("Erreur détectée pendant la lecture du labyrinthe dans " + fileName + "(" + row + "," + column + ") : " + error) ;
 	}
 }

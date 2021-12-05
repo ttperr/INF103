@@ -9,10 +9,10 @@ import java.util.Hashtable;
  */
 public class Previous extends Hashtable<VertexInterface,VertexInterface> implements PreviousInterface {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L ;
 
 	public Previous() {
-		super();
+		super() ;
 	}
 	
 	/** Définit le lien de succession entre deux sommets
@@ -20,7 +20,7 @@ public class Previous extends Hashtable<VertexInterface,VertexInterface> impleme
 	 * @param previous Le sommet père
 	 **/
 	public final void setPrevious(VertexInterface x, VertexInterface previous) {
-		this.put(x, previous);		
+		this.put(x, previous) ;		
 	}
 	
 	/** Renvoie le père d'un vecteur.
@@ -28,7 +28,7 @@ public class Previous extends Hashtable<VertexInterface,VertexInterface> impleme
 	 * @return Le sommet père
 	 **/
 	public final VertexInterface getPrevious(VertexInterface x) {
-		return this.get(x);
+		return this.get(x) ;
 	}
 
 	

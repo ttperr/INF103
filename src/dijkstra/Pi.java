@@ -10,10 +10,10 @@ import java.util.Hashtable;
  */
 public class Pi extends Hashtable<VertexInterface, Integer> implements PiInterface{
 	
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L ;
 
 	public Pi() {
-		super();
+		super() ;
 	}
 	
 	/** Assigne une valeur de pi à un sommet
@@ -21,7 +21,7 @@ public class Pi extends Hashtable<VertexInterface, Integer> implements PiInterfa
 	 * @param value La valeur donnée à pi(vertex)
 	**/
 	public void setPi(VertexInterface vertex, Integer value) {
-		this.put(vertex, value);
+		this.put(vertex, value) ;
 	}
 	
 	/** Renvoie la valeur de pi pour un sommet
@@ -29,7 +29,7 @@ public class Pi extends Hashtable<VertexInterface, Integer> implements PiInterfa
 	 * @return  La valeur de pi(vertex)
 	**/
 	public Integer getPi(VertexInterface vertex) {
-		return this.get(vertex);
+		return this.get(vertex) ;
 	}
 
 }
