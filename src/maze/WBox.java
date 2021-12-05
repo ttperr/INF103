@@ -1,15 +1,15 @@
 package maze;
 
-
-/** Classe des murs
+/**
+ * Classe des murs
  * 
  * @author Tristan Perrot
  *
  */
-public class WBox extends MBox{
-	
+public class WBox extends MBox {
+
 	public WBox(int i, int j) {
-		super(i, j, "W") ;
+		super(i, j, "W");
 	}
 
 }
