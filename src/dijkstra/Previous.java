@@ -1,5 +1,6 @@
 package dijkstra;
 
+import java.util.ArrayList;
 import java.util.Hashtable;
 
 /**
@@ -34,6 +35,19 @@ public class Previous extends Hashtable<VertexInterface, VertexInterface> implem
 	 **/
 	public final VertexInterface getPrevious(VertexInterface x) {
 		return this.get(x);
+	}
+
+	/** Renvoie la liste représentant le plus court jusqu'à un sommet donné
+	 * @param vertex Le sommet d'arrivéd
+	 * @return La liste des sommets formant le chemin jusqu'à vertex
+	 */
+	public ArrayList<VertexInterface> getShortestPathTo(VertexInterface vertex) {
+		ArrayList<VertexInterface> path = new ArrayList<VertexInterface>();
+		while (vertex != null) {
+			path.add(vertex);
+			vertex = getPrevious(vertex);
+		}
+		return path;
 	}
 
 }

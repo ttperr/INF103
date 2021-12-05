@@ -1,5 +1,7 @@
 package dijkstra;
 
+import java.util.ArrayList;
+
 /**
  * Interface des pères des sommets
  * 
@@ -23,5 +25,11 @@ public interface PreviousInterface {
 	 * @return Le sommet père
 	 **/
 	public VertexInterface getPrevious(VertexInterface x);
+
+	/** Renvoie la liste représentant le plus court jusqu'à un sommet donné
+	 * @param vertex Le sommet d'arrivéd
+	 * @return La liste des sommets formant le chemin jusqu'à vertex
+	 */
+	public ArrayList<VertexInterface> getShortestPathTo(VertexInterface vertex);
 
 }
