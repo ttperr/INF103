@@ -11,6 +11,6 @@ public class DepartureArrivalException extends Exception {
 	 */
 	public DepartureArrivalException(int row, int column, String message) {
 		super("Erreur lors de la recherche du point de départ et d'arrivée à la ligne " + row + " et la colonne "
-				+ column + " : ");
+				+ column + " : " + message);
 	}
 }
