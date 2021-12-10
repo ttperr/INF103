@@ -1,13 +1,14 @@
+package ProjectLauncher;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
-import dijkstra.Dijkstra;
-import dijkstra.PreviousInterface;
-import dijkstra.VertexInterface;
-import maze.DepartureArrivalException;
-import maze.MBox;
-import maze.Maze;
-import maze.MazeReadingException;
+import algo.dijkstra.Dijkstra;
+import algo.dijkstra.PreviousInterface;
+import algo.dijkstra.VertexInterface;
+import algo.maze.DepartureArrivalException;
+import algo.maze.MBox;
+import algo.maze.Maze;
+import algo.maze.MazeReadingException;
 
 public class Main {
 
