@@ -1,4 +1,4 @@
-package dijkstra;
+package algo.dijkstra;
 
 /**
  * Interface de l'ensemble de A de l'algorithme de Dijkstra

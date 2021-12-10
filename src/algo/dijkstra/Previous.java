@@ -1,4 +1,4 @@
-package dijkstra;
+package algo.dijkstra;
 
 import java.util.ArrayList;
 import java.util.Hashtable;

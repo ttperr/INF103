@@ -1,4 +1,4 @@
-package maze;
+package algo.maze;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -8,8 +8,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
-import dijkstra.GraphInterface;
-import dijkstra.VertexInterface;
+import algo.dijkstra.GraphInterface;
+import algo.dijkstra.VertexInterface;
 
 /**
  * Classe des labyrinthes

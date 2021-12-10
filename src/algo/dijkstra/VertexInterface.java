@@ -1,4 +1,4 @@
-package dijkstra;
+package algo.dijkstra;
 
 /**
  * Interface des sommets

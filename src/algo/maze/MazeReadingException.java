@@ -1,4 +1,4 @@
-package maze;
+package algo.maze;
 
 /**
  * Erreur qui a lieu pendant la lecture du fichier texte d'initialisation

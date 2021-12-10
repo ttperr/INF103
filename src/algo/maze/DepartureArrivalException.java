@@ -1,4 +1,4 @@
-package maze;
+package algo.maze;
 
 public class DepartureArrivalException extends Exception {
 

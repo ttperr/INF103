@@ -1,4 +1,4 @@
-package dijkstra;
+package algo.dijkstra;
 
 /**
  * Interface de la fonction pi de l'algorithme Dijkstra

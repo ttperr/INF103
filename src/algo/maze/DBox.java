@@ -1,4 +1,4 @@
-package maze;
+package algo.maze;
 
 /**
  * Classe de la cases de départ

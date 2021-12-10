@@ -1,6 +1,6 @@
-package maze;
+package algo.maze;
 
-import dijkstra.VertexInterface;
+import algo.dijkstra.VertexInterface;
 
 /**
  * Classe des cases du labyrinthes
