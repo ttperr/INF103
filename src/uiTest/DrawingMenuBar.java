@@ -1,18 +1,15 @@
-package ui.view.menu;
+package uiTest;
 
 import javax.swing.*;
 
-import ui.view.DrawingApp;
-
 public class DrawingMenuBar extends JMenuBar {
 
-	private final FileMenu fileMenu ;
-	
-	public DrawingMenuBar(DrawingApp drawingApp)
-	{
-		super() ;
-		
+	private final FileMenu fileMenu;
+
+	public DrawingMenuBar(DrawingApp drawingApp) {
+		super();
+
 		// Create and add menus
-		add(fileMenu = new FileMenu(drawingApp)) ;
+		add(fileMenu = new FileMenu(drawingApp));
 	}
 }

@@ -1,11 +1,11 @@
 package ProjectLauncher;
 
-import ui.view.DrawingApp;
+import uiTest.DrawingApp;
 
 public class MainUi {
 
 	public static void main(String[] args) {
-		new DrawingApp() ;
+		new DrawingApp();
 
 	}
 
