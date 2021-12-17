@@ -1,3 +1,3 @@
 # Projet INF103 de Tristan PERROT
 
-Développement de l'algorithme de Dijkstra pour résoudre des labyrinthes
+Développement de l'algorithme de Dijkstra et de son interface graphique pour résoudre des labyrinthes
