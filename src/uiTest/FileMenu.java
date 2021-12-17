@@ -3,10 +3,6 @@ package uiTest;
 import javax.swing.*;
 
 public class FileMenu extends JMenu {
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private final QuitMenuItem quitMenuItem;
 

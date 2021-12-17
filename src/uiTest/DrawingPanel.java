@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class DrawingPanel extends JPanel {
+	private static final long serialVersionUID = 1L;
 	private final DrawingApp drawingApp;
 
 	public DrawingPanel(DrawingApp drawingApp) {

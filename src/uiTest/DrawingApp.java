@@ -3,9 +3,6 @@ package uiTest;
 import javax.swing.*;
 
 public class DrawingApp extends JFrame {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private final DrawingMenuBar drawingMenuBar;
 	private final WindowPanel windowPanel;

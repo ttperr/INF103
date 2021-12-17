@@ -4,6 +4,7 @@ import java.awt.*;
 import javax.swing.*;
 
 public class ButtonsPanel extends JPanel {
+	private static final long serialVersionUID = 1L;
 	private final ColorIndicator colorIndicator;
 	private final ColorChooserButton colorChooser;
 	private final EraseSegmentButton eraseSegment;
