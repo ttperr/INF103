@@ -1,6 +1,6 @@
 package ProjectLauncher;
 
-import uiTest.DrawingApp;
+import uiTest.ui.DrawingApp;
 
 public class MainUi {
 

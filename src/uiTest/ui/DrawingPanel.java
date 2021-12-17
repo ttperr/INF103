@@ -1,4 +1,4 @@
-package uiTest;
+package uiTest.ui;
 
 import javax.swing.*;
 import java.awt.*;
