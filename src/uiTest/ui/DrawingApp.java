@@ -1,7 +1,7 @@
 package uiTest.ui;
 
 import javax.swing.*;
-import javax.swing.event.*r;
+import javax.swing.event.*;
 
 import uiTest.model.*;
 

@@ -3,7 +3,7 @@ package uiTest.model;
 import java.awt.*;
 import java.util.*;
 
-import javax.swing.event.*;;
+import javax.swing.event.*;
 
 public class DrawingAppModel {
 	private final ArrayList<Segment> editedSegments = new ArrayList<Segment>(128);
@@ -41,7 +41,7 @@ public class DrawingAppModel {
 	}
 
 	public final void setSelectedSegment(Segment selectedSegment) {
-		if (this.selectedSegment != selectedSegment;) {
+		if (this.selectedSegment != selectedSegment) {
 			this.selectedSegment = selectedSegment;
 			setModified(true);
 			stateChanges();
