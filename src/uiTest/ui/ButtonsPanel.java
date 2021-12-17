@@ -16,4 +16,10 @@ public class ButtonsPanel extends JPanel {
 		add(colorChooser = new ColorChooserButton(drawingApp));
 		add(eraseSegment = new EraseSegmentButton(drawingApp));
 	}
+
+	public void notifyForUpdate() {
+		colorIndicator.notifyForUpdate();
+		eraseSegment.notifyForUpdate();
+	}
+
 }

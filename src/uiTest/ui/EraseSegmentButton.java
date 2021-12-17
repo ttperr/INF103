@@ -2,6 +2,8 @@ package uiTest.ui;
 
 import javax.swing.*;
 
+import uiTest.model.*;
+
 public class EraseSegmentButton extends JButton {
 	private static final long serialVersionUID = 1L;
 	private final DrawingApp drawingApp;
@@ -11,4 +13,11 @@ public class EraseSegmentButton extends JButton {
 
 		this.drawingApp = drawingApp;
 	}
+
+	public void notifyForUpdate() {
+		Segment selected = drawingApp.getDrawingAppModel().getSelectedSegment();
+
+		setEnabled(selected != null);
+	}
+
 }

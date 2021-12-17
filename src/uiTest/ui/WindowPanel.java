@@ -15,4 +15,9 @@ public class WindowPanel extends JPanel {
 		add(buttonsPanel = new ButtonsPanel(drawingApp), BorderLayout.SOUTH);
 	}
 
+	public void notifyForUpdate() {
+		drawingPanel.notifyForUpdate();
+		buttonsPanel.notifyForUpdate();
+	}
+
 }
