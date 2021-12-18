@@ -14,6 +14,11 @@ public class DrawingPanel extends JPanel {
 
 		// for pack() instruction
 		setPreferredSize(new Dimension(300, 300));
+
+		DrawingPanelMouseListener drawingPanelMouseListener = new DrawingPanelMouseListener(drawingApp);
+
+		addMouseListener(drawingPanelMouseListener);
+		addMouseMotionListener(drawingPanelMouseListener);
 	}
 
 	@Override

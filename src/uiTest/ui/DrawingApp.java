@@ -2,7 +2,6 @@ package uiTest.ui;
 
 import javax.swing.*;
 import javax.swing.event.*;
-
 import uiTest.model.*;
 
 public class DrawingApp extends JFrame implements ChangeListener{
