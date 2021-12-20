@@ -2,7 +2,7 @@ package ProjectLauncher;
 
 import uiTest.ui.DrawingApp;
 
-public class MainUi {
+public class MainUiTest {
 
 	public static void main(String[] args) {
 		new DrawingApp();
