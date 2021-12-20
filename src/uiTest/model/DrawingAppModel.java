@@ -2,7 +2,6 @@ package uiTest.model;
 
 import java.awt.*;
 import java.util.*;
-
 import javax.swing.event.*;
 
 public class DrawingAppModel {
