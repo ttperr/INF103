@@ -21,26 +21,20 @@ public abstract class MBox implements VertexInterface {
 	}
 
 	/**
-	 * Renvoie le numéro de ligne de la case
-	 * 
-	 * @return Numéro de ligne de la case
+	 * @return Le numéro de ligne de la case
 	 */
 	public int getRow() {
 		return row;
 	}
 
 	/**
-	 * Renvoie le numéro de colomne de la case
-	 * 
-	 * @return Numéro de colomne de la case
+	 * @return Le numéro de colonne de la case
 	 */
 	public int getColumn() {
 		return column;
 	}
 
 	/**
-	 * Renvoie le label du sommet
-	 * 
 	 * @return Le caractère correspondant au type de la case
 	 */
 	public String getLabel() {
@@ -48,8 +42,6 @@ public abstract class MBox implements VertexInterface {
 	}
 
 	/**
-	 * Renvoie le test d'égalité entre 2 sommet
-	 * 
 	 * @return Le test d'égalité entre 2 sommet
 	 */
 	public Boolean isEqualTo(VertexInterface vertex) {
