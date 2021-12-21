@@ -252,26 +252,6 @@ public final class Maze implements GraphInterface {
 	}
 
 	/**
-	 * Sauvegarde le labyrinthe dans un fichier texte après l'avoir résolu
-	 * 
-	 * @param fileName Adresse du fichier
-	 */
-	public final void saveToTextFile(String fileName) {
-		try {
-			PrintWriter textF = new PrintWriter(fileName);
-			for (MBox[] listMBox : maze) {
-				for (MBox box : listMBox) {
-					textF.print(box.getLabel());
-				}
-				textF.print("\n");
-			}
-			textF.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	/**
 	 * Affiche le chemin sur la console et renvoie le résultat dans un fichier
 	 * 
 	 * @param path     Chemin du départ à l'arrivée
