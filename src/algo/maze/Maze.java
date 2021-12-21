@@ -59,7 +59,8 @@ public final class Maze implements GraphInterface {
 		return height;
 	}
 
-	/** Renvoie la case de coordonées i,j
+	/**
+	 * Renvoie la case de coordonées i,j
 	 * 
 	 * @param i Numéro de ligne
 	 * @param j Numéro de colonne
