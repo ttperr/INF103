@@ -8,7 +8,7 @@ package algo.maze;
  */
 public class EBox extends MBox {
 
-	protected EBox(int i, int j) {
+	public EBox(int i, int j) {
 		super(i, j, "E");
 	}
 
