@@ -1,25 +1,47 @@
 package uiProject.model;
 
 import java.awt.*;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
 import java.util.*;
 import javax.swing.event.*;
 
+import algo.maze.*;
+
 public class DrawingAppModel {
-	private Box[][] maze;
+	private MBox[][] maze;
 	private int width = 10;
 	private int height = 10;
 	private String currentBoxLabel = "E";
-	private Box currentBox = null;
-	private Box selectedSegment = null;
+	private MBox currentBox = null;
+	private MBox selectedBox = null;
 	private boolean modified = false;
 	private ArrayList<ChangeListener> listeners = new ArrayList<ChangeListener>();
 
 	public DrawingAppModel() {
-		maze = new Box[height][width];
+		maze = new MBox[height][width];
 		for (int i = 0; i < height; i++) {
 			for (int j = 0; j < width; j++) {
-				maze[i][j] = new Box(i, j, "E");
+				maze[i][j] = new EBox(i, j);
 			}
+		}
+	}
+
+	/**
+	 * @return the maze
+	 */
+	public MBox[][] getMaze() {
+		return maze;
+	}
+
+	/**
+	 * @param maze the maze to set
+	 */
+	public void setMaze(MBox[][] maze) {
+		if (this.maze != maze) {
+			this.maze = maze;
+			setModified(true);
+			stateChanges();
 		}
 	}
 
@@ -80,14 +102,14 @@ public class DrawingAppModel {
 	/**
 	 * @return the currentBox
 	 */
-	public Box getCurrentBox() {
+	public MBox getCurrentBox() {
 		return currentBox;
 	}
 
 	/**
 	 * @param currentBox the currentBox to set
 	 */
-	public void setCurrentBox(Box currentBox) {
+	public void setCurrentBox(MBox currentBox) {
 		if (this.currentBox != currentBox) {
 			this.currentBox = currentBox;
 			setModified(true);
@@ -96,18 +118,18 @@ public class DrawingAppModel {
 	}
 
 	/**
-	 * @return the selectedSegment
+	 * @return the selectedBox
 	 */
-	public Box getSelectedSegment() {
-		return selectedSegment;
+	public MBox getSelectedBox() {
+		return selectedBox;
 	}
 
 	/**
-	 * @param selectedSegment the selectedSegment to set
+	 * @param selectedBox the selectedSegment to set
 	 */
-	public void setSelectedSegment(Box selectedSegment) {
-		if (this.selectedSegment != selectedSegment) {
-			this.selectedSegment = selectedSegment;
+	public void setSelectedBox(MBox selectedBox) {
+		if (this.selectedBox != selectedBox) {
+			this.selectedBox = selectedBox;
 			setModified(true);
 			stateChanges();
 		}
@@ -137,4 +159,32 @@ public class DrawingAppModel {
 			listener.stateChanged(evt);
 	}
 
+	public void reset(int width, int height) {
+		setWidth(width);
+		setHeight(height);
+		setCurrentBoxLabel("E");
+		MBox[][] rMaze = new MBox[height][width];
+		for (int i = 0; i < height; i++) {
+			for (int j = 0; j < width; j++) {
+				rMaze[i][j] = new EBox(i, j);
+			}
+		}
+		setMaze(rMaze);
+	}
+	
+	public final void exportMazeToTextFile()) {
+		try {
+			PrintWriter textF = new PrintWriter(new FileOutputStream("data/export.txt"));
+			for (MBox[] listMBox : maze) {
+				for (MBox box : listMBox) {
+					textF.print(box.getLabel());
+				}
+				textF.print("\n");
+			}
+			textF.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 }
