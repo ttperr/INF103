@@ -27,11 +27,11 @@ public final class Maze implements GraphInterface {
 	public Maze(MBox[][] maze) {
 		this.maze = maze;
 		if (maze != null) {
-			width = maze[0].length;
-			height = maze.length;
+			setWidth(maze[0].length);
+			setHeight(maze.length);
 		}
 	}
-
+	
 	/**
 	 * Renvoie la matrice des sommets
 	 * 
@@ -49,6 +49,10 @@ public final class Maze implements GraphInterface {
 	public final int getWidth() {
 		return width;
 	}
+	
+	public final void setWidth(int width) {
+		this.width = width;
+	}
 
 	/**
 	 * Renvoie la hauteur
@@ -59,6 +63,10 @@ public final class Maze implements GraphInterface {
 		return height;
 	}
 
+	public final void setHeight(int height) {
+		this.height = height;
+	}
+	
 	/**
 	 * Renvoie la case de coordonées i,j
 	 * 
@@ -208,8 +216,8 @@ public final class Maze implements GraphInterface {
 			} while ((line = br.readLine()) != null);
 
 			br.close();
-			height = row;
-			width = lineLength;
+			setHeight(row);
+			setWidth(lineLength);
 			maze = new MBox[height][width];
 
 			for (int i = 0; i < height; i++) {
