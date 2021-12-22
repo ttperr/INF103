@@ -32,14 +32,14 @@ public class DrawingAppModel {
 	}
 
 	/**
-	 * @return the maze
+	 * @return The maze
 	 */
 	public Maze getMaze() {
 		return maze;
 	}
 
 	/**
-	 * @param maze the maze to set
+	 * @param maze The maze to set
 	 */
 	public void setMaze(MBox[][] maze) {
 		if (this.getMaze().getMaze() != maze) {
@@ -50,14 +50,14 @@ public class DrawingAppModel {
 	}
 
 	/**
-	 * @return the currentBoxLabel
+	 * @return The currentBoxLabel
 	 */
 	public String getCurrentBoxLabel() {
 		return currentBoxLabel;
 	}
 
 	/**
-	 * @param currentBoxLabel the currentBoxLabel to set
+	 * @param currentBoxLabel The currentBoxLabel to set
 	 */
 	public void setCurrentBoxLabel(String currentBoxLabel) {
 		if (this.currentBoxLabel != currentBoxLabel) {
@@ -68,14 +68,14 @@ public class DrawingAppModel {
 	}
 
 	/**
-	 * @return the currentBox
+	 * @return The currentBox
 	 */
 	public MBox getCurrentBox() {
 		return currentBox;
 	}
 
 	/**
-	 * @param currentBox the currentBox to set
+	 * @param currentBox The currentBox to set
 	 */
 	public void setCurrentBox(MBox currentBox) {
 		if (this.currentBox != currentBox) {
@@ -86,14 +86,14 @@ public class DrawingAppModel {
 	}
 
 	/**
-	 * @return the selectedBox
+	 * @return The selectedBox
 	 */
 	public MBox getSelectedBox() {
 		return selectedBox;
 	}
 
 	/**
-	 * @param selectedBox the selectedSegment to set
+	 * @param selectedBox The selectedSegment to set
 	 */
 	public void setSelectedBox(MBox selectedBox) {
 		if (this.selectedBox != selectedBox) {
@@ -104,19 +104,25 @@ public class DrawingAppModel {
 	}
 
 	/**
-	 * @return the modified
+	 * @return if it's modified or not
 	 */
 	public boolean isModified() {
 		return modified;
 	}
 
 	/**
-	 * @param modified the modified to set
+	 * @param modified the new modified value
 	 */
 	public void setModified(boolean modified) {
 		this.modified = modified;
 	}
 
+	/**
+	 * Reset the maze to an empty maze
+	 * 
+	 * @param width  The new width
+	 * @param height The new height
+	 */
 	public void reset(int width, int height) {
 		setCurrentBoxLabel("E");
 		MBox[][] rMaze = new MBox[height][width];
@@ -128,6 +134,9 @@ public class DrawingAppModel {
 		setMaze(rMaze);
 	}
 
+	/**
+	 * Save the maze to a text file
+	 */
 	public final void exportMazeToTextFile() {
 		try {
 			PrintWriter textF = new PrintWriter(new FileOutputStream("data/export.txt"));
@@ -143,6 +152,12 @@ public class DrawingAppModel {
 		}
 	}
 
+	/**
+	 * Solve the actual maze
+	 * 
+	 * @throws DepartureArrivalException Throwed exception if there is not only one
+	 *                                   arrival and one departure
+	 */
 	public final void solve() throws DepartureArrivalException {
 		MBox[] startAndEnd = maze.findStartAndEnd();
 		MBox start = startAndEnd[0];
