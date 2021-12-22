@@ -117,17 +117,6 @@ public class DrawingAppModel {
 		this.modified = modified;
 	}
 
-	public void addObserver(ChangeListener listener) {
-		listeners.add(listener);
-	}
-
-	public void stateChanges() {
-		ChangeEvent evt = new ChangeEvent(this);
-		for (ChangeListener listener : listeners) {
-			listener.stateChanged(evt);
-		}
-	}
-
 	public void reset(int width, int height) {
 		setCurrentBoxLabel("E");
 		MBox[][] rMaze = new MBox[height][width];
@@ -178,4 +167,14 @@ public class DrawingAppModel {
 		}
 	}
 
+	public void addObserver(ChangeListener listener) {
+		listeners.add(listener);
+	}
+
+	public void stateChanges() {
+		ChangeEvent evt = new ChangeEvent(this);
+		for (ChangeListener listener : listeners) {
+			listener.stateChanged(evt);
+		}
+	}
 }

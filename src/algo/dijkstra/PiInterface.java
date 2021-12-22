@@ -1,7 +1,7 @@
 package algo.dijkstra;
 
 /**
- * Interface de la fonction pi de l'algorithme Dijkstra
+ * Pi function interface of the Dijkstra algorithm
  * 
  * @author Tristan Perrot
  *
@@ -9,18 +9,18 @@ package algo.dijkstra;
 public interface PiInterface {
 
 	/**
-	 * Assigne une valeur de pi à un sommet
+	 * Set a pi value for a vertex
 	 * 
-	 * @param vertex Le sommet considéré
-	 * @param value  La valeur donné
-	 */
+	 * @param vertex The vertex considered
+	 * @param value  The value to give for pi(vertex)
+	 **/
 	public void setPi(VertexInterface vertex, Integer value);
 
 	/**
-	 * Renvoie la valeur de pi pour un sommet
+	 * Return the value of pi for a vertex
 	 * 
-	 * @param vertex Le sommet considéré
-	 * @return La valeur de pi(vertex)
+	 * @param vertex The vertex considered
+	 * @return The value of pi(vertex)
 	 **/
 	public Integer getPi(VertexInterface vertex);
 

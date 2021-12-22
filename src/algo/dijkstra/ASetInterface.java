@@ -1,25 +1,26 @@
 package algo.dijkstra;
 
 /**
- * Interface de l'ensemble de A de l'algorithme de Dijkstra
+ * A set class of the Dijkstra algorithm
  * 
  * @author Tristan Perrot
- *
+ * 
  */
 public interface ASetInterface {
 
 	/**
-	 * Ajout un sommet à A
+	 * Add a vertex to A
 	 * 
-	 * @param vertex Le sommet à ajouter à A
+	 * @param vertex The vertex to add to A
 	 */
 	public void addVertex(VertexInterface vertex);
 
 	/**
-	 * Renvoie le test le booléen indiquant un sommet est dans A
+	 * Return the boolean test if A contains the vertex vertex
 	 * 
-	 * @param vertex Le sommet considéré
+	 * @param vertex The vertex to test
+	 * 
+	 * @return true if vertex is in A, false if not
 	 */
 	public Boolean containsVertex(VertexInterface vertex);
-
 }

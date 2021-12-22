@@ -11,11 +11,12 @@ import java.util.ArrayList;
 public final class Dijkstra {
 
 	/**
-	 * Pour un graphe et un sommet d'origine donné, renvoie ce qui contient les
-	 * chemins le plus court jusqu'à le sommet d'origine
+	 * For a graph and a vertex given, return what contains the shortest path to the
+	 * origin vertex
 	 * 
-	 * @param g Le graphe considéré
-	 * @param r Le sommet d'orgine
+	 * @param g The graph considered
+	 * @param r The origin vertex
+	 * 
 	 * @return Previous
 	 **/
 	public final static PreviousInterface dijkstra(GraphInterface g, VertexInterface r) {
@@ -64,6 +65,5 @@ public final class Dijkstra {
 			}
 		}
 		return previous;
-
 	}
 }

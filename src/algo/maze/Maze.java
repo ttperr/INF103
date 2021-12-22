@@ -12,12 +12,13 @@ import algo.dijkstra.GraphInterface;
 import algo.dijkstra.VertexInterface;
 
 /**
- * Classe des labyrinthes
+ * Maze class
  * 
- * Un labyrinthe est représenté par la matrice de ses cases (maze), ses
- * dimensions (width,height)
+ * A maze is represented by his vertices matrix (maze) and his dimensions
+ * (width,height)
  * 
  * @author Tristan Perrot
+ * 
  */
 public final class Maze implements GraphInterface {
 	private MBox[][] maze;
@@ -31,33 +32,33 @@ public final class Maze implements GraphInterface {
 			setHeight(maze.length);
 		}
 	}
-	
+
 	/**
-	 * Renvoie la matrice des sommets
+	 * Return the vertices matrix
 	 * 
-	 * @return La matrice des sommets
+	 * @return The vertices matrix
 	 */
 	public final MBox[][] getMaze() {
 		return maze;
 	}
 
 	/**
-	 * Renvoie la largeur
+	 * Return the width
 	 * 
-	 * @return Largeur du graphe
+	 * @return Maze width
 	 */
 	public final int getWidth() {
 		return width;
 	}
-	
+
 	public final void setWidth(int width) {
 		this.width = width;
 	}
 
 	/**
-	 * Renvoie la hauteur
+	 * Return the height
 	 * 
-	 * @return Hauteur du graphe
+	 * @return Maze height
 	 */
 	public final int getHeight() {
 		return height;
@@ -66,31 +67,31 @@ public final class Maze implements GraphInterface {
 	public final void setHeight(int height) {
 		this.height = height;
 	}
-	
+
 	/**
-	 * Renvoie la case de coordonées i,j
+	 * Return the box of coordinates (i, j)
 	 * 
-	 * @param i Numéro de ligne
-	 * @param j Numéro de colonne
-	 * @return La case de coordonnée i,j
+	 * @param i Line number
+	 * @param j Column number
+	 * @return The (i, j) box
 	 */
 	public MBox getBox(int i, int j) {
 		return maze[i][j];
 	}
-	
+
 	/**
-	 * Remplace la case i,j (coordonnées de la boxe) de maze par la boxd donnée en paramètre
+	 * Replace a box in maze by a new box given
 	 * 
-	 * @param box La boxe à appliquer
+	 * @param box The new box
 	 */
 	public void setBox(MBox box) {
 		maze[box.getRow()][box.getColumn()] = box;
 	}
-	
+
 	/**
-	 * Renvoie l'ensemble des sommets du graphe
+	 * Return the set of all graph vertices
 	 * 
-	 * @return La liste de tous les sommets
+	 * @return The list of all the vertices
 	 **/
 	public final ArrayList<VertexInterface> getAllVertices() {
 		ArrayList<VertexInterface> vertices = new ArrayList<VertexInterface>();
@@ -104,13 +105,13 @@ public final class Maze implements GraphInterface {
 	}
 
 	/**
-	 * Ajoute ï¿½ la liste successors un sommet nextVertex s'il est accessible
-	 * depuis le sommet vertex
+	 * Add a nextVertex vertex to the successors list if it's reachable from the
+	 * vertex vertex
 	 * 
-	 * @param vertex     Le sommet de départ
-	 * @param nextVertex Le sommet d'arrivée
-	 * @param successors La liste temporaire des voisins de vertex
-	 * @return La liste des voisins
+	 * @param vertex     The origin vertex
+	 * @param nextVertex The arrival vertex
+	 * @param successors The neighbors temporary list of the vertex
+	 * @return The neighbors list
 	 **/
 	private final void addSuccessors(ArrayList<VertexInterface> successors, VertexInterface vertex,
 			VertexInterface nextVertex) {
@@ -122,10 +123,10 @@ public final class Maze implements GraphInterface {
 	}
 
 	/**
-	 * Renvoie la liste des voisins d'un sommet dans le graphe
+	 * Return the neighbor list of a vertex in the graph
 	 * 
-	 * @param vertex Le sommet dont on cherche les voisins
-	 * @return La liste des voisins
+	 * @param vertex The vertex whose neighbors we are looking for
+	 * @return The neighbors list
 	 **/
 	public final ArrayList<VertexInterface> getSuccessors(VertexInterface vertex) {
 		ArrayList<VertexInterface> successors = new ArrayList<VertexInterface>();
@@ -157,11 +158,11 @@ public final class Maze implements GraphInterface {
 	}
 
 	/**
-	 * Renvoie le poids dans le graphe de l'arête entre deux sommets
+	 * Return the weight in the graph of an edge between two vertices
 	 * 
-	 * @param src Le sommet d'origine
-	 * @param dst Le sommet d'arrivée
-	 * @return Le poids de l'arête src-dst
+	 * @param src The origin vertex
+	 * @param dst The arrival vertex
+	 * @returnThe weight of the edge src-dst
 	 **/
 	public final Double getWeight(VertexInterface src, VertexInterface dst) {
 		MBox srcBox = (MBox) src;
@@ -178,10 +179,10 @@ public final class Maze implements GraphInterface {
 	}
 
 	/**
-	 * Initialise le labyrinthe à partir d'un fichier texte
+	 * Initialize a Maze from a text file
 	 * 
-	 * @param fileName Adresse du fichier
-	 * @throws MazeReadingException Erreur liée à la lecture du fichier
+	 * @param fileName File adress
+	 * @throws MazeReadingException Exception link to the file reading
 	 */
 	public final void initFromTextFile(String fileName) throws MazeReadingException {
 		try {
@@ -239,9 +240,9 @@ public final class Maze implements GraphInterface {
 	}
 
 	/**
-	 * Renvoie la liste [case départ, case d'arrivée] du labyrinthe
+	 * Return the [departure box, arrival box] list of the maze
 	 * 
-	 * @return la liste faite de la case départ et de la case d'arrivée
+	 * @return The departure and arrival box list
 	 * @throws DepartureArrivalException
 	 */
 	public final MBox[] findStartAndEnd() throws DepartureArrivalException {
@@ -270,14 +271,14 @@ public final class Maze implements GraphInterface {
 	}
 
 	/**
-	 * Affiche le chemin sur la console et renvoie le résultat dans un fichier
+	 * Show on the console the path and save the answer in a text file
 	 * 
-	 * @param path     Chemin du départ à l'arrivée
-	 * @param fileName Nom du fichier dans lequel la solution doit être sauvegardée
-	 * @throws DepartureArrivalException Erreur levé lorsqu'il n'y a pas qu'une
-	 *                                   entrée et qu'une sortie
-	 * @throws FileNotFoundException     Erreur levé lorsque le fichier n'est pas
-	 *                                   trouvé
+	 * @param path     Departure to arrival path
+	 * @param fileName File name where the solution has to be saved
+	 * @throws DepartureArrivalException Throwed exception if there is not only one
+	 *                                   arrival and one departure
+	 * @throws FileNotFoundException     Throwed exception when the file si not
+	 *                                   found
 	 */
 	public final void showPath(ArrayList<VertexInterface> path, String fileName)
 			throws DepartureArrivalException, FileNotFoundException {
@@ -304,5 +305,4 @@ public final class Maze implements GraphInterface {
 			textF.close();
 		}
 	}
-
 }

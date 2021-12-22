@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 
 /**
- * Classe des pères des sommets
+ * Vertex previous class of the Dijkstra algorithm
  * 
  * @author Tristan Perrot
  *
@@ -18,30 +18,30 @@ public class Previous extends Hashtable<VertexInterface, VertexInterface> implem
 	}
 
 	/**
-	 * Définit le lien de succession entre deux sommets
+	 * Define the succession link between two vertices
 	 * 
-	 * @param vertex   Le sommet fils
-	 * @param previous Le sommet père
+	 * @param vertex   The son vertex
+	 * @param previous The father vertex
 	 **/
 	public final void setPrevious(VertexInterface x, VertexInterface previous) {
 		this.put(x, previous);
 	}
 
 	/**
-	 * Renvoie le père d'un vecteur.
+	 * Return the father of a vertex
 	 * 
-	 * @param vertex Le sommet fils
-	 * @return Le sommet père
+	 * @param vertex The son vertex
+	 * @return The father vertex
 	 **/
 	public final VertexInterface getPrevious(VertexInterface x) {
 		return this.get(x);
 	}
 
 	/**
-	 * Renvoie la liste représentant le plus court jusqu'à un sommet donné
+	 * Return the shortest path to a vertex given reprensatative list
 	 * 
-	 * @param vertex Le sommet d'arrivé
-	 * @return La liste des sommets formant le chemin jusqu'à vertex
+	 * @param vertex The arrival vertex
+	 * @return The vertices list who represent the path to the vertex
 	 */
 	public ArrayList<VertexInterface> getShortestPathTo(VertexInterface vertex) {
 		ArrayList<VertexInterface> path = new ArrayList<VertexInterface>();
@@ -51,5 +51,4 @@ public class Previous extends Hashtable<VertexInterface, VertexInterface> implem
 		}
 		return path;
 	}
-
 }

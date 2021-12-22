@@ -3,7 +3,7 @@ package algo.dijkstra;
 import java.util.ArrayList;
 
 /**
- * Interface des pères des sommets
+ * Vertex previous interface
  * 
  * @author Tristan Perrot
  *
@@ -11,24 +11,26 @@ import java.util.ArrayList;
 public interface PreviousInterface {
 
 	/**
-	 * Définit le lien de succession entre deux sommets
+	 * Define the succession link between two vertices
 	 * 
-	 * @param vertex   Le sommet fils
-	 * @param previous Le sommet père
+	 * @param vertex   The son vertex
+	 * @param previous The father vertex
 	 **/
 	public void setPrevious(VertexInterface x, VertexInterface previous);
 
 	/**
-	 * Renvoie le père d'un vecteur.
+	 * Return the father of a vertex
 	 * 
-	 * @param vertex Le sommet fils
-	 * @return Le sommet père
+	 * @param vertex The son vertex
+	 * @return The father vertex
 	 **/
 	public VertexInterface getPrevious(VertexInterface x);
 
-	/** Renvoie la liste représentant le plus court jusqu'à un sommet donné
-	 * @param vertex Le sommet d'arrivé
-	 * @return La liste des sommets formant le chemin jusqu'à vertex
+	/**
+	 * Return the shortest path to a vertex given reprensatative list
+	 * 
+	 * @param vertex The arrival vertex
+	 * @return The vertices list who represent the path to the vertex
 	 */
 	public ArrayList<VertexInterface> getShortestPathTo(VertexInterface vertex);
 

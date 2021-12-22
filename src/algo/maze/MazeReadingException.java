@@ -1,7 +1,7 @@
 package algo.maze;
 
 /**
- * Erreur qui a lieu pendant la lecture du fichier texte d'initialisation
+ * Exception link to the initializing file reading
  * 
  * @author Tristan Perrot
  *
@@ -11,13 +11,13 @@ public class MazeReadingException extends Exception {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Renvoie les informations liées à l'erreur levée telle que la position et la
+	 * Return the detail of the reading file exception like the position and the
 	 * nature
 	 * 
-	 * @param fileName Adresse du fichier
-	 * @param row      Numéro de la ligne
-	 * @param column   Numéro de la colonne
-	 * @param error    Nature de l'erreur
+	 * @param fileName File adress
+	 * @param row      Line number
+	 * @param column   Column number
+	 * @param error    Error nature
 	 */
 	public MazeReadingException(String fileName, int row, int column, String error) {
 		super("Erreur détectée pendant la lecture du labyrinthe dans " + fileName + "(" + row + "," + column + ") : "

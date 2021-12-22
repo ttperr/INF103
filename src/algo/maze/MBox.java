@@ -3,7 +3,7 @@ package algo.maze;
 import algo.dijkstra.VertexInterface;
 
 /**
- * Classe des cases du labyrinthes
+ * Maze boxes class
  * 
  * @author Tristan Perrot
  *
@@ -21,32 +21,31 @@ public abstract class MBox implements VertexInterface {
 	}
 
 	/**
-	 * @return Le numéro de ligne de la case
+	 * @return Box line number
 	 */
 	public int getRow() {
 		return row;
 	}
 
 	/**
-	 * @return Le numéro de colonne de la case
+	 * @return Box column number
 	 */
 	public int getColumn() {
 		return column;
 	}
 
 	/**
-	 * @return Le caractère correspondant au type de la case
+	 * @return The box label
 	 */
 	public String getLabel() {
 		return label;
 	}
 
 	/**
-	 * @return Le test d'égalité entre 2 sommet
+	 * @return The equality test between two vertices
 	 */
 	public Boolean isEqualTo(VertexInterface vertex) {
 		MBox box = (MBox) vertex;
 		return row == box.getRow() && column == box.getColumn();
 	}
-
 }

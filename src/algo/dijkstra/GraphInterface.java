@@ -3,7 +3,7 @@ package algo.dijkstra;
 import java.util.ArrayList;
 
 /**
- * Interface des graphes
+ * Graph interface
  * 
  * @author Tristan Perrot
  *
@@ -11,26 +11,26 @@ import java.util.ArrayList;
 public interface GraphInterface {
 
 	/**
-	 * Renvoie l'ensemble des sommets du graphe
+	 * Return the set of all graph vertices
 	 * 
-	 * @return La liste de tous les sommets
+	 * @return The list of all the vertices
 	 **/
 	public ArrayList<VertexInterface> getAllVertices();
 
 	/**
-	 * Renvoie la liste des voisins d'un sommet dans le graphe
+	 * Return the neighbor list of a vertex in the graph
 	 * 
-	 * @param vertex Le sommet dont on cherche les voisins
-	 * @return La liste des voisins
+	 * @param vertex The vertex whose neighbors we are looking for
+	 * @return The neighbors list
 	 **/
 	public ArrayList<VertexInterface> getSuccessors(VertexInterface vertex);
 
 	/**
-	 * Renvoie le poids dans le graphe de l'arête entre deux sommets
+	 * Return the weight in the graph of an edge between two vertices
 	 * 
-	 * @param src Le sommet d'origine
-	 * @param dst Le sommet d'arrivée
-	 * @return Le poids de l'arête src-dst
+	 * @param src The origin vertex
+	 * @param dst The arrival vertex
+	 * @returnThe weight of the edge src-dst
 	 **/
 	public Double getWeight(VertexInterface src, VertexInterface dst);
 

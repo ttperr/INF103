@@ -1,7 +1,7 @@
 package algo.maze;
 
 /**
- * Classe des cases du chemin final, sera utile pour l'interface graphique
+ * Path box class, useful for the user interface
  * 
  * @author Tristan Perrot
  *
@@ -11,5 +11,4 @@ public class PBox extends MBox {
 	public PBox(int i, int j) {
 		super(i, j, ".");
 	}
-
 }

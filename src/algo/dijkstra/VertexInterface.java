@@ -1,7 +1,7 @@
 package algo.dijkstra;
 
 /**
- * Interface des sommets
+ * Vertex interface
  * 
  * @author Tristan Perrot
  *
@@ -9,16 +9,16 @@ package algo.dijkstra;
 public interface VertexInterface {
 
 	/**
-	 * Renvoie le test d'égalité entre 2 sommet
+	 * Return the equality test beteween two vertices
 	 * 
-	 * @return Le test d'égalité entre 2 sommet
+	 * @return The equality test between two vertices
 	 */
 	public Boolean isEqualTo(VertexInterface vertex);
 
 	/**
-	 * Renvoie le label du sommet
+	 * Return the label of a vertex
 	 * 
-	 * @return Le caractère correspondont au type de la case
+	 * @return The string of the vertex
 	 */
 	public String getLabel();
 

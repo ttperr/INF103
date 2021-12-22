@@ -3,7 +3,7 @@ package algo.dijkstra;
 import java.util.Hashtable;
 
 /**
- * Classe de la fonction pi de l'algorithme de Dijkstra
+ * Pi function class of the Dijkstra algorithm
  * 
  * @author Tristan Perrot
  *
@@ -17,23 +17,22 @@ public class Pi extends Hashtable<VertexInterface, Integer> implements PiInterfa
 	}
 
 	/**
-	 * Assigne une valeur de pi à un sommet
+	 * Set a pi value for a vertex
 	 * 
-	 * @param vertex Le sommet considéré
-	 * @param value  La valeur donnée à pi(vertex)
+	 * @param vertex The vertex considered
+	 * @param value  The value to give for pi(vertex)
 	 **/
 	public void setPi(VertexInterface vertex, Integer value) {
 		this.put(vertex, value);
 	}
 
 	/**
-	 * Renvoie la valeur de pi pour un sommet
+	 * Return the value of pi for a vertex
 	 * 
-	 * @param vertex Le sommet considéré
-	 * @return La valeur de pi(vertex)
+	 * @param vertex The vertex considered
+	 * @return The value of pi(vertex)
 	 **/
 	public Integer getPi(VertexInterface vertex) {
 		return this.get(vertex);
 	}
-
 }
