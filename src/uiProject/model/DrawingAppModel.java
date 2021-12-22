@@ -1,13 +1,12 @@
 package uiProject.model;
 
 import java.awt.*;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
 import java.util.*;
 import javax.swing.event.*;
 
-import algo.dijkstra.VertexInterface;
+import algo.dijkstra.*;
 import algo.maze.*;
 
 import uiProject.vue.*;
@@ -155,11 +154,14 @@ public class DrawingAppModel {
 		}
 	}
 
-	public final void solve(ArrayList<VertexInterface> path, String fileName)
-			throws DepartureArrivalException, FileNotFoundException {
+	public final void solve() throws DepartureArrivalException {
 		MBox[] startAndEnd = maze.findStartAndEnd();
 		MBox start = startAndEnd[0];
 		MBox end = startAndEnd[1];
+
+		PreviousInterface previous = Dijkstra.dijkstra(maze, start);
+		ArrayList<VertexInterface> path = previous.getShortestPathTo(end);
+
 		if (!(path.get(path.size() - 1).isEqualTo(start))) {
 			NoPathException.throwNoPathPopUp();
 		} else {
