@@ -77,7 +77,16 @@ public final class Maze implements GraphInterface {
 	public MBox getBox(int i, int j) {
 		return maze[i][j];
 	}
-
+	
+	/**
+	 * Remplace la case i,j (coordonnées de la boxe) de maze par la boxd donnée en paramètre
+	 * 
+	 * @param box La boxe à appliquer
+	 */
+	public void setBox(MBox box) {
+		maze[box.getRow()][box.getColumn()] = box;
+	}
+	
 	/**
 	 * Renvoie l'ensemble des sommets du graphe
 	 * 
