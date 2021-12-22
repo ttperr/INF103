@@ -9,9 +9,7 @@ import javax.swing.event.*;
 import algo.maze.*;
 
 public class DrawingAppModel {
-	private MBox[][] maze;
-	private int width = 10;
-	private int height = 10;
+	private Maze maze;
 	private String currentBoxLabel = "E";
 	private MBox currentBox = null;
 	private MBox selectedBox = null;
@@ -19,18 +17,21 @@ public class DrawingAppModel {
 	private ArrayList<ChangeListener> listeners = new ArrayList<ChangeListener>();
 
 	public DrawingAppModel() {
-		maze = new MBox[height][width];
+		int width = 10;
+		int height = 10;
+		MBox[][] boxes = new MBox[height][width];
 		for (int i = 0; i < height; i++) {
 			for (int j = 0; j < width; j++) {
-				maze[i][j] = new EBox(i, j);
+				boxes[i][j] = new EBox(i, j);
 			}
 		}
+		maze = new Maze(boxes);
 	}
 
 	/**
 	 * @return the maze
 	 */
-	public MBox[][] getMaze() {
+	public Maze getMaze() {
 		return maze;
 	}
 
@@ -38,44 +39,8 @@ public class DrawingAppModel {
 	 * @param maze the maze to set
 	 */
 	public void setMaze(MBox[][] maze) {
-		if (this.maze != maze) {
-			this.maze = maze;
-			setModified(true);
-			stateChanges();
-		}
-	}
-
-	/**
-	 * @return the width
-	 */
-	public int getWidth() {
-		return width;
-	}
-
-	/**
-	 * @param width the width to set
-	 */
-	public void setWidth(int width) {
-		if (this.width != width) {
-			this.width = width;
-			setModified(true);
-			stateChanges();
-		}
-	}
-
-	/**
-	 * @return the height
-	 */
-	public int getHeight() {
-		return height;
-	}
-
-	/**
-	 * @param height the height to set
-	 */
-	public void setHeight(int height) {
-		if (this.height != height) {
-			this.height = height;
+		if (this.getMaze().getMaze() != maze) {
+			this.maze = new Maze(maze);
 			setModified(true);
 			stateChanges();
 		}
@@ -155,13 +120,12 @@ public class DrawingAppModel {
 
 	public void stateChanges() {
 		ChangeEvent evt = new ChangeEvent(this);
-		for (ChangeListener listener : listeners)
+		for (ChangeListener listener : listeners) {
 			listener.stateChanged(evt);
+		}
 	}
 
 	public void reset(int width, int height) {
-		setWidth(width);
-		setHeight(height);
 		setCurrentBoxLabel("E");
 		MBox[][] rMaze = new MBox[height][width];
 		for (int i = 0; i < height; i++) {
@@ -172,10 +136,10 @@ public class DrawingAppModel {
 		setMaze(rMaze);
 	}
 	
-	public final void exportMazeToTextFile()) {
+	public final void exportMazeToTextFile() {
 		try {
 			PrintWriter textF = new PrintWriter(new FileOutputStream("data/export.txt"));
-			for (MBox[] listMBox : maze) {
+			for (MBox[] listMBox : maze.getMaze()) {
 				for (MBox box : listMBox) {
 					textF.print(box.getLabel());
 				}
