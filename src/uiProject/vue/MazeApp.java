@@ -20,16 +20,16 @@ public class MazeApp extends JFrame implements ChangeListener{
 	private MazeAppModel mazeAppModel = new MazeAppModel();
 	
 	public MazeApp() {
-		super("Solveur de labyrinthe"); // Window title
+		super("Solveur de labyrinthe");
 
 		setJMenuBar(mazeMenuBar = new MazeMenuBar(this));
 		setContentPane(windowPanel = new WindowPanel(this));
 
 		drawingAppModel.addObserver(this);
 		
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Explicit !
-		pack(); // Components sizes and positions
-		setVisible(true); // The great show
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		pack(); 
+		setVisible(true);
 
 	}
 

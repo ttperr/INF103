@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import uiProject.vue.MazeApp;
 
 public class DimensionPanel extends JPanel {
+	private static final long serialVersionUID = 1L;
 	private final DimensionSet dimensionSet;
 
 	public DimensionPanel(MazeApp mazeApp) {
