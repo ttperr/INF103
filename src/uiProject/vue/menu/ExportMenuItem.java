@@ -4,30 +4,31 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 
 import uiProject.vue.MazeApp;
 
 /**
- * Reset item class in the menu
+ * Export item class in the menu
  * 
  * @author ttper
  *
  */
-public class ResetMenuItem extends JMenuItem implements ActionListener {
+public class ExportMenuItem extends JMenuItem implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	private final MazeApp mazeApp;
-
-	public ResetMenuItem(MazeApp mazeApp) {
-		super("Reset");
+	
+	public ExportMenuItem(MazeApp mazeApp) {
+		super("Export");
 		this.mazeApp = mazeApp;
 		addActionListener(this);
 	}
-
+	
 	/**
-	 * Reset the maze when button is clicked
+	 * Export the maze to text file when the button is clicked
 	 */
-	@Override
 	public void actionPerformed(ActionEvent e) {
-		mazeApp.getMazeAppModel().reset(10, 10);
+		mazeApp.getMazeAppModel().exportMazeToTextFile();
+		JOptionPane.showInternalMessageDialog(mazeApp, "File exported !");
 	}
 }
