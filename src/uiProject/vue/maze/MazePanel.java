@@ -1,12 +1,21 @@
 package uiProject.vue.maze;
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+
 import javax.swing.JPanel;
-import java.awt.*;
 
 import algo.maze.MBox;
 import uiProject.model.MazeAppModel;
 import uiProject.vue.MazeApp;
 
+/**
+ * Maze panel class
+ * 
+ * @author Tristan Perrot
+ *
+ */
 public class MazePanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private final BoxPanel[][] boxes;
@@ -40,6 +49,9 @@ public class MazePanel extends JPanel {
 		return boxes;
 	}
 
+	/**
+	 * fill the grid layout with the maze of MazeApp
+	 */
 	public void fillGrid() {
 		this.removeAll();
 		MazeAppModel mazeAppModel = mazeApp.getMazeAppModel();
@@ -54,6 +66,9 @@ public class MazePanel extends JPanel {
 		repaint();
 	}
 
+	/**
+	 * Action to do if there is an update of the maze
+	 */
 	public void notifyForUpdate() {
 		MazeAppModel mazeAppModel = mazeApp.getMazeAppModel();
 		if (mazeAppModel.isModified()) {

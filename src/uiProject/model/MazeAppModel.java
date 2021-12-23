@@ -2,13 +2,19 @@ package uiProject.model;
 
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
-import java.util.*;
-import javax.swing.event.*;
+import java.util.ArrayList;
 
-import algo.dijkstra.*;
-import algo.maze.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
-import uiProject.vue.*;
+import algo.dijkstra.Dijkstra;
+import algo.dijkstra.PreviousInterface;
+import algo.dijkstra.VertexInterface;
+import algo.maze.DepartureArrivalException;
+import algo.maze.EBox;
+import algo.maze.MBox;
+import algo.maze.Maze;
+import algo.maze.PBox;
 import uiProject.vue.maze.NoPathException;
 
 public class MazeAppModel {
@@ -94,7 +100,7 @@ public class MazeAppModel {
 	 * @param height The new height
 	 */
 	public void reset(int width, int height) {
-		setCurrentBoxLabel("E");
+		setSelectedBoxLabel("Empty");
 		MBox[][] rMaze = new MBox[height][width];
 		for (int i = 0; i < height; i++) {
 			for (int j = 0; j < width; j++) {

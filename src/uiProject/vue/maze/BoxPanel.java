@@ -5,6 +5,12 @@ import javax.swing.JPanel;
 import algo.maze.MBox;
 import uiProject.vue.MazeApp;
 
+/**
+ * Box panel class
+ * 
+ * @author Tristan Perrot
+ *
+ */
 public class BoxPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private final MBox box;
@@ -23,6 +29,9 @@ public class BoxPanel extends JPanel {
 		return box;
 	}
 
+	/**
+	 * Action to do if there is an update of the box
+	 */
 	public void notifyForUpdate() {
 		repaint();
 	}

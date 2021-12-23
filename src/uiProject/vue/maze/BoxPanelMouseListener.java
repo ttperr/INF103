@@ -1,11 +1,22 @@
 package uiProject.vue.maze;
 
-import java.awt.event.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
-import algo.maze.*;
+import algo.maze.ABox;
+import algo.maze.DBox;
+import algo.maze.EBox;
+import algo.maze.WBox;
 import uiProject.model.MazeAppModel;
 import uiProject.vue.MazeApp;
 
+/**
+ * Box panel mouse listener class
+ * 
+ * @author Tristan Perrot
+ *
+ */
 public class BoxPanelMouseListener extends MouseAdapter implements MouseListener{
 	MazeApp mazeApp;
 
@@ -14,6 +25,9 @@ public class BoxPanelMouseListener extends MouseAdapter implements MouseListener
 		this.mazeApp = mazeApp;
 	}
 	
+	/**
+	 * Action to do when mouse click is released
+	 */
 	@Override
 	public final void mouseReleased(MouseEvent e) {
 		MazeAppModel mazeAppModel = mazeApp.getMazeAppModel();
