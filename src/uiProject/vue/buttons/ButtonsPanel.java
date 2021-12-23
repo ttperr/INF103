@@ -18,7 +18,6 @@ public class ButtonsPanel extends JPanel {
 	}
 
 	public void notifyForUpdate() {
-		dimensionPanel.notifyForUpdate();
 		optionPanel.notifyForUpdate();
 	}
 }
