@@ -1,4 +1,5 @@
 package algo.maze;
+
 /**
  * Departure and Arrival Exception
  * 
@@ -15,7 +16,7 @@ public class DepartureArrivalException extends Exception {
 	 * @param message The error message
 	 */
 	public DepartureArrivalException(int row, int column, String message) {
-		super("Erreur lors de la recherche du point de départ et d'arrivée à la ligne " + row + " et la colonne "
+		super("Error when the research of arrival and departure point on the row " + row + " and the column "
 				+ column + " : " + message);
 	}
 }
