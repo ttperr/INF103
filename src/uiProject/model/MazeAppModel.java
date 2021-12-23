@@ -13,9 +13,7 @@ import uiProject.vue.maze.NoPathException;
 
 public class MazeAppModel {
 	private Maze maze;
-	private String currentBoxLabel = "E";
-	private MBox currentBox = null;
-	private MBox selectedBox = null;
+	private String selectedBoxLabel = "Empty";
 	private boolean modified = false;
 	private ArrayList<ChangeListener> listeners = new ArrayList<ChangeListener>();
 
@@ -50,59 +48,31 @@ public class MazeAppModel {
 	}
 
 	/**
-	 * @return The currentBoxLabel
+	 * @return The selectedBoxLabel
 	 */
-	public String getCurrentBoxLabel() {
-		return currentBoxLabel;
+	public String getSelectedBoxLabel() {
+		return selectedBoxLabel;
 	}
 
 	/**
-	 * @param currentBoxLabel The currentBoxLabel to set
+	 * @param selectedBoxLabel The currentBoxLabel to set
 	 */
-	public void setCurrentBoxLabel(String currentBoxLabel) {
-		if (this.currentBoxLabel != currentBoxLabel) {
-			this.currentBoxLabel = currentBoxLabel;
+	public void setSelectedBoxLabel(String selectedBoxLabel) {
+		if (this.selectedBoxLabel != selectedBoxLabel) {
+			this.selectedBoxLabel = selectedBoxLabel;
 			setModified(true);
 			stateChanges();
 		}
 	}
 
-	/**
-	 * @return The currentBox
-	 */
-	public MBox getCurrentBox() {
-		return currentBox;
-	}
-
-	/**
-	 * @param currentBox The currentBox to set
-	 */
-	public void setCurrentBox(MBox currentBox) {
-		if (this.currentBox != currentBox) {
-			this.currentBox = currentBox;
+	public void setBox(MBox box) {
+		if (!(maze.getBox(box.getRow(), box.getColumn()).getLabel().equals(box.getLabel()))) {
+			maze.setBox(box);
 			setModified(true);
 			stateChanges();
 		}
 	}
-
-	/**
-	 * @return The selectedBox
-	 */
-	public MBox getSelectedBox() {
-		return selectedBox;
-	}
-
-	/**
-	 * @param selectedBox The selectedSegment to set
-	 */
-	public void setSelectedBox(MBox selectedBox) {
-		if (this.selectedBox != selectedBox) {
-			this.selectedBox = selectedBox;
-			setModified(true);
-			stateChanges();
-		}
-	}
-
+	
 	/**
 	 * @return if it's modified or not
 	 */

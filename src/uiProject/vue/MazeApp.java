@@ -9,7 +9,9 @@ public class MazeApp extends JFrame implements ChangeListener{
 	private static final long serialVersionUID = 1L;
 	private final MazeMenuBar mazeMenuBar;
 	private final WindowPanel windowPanel;
-
+	
+	private MazeAppModel mazeAppModel = new MazeAppModel();
+	
 	public MazeApp() {
 		super("Solveur de labyrinthe"); // Window title
 
@@ -26,12 +28,12 @@ public class MazeApp extends JFrame implements ChangeListener{
 
 	private MazeAppModel drawingAppModel = new MazeAppModel();
 
-	public MazeAppModel getDrawingAppModel() {
-		return drawingAppModel;
+	public MazeAppModel getMazeAppModel() {
+		return mazeAppModel;
 	}
 
-	public void setDrawingAppModel(MazeAppModel drawingAppModel) {
-		this.drawingAppModel = drawingAppModel;
+	public void setMazeAppModel(MazeAppModel mazeAppModel) {
+		this.mazeAppModel = mazeAppModel;
 	}
 
 	@Override
