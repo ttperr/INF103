@@ -14,9 +14,8 @@ import algo.maze.DepartureArrivalException;
 import algo.maze.EBox;
 import algo.maze.MBox;
 import algo.maze.Maze;
+import algo.maze.NoPathException;
 import algo.maze.PBox;
-import uiProject.vue.maze.NoPathException;
-import algo.maze.*;
 
 public class MazeAppModel {
 	private Maze maze;
@@ -79,7 +78,7 @@ public class MazeAppModel {
 			stateChanges();
 		}
 	}
-	
+
 	/**
 	 * @return if it's modified or not
 	 */
