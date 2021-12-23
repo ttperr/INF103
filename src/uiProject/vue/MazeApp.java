@@ -1,10 +1,17 @@
 package uiProject.vue;
 
-import javax.swing.*;
-import javax.swing.event.*;
+import javax.swing.JFrame;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
-import uiProject.model.*;
+import uiProject.model.MazeAppModel;
 
+/**
+ * Maze App class
+ * 
+ * @author Tristan Perrot
+ *
+ */
 public class MazeApp extends JFrame implements ChangeListener{
 	private static final long serialVersionUID = 1L;
 	private final MazeMenuBar mazeMenuBar;
@@ -28,10 +35,17 @@ public class MazeApp extends JFrame implements ChangeListener{
 
 	private MazeAppModel drawingAppModel = new MazeAppModel();
 
+	/**
+	 * @return the mazeAppModel
+	 */
 	public MazeAppModel getMazeAppModel() {
 		return mazeAppModel;
 	}
-
+	/**
+	 * Set the mazeAppModel
+	 * 
+	 * @param mazeAppModel The mazeAppModel to set
+	 */
 	public void setMazeAppModel(MazeAppModel mazeAppModel) {
 		this.mazeAppModel = mazeAppModel;
 	}
