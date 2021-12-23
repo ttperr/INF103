@@ -16,6 +16,7 @@ import algo.maze.MBox;
 import algo.maze.Maze;
 import algo.maze.PBox;
 import uiProject.vue.maze.NoPathException;
+import algo.maze.*;
 
 public class MazeAppModel {
 	private Maze maze;
@@ -134,7 +135,7 @@ public class MazeAppModel {
 	 * @throws DepartureArrivalException Throwed exception if there is not only one
 	 *                                   arrival and one departure
 	 */
-	public final void solve() throws DepartureArrivalException {
+	public final void solve() throws DepartureArrivalException, NoPathException {
 		MBox[] startAndEnd = maze.findStartAndEnd();
 		MBox start = startAndEnd[0];
 		MBox end = startAndEnd[1];
@@ -143,7 +144,7 @@ public class MazeAppModel {
 		ArrayList<VertexInterface> path = previous.getShortestPathTo(end);
 
 		if (!(path.get(path.size() - 1).isEqualTo(start))) {
-			NoPathException.throwNoPathPopUp();
+			throw new NoPathException("your creation");
 		} else {
 			for (int i = 0; i < maze.getHeight(); i++) {
 				for (int j = 0; j < maze.getWidth(); j++) {
