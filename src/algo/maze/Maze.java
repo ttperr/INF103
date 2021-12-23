@@ -286,7 +286,7 @@ public final class Maze implements GraphInterface {
 		MBox start = startAndEnd[0];
 		MBox end = startAndEnd[1];
 		if (!(path.get(path.size() - 1).isEqualTo(start))) {
-			System.out.println("Erreur : le labyrinthe n'a pas de solution !");
+			System.out.println("Error : maze has no solution !");
 		} else {
 			PrintWriter textF = new PrintWriter(new FileOutputStream(fileName));
 			for (MBox[] listMBox : maze) {
