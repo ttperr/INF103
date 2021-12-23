@@ -1,6 +1,5 @@
 package uiProject.model;
 
-import java.awt.*;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
 import java.util.*;
@@ -10,8 +9,9 @@ import algo.dijkstra.*;
 import algo.maze.*;
 
 import uiProject.vue.*;
+import uiProject.vue.maze.NoPathException;
 
-public class DrawingAppModel {
+public class MazeAppModel {
 	private Maze maze;
 	private String currentBoxLabel = "E";
 	private MBox currentBox = null;
@@ -19,7 +19,7 @@ public class DrawingAppModel {
 	private boolean modified = false;
 	private ArrayList<ChangeListener> listeners = new ArrayList<ChangeListener>();
 
-	public DrawingAppModel() {
+	public MazeAppModel() {
 		int width = 10;
 		int height = 10;
 		MBox[][] boxes = new MBox[height][width];

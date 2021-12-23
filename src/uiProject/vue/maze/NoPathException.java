@@ -1,4 +1,4 @@
-package uiProject.vue;
+package uiProject.vue.maze;
 
 import javax.swing.JOptionPane;
 
