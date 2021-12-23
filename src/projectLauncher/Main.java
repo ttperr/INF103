@@ -1,4 +1,4 @@
-package ProjectLauncher;
+package projectLauncher;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 

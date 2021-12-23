@@ -1,4 +1,4 @@
-package ProjectLauncher;
+package projectLauncher;
 
 import uiTest.ui.DrawingApp;
 
