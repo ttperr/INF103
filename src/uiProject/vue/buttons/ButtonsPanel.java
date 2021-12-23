@@ -1,5 +1,5 @@
 package uiProject.vue.buttons;
 
-public class ButtonsPanel {
+public class OptionsPanel {
 
 }

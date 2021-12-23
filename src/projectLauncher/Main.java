@@ -1,4 +1,5 @@
 package projectLauncher;
+
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
@@ -9,11 +10,12 @@ import algo.maze.DepartureArrivalException;
 import algo.maze.MBox;
 import algo.maze.Maze;
 import algo.maze.MazeReadingException;
+import algo.maze.NoPathException;
 
 public class Main {
 
 	public static void main(String[] args)
-			throws MazeReadingException, DepartureArrivalException, FileNotFoundException {
+			throws MazeReadingException, DepartureArrivalException, FileNotFoundException, NoPathException {
 		Maze maze = new Maze(null);
 		maze.initFromTextFile("data/labyrinthe.txt");
 
@@ -24,9 +26,9 @@ public class Main {
 		PreviousInterface previous = Dijkstra.dijkstra(maze, start);
 		ArrayList<VertexInterface> path = previous.getShortestPathTo(end);
 		maze.showPath(path, "data/solution.txt");
-		
+
 		System.out.println("");
-		
+
 		Maze maze2 = new Maze(null);
 		maze2.initFromTextFile("data/labyrinthe2.txt");
 

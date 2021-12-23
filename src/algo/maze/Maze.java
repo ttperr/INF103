@@ -279,30 +279,40 @@ public final class Maze implements GraphInterface {
 	 *                                   arrival and one departure
 	 * @throws FileNotFoundException     Throwed exception when the file si not
 	 *                                   found
+	 * @throws NoPathException           Throwed exception when the maze has no
+	 *                                   solution
 	 */
 	public final void showPath(ArrayList<VertexInterface> path, String fileName)
-			throws DepartureArrivalException, FileNotFoundException {
-		MBox[] startAndEnd = findStartAndEnd();
-		MBox start = startAndEnd[0];
-		MBox end = startAndEnd[1];
-		if (!(path.get(path.size() - 1).isEqualTo(start))) {
-			System.out.println("Error : maze has no solution !");
-		} else {
-			PrintWriter textF = new PrintWriter(new FileOutputStream(fileName));
-			for (MBox[] listMBox : maze) {
-				for (MBox box : listMBox) {
-					if (path.contains(box) && !(box.isEqualTo(end)) && !(box.isEqualTo(start))) {
-						System.out.print(".");
-						textF.print(".");
-					} else {
-						System.out.print(box.getLabel());
-						textF.print(box.getLabel());
+			throws DepartureArrivalException, FileNotFoundException, NoPathException {
+		try {
+			MBox[] startAndEnd = findStartAndEnd();
+			MBox start = startAndEnd[0];
+			MBox end = startAndEnd[1];
+			if (!(path.get(path.size() - 1).isEqualTo(start))) {
+				throw new NoPathException(fileName);
+			} else {
+				PrintWriter textF = new PrintWriter(new FileOutputStream(fileName));
+				for (MBox[] listMBox : maze) {
+					for (MBox box : listMBox) {
+						if (path.contains(box) && !(box.isEqualTo(end)) && !(box.isEqualTo(start))) {
+							System.out.print(".");
+							textF.print(".");
+						} else {
+							System.out.print(box.getLabel());
+							textF.print(box.getLabel());
+						}
 					}
+					System.out.print("\n");
+					textF.print("\n");
 				}
-				System.out.print("\n");
-				textF.print("\n");
+				textF.close();
 			}
-			textF.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (DepartureArrivalException e) {
+			e.printStackTrace();
+		} catch (NoPathException e) {
+			System.out.println(e);
 		}
 	}
 }
