@@ -20,7 +20,7 @@ public class MazeReadingException extends Exception {
 	 * @param error    Error nature
 	 */
 	public MazeReadingException(String fileName, int row, int column, String error) {
-		super("Erreur détectée pendant la lecture du labyrinthe dans " + fileName + "(" + row + "," + column + ") : "
+		super("Error detected when reading the file  " + fileName + "(" + row + "," + column + ") : "
 				+ error);
 	}
 }
