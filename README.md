@@ -4,7 +4,7 @@ Développement de l'algorithme de Dijkstra et de son interface graphique pour r�
 
 # Structure
 
-## [`data]`(./data)
+## [`data`](./data)
 
 Dans ce dossier est présent toute la data importée pour l'algorithme ou exportée (textes, images, etc...) pour
 
