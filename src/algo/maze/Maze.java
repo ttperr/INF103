@@ -253,12 +253,14 @@ public final class Maze implements GraphInterface {
 					if (startAndEnd[0] == null) {
 						startAndEnd[0] = box;
 					} else
-						throw new DepartureArrivalException(box.getRow(), box.getRow(), "More than one start box");
+						throw new DepartureArrivalException(box.getRow() + 1, box.getColumn() + 1,
+								"More than one start box");
 				} else if (box.getLabel().equals("A")) {
 					if (startAndEnd[1] == null) {
 						startAndEnd[1] = box;
 					} else
-						throw new DepartureArrivalException(box.getRow(), box.getRow(), "More than one end box");
+						throw new DepartureArrivalException(box.getRow() + 1, box.getColumn() + 1,
+								"More than one end box");
 				}
 			}
 		}
