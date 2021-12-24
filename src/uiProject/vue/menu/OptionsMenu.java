@@ -17,7 +17,7 @@ public class OptionsMenu extends JMenu {
 
 	public OptionsMenu(MazeApp mazeApp) {
 		super("Options");
-		add(quitMenuItem = new QuitMenuItem(mazeApp));
 		add(resetMenuItem = new ResetMenuItem(mazeApp));
+		add(quitMenuItem = new QuitMenuItem(mazeApp));
 	}
 }
