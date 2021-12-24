@@ -64,7 +64,7 @@ public class MazeAppModel {
 	 * @param selectedBoxLabel The currentBoxLabel to set
 	 */
 	public void setSelectedBoxLabel(String selectedBoxLabel) {
-		if (this.selectedBoxLabel != selectedBoxLabel) {
+		if (!(this.selectedBoxLabel.equals(selectedBoxLabel))) {
 			this.selectedBoxLabel = selectedBoxLabel;
 			setModified(true);
 			stateChanges();

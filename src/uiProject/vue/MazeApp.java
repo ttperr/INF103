@@ -12,28 +12,25 @@ import uiProject.model.MazeAppModel;
  * @author Tristan Perrot
  *
  */
-public class MazeApp extends JFrame implements ChangeListener{
+public class MazeApp extends JFrame implements ChangeListener {
 	private static final long serialVersionUID = 1L;
 	private final MazeMenuBar mazeMenuBar;
 	private final WindowPanel windowPanel;
-	
+
 	private MazeAppModel mazeAppModel = new MazeAppModel();
-	
+
 	public MazeApp() {
 		super("Solveur de labyrinthe");
 
 		setJMenuBar(mazeMenuBar = new MazeMenuBar(this));
 		setContentPane(windowPanel = new WindowPanel(this));
 
-		drawingAppModel.addObserver(this);
-		
+		mazeAppModel.addObserver(this);
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		pack(); 
+		pack();
 		setVisible(true);
-
 	}
-
-	private MazeAppModel drawingAppModel = new MazeAppModel();
 
 	/**
 	 * @return the mazeAppModel
@@ -41,6 +38,7 @@ public class MazeApp extends JFrame implements ChangeListener{
 	public MazeAppModel getMazeAppModel() {
 		return mazeAppModel;
 	}
+
 	/**
 	 * Set the mazeAppModel
 	 * 
@@ -52,7 +50,7 @@ public class MazeApp extends JFrame implements ChangeListener{
 
 	@Override
 	public void stateChanged(ChangeEvent evt) {
-	   windowPanel.notifyForUpdate() ;	
+		windowPanel.notifyForUpdate();
 	}
 
 }

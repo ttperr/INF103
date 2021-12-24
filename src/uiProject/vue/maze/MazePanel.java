@@ -61,6 +61,7 @@ public class MazePanel extends JPanel {
 		for (int row = 0; row < gridLayout.getRows(); row++) {
 			for (int col = 0; col < gridLayout.getColumns(); col++) {
 				BoxPanel boxPanel = new BoxPanel(mazeApp, mazeModel[row][col]);
+				boxes[row][col] = boxPanel;
 				this.add(boxPanel);
 			}
 		}
