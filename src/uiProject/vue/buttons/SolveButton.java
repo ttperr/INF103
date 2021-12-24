@@ -22,7 +22,7 @@ public class SolveButton extends JButton implements ActionListener {
 		try {
 			mazeApp.getMazeAppModel().solve();
 		} catch (DepartureArrivalException | NoPathException e) {
-			JOptionPane.showInternalOptionDialog(null, e, "Errorr",
+			JOptionPane.showInternalOptionDialog(null, e, "Error",
 					JOptionPane.CANCEL_OPTION, JOptionPane.ERROR_MESSAGE, null, null, null);
 		}
 	}

@@ -21,17 +21,17 @@ public class BoxPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private final MBox box;
 	private BoxPanelMouseListener mazePanelMouseListener;
-	
-	private static Image arrival ;
-	private static Image wall ;
-	private static Image departure ;
-	private static Image empty ;
+
+	private static Image arrival;
+	private static Image wall;
+	private static Image departure;
+	private static Image empty;
 	private static Image path;
-	
-	static { 
+
+	static {
 		try {
 			arrival = ImageIO.read(new File("data/arrival.jpg"));
-			wall =ImageIO.read(new File("data/wall.jpg"));
+			wall = ImageIO.read(new File("data/wall.jpg"));
 			empty = ImageIO.read(new File("data/empty.jpg"));
 			departure = ImageIO.read(new File("data/departure.png"));
 			path = ImageIO.read(new File("data/path.jpg"));
@@ -52,24 +52,24 @@ public class BoxPanel extends JPanel {
 	public MBox getBox() {
 		return box;
 	}
-	
+
 	@Override
 	public void paintComponent(Graphics g) {
-	   // Paint the background
-	   super.paintComponent(g) ;
+		// Paint the background
+		super.paintComponent(g);
 
-	   if(box.getLabel() =="A") {
-		    g.drawImage(arrival, 0,0,getWidth(),getHeight(),this);
-	    }else if( box.getLabel() == "D") {
-		    g.drawImage(departure, 0,0,getWidth(),getHeight(),this);
-		}else if (box.getLabel() == "E") {
-			g.drawImage(empty, 0,0,getWidth(),getHeight(),this);
-		}else if (box.getLabel() == "W") {
-			g.drawImage(wall, 0,0,getWidth(),getHeight(),this);
-		}else {
-			g.drawImage(path, 0,0,getWidth(),getHeight(),this);
+		if (box.getLabel().equals("A")) {
+			g.drawImage(arrival, 0, 0, getWidth(), getHeight(), this);
+		} else if (box.getLabel().equals( "D")) {
+			g.drawImage(departure, 0, 0, getWidth(), getHeight(), this);
+		} else if (box.getLabel().equals("E")) {
+			g.drawImage(empty, 0, 0, getWidth(), getHeight(), this);
+		} else if (box.getLabel().equals("W")) {
+			g.drawImage(wall, 0, 0, getWidth(), getHeight(), this);
+		} else {
+			g.drawImage(path, 0, 0, getWidth(), getHeight(), this);
 		}
-	} 
+	}
 
 	/**
 	 * Action to do if there is an update of the box

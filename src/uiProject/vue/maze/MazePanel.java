@@ -29,8 +29,8 @@ public class MazePanel extends JPanel {
 		int height = MazeAppModel.getMaze().getHeight();
 		this.gridLayout = new GridLayout(height, width, 2, 2);
 		setLayout(gridLayout);
-		setPreferredSize(new Dimension(300, 300));
-		setBackground(Color.WHITE);
+		setPreferredSize(new Dimension(900, 600));
+		setBackground(Color.BLACK);
 
 		boxes = new BoxPanel[height][width];
 		for (int i = 0; i < height; i++) {
@@ -40,6 +40,8 @@ public class MazePanel extends JPanel {
 				add(boxPanel);
 			}
 		}
+		BoxPanelMouseListener mazePanelMouseListener = new BoxPanelMouseListener(mazeApp);
+		addMouseListener(mazePanelMouseListener);
 	}
 
 	/**

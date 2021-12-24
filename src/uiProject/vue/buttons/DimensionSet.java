@@ -14,6 +14,7 @@ import uiProject.model.MazeAppModel;
 import uiProject.vue.MazeApp;
 
 public class DimensionSet extends JPanel implements PropertyChangeListener {
+	private static final long serialVersionUID = 1L;
 	private int width;
 	private int height;
 
@@ -42,7 +43,7 @@ public class DimensionSet extends JPanel implements PropertyChangeListener {
 		widthLabel.setLabelFor(widthField);
 		widthField.addPropertyChangeListener("value", this);
 
-		heightLabel = new JLabel("Width : ");
+		heightLabel = new JLabel("Height : ");
 		heightField = new JFormattedTextField(heightFormat);
 		heightField.setValue(height);
 		heightField.setColumns(10);
@@ -57,8 +58,8 @@ public class DimensionSet extends JPanel implements PropertyChangeListener {
 		fieldPane.add(widthField);
 		fieldPane.add(heightField);
 
-		add(labelPane, BorderLayout.CENTER);
-		add(fieldPane, BorderLayout.LINE_END);
+		add(labelPane, BorderLayout.WEST);
+		add(fieldPane, BorderLayout.CENTER);
 	}
 
 	public void propertyChange(PropertyChangeEvent evt) {
