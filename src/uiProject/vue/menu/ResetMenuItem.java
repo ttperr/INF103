@@ -28,6 +28,6 @@ public class ResetMenuItem extends JMenuItem implements ActionListener {
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		mazeApp.getMazeAppModel().reset(10, 10);
+		mazeApp.getMazeAppModel().reset(mazeApp.getMazeAppModel().getMaze().getHeight(), mazeApp.getMazeAppModel().getMaze().getWidth());
 	}
 }
