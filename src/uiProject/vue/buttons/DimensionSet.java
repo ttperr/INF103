@@ -39,14 +39,12 @@ public class DimensionSet extends JPanel implements PropertyChangeListener {
 		widthLabel = new JLabel("Width : ");
 		widthField = new JFormattedTextField(widthFormat);
 		widthField.setValue(width);
-		widthField.setColumns(10);
 		widthLabel.setLabelFor(widthField);
 		widthField.addPropertyChangeListener("value", this);
 
 		heightLabel = new JLabel("Height : ");
 		heightField = new JFormattedTextField(heightFormat);
 		heightField.setValue(height);
-		heightField.setColumns(10);
 		heightLabel.setLabelFor(heightField);
 		heightField.addPropertyChangeListener("value", this);
 

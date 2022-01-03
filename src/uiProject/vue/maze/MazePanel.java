@@ -18,7 +18,7 @@ import uiProject.vue.MazeApp;
  */
 public class MazePanel extends JPanel {
 	private static final long serialVersionUID = 1L;
-	private final BoxPanel[][] boxes;
+	private BoxPanel[][] boxes;
 	private final MazeApp mazeApp;
 	private final GridLayout gridLayout;
 
@@ -58,6 +58,7 @@ public class MazePanel extends JPanel {
 		this.removeAll();
 		MazeAppModel mazeAppModel = mazeApp.getMazeAppModel();
 		MBox[][] mazeModel = mazeAppModel.getMaze().getMaze();
+		BoxPanel[][] boxes = new BoxPanel[mazeAppModel.getMaze().getHeight()][mazeAppModel.getMaze().getWidth()];
 		for (int row = 0; row < gridLayout.getRows(); row++) {
 			for (int col = 0; col < gridLayout.getColumns(); col++) {
 				BoxPanel boxPanel = new BoxPanel(mazeApp, mazeModel[row][col]);
