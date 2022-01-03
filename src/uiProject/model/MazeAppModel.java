@@ -148,6 +148,11 @@ public class MazeAppModel {
 			for (int i = 0; i < maze.getHeight(); i++) {
 				for (int j = 0; j < maze.getWidth(); j++) {
 					MBox box = maze.getBox(i, j);
+					if (box.getLabel().equals(".")) {
+						maze.setBox(new EBox(i, j));
+						setModified(true);
+						stateChanges();
+					}
 					if (path.contains(box) && !(box.isEqualTo(end)) && !(box.isEqualTo(start))) {
 						maze.setBox(new PBox(i, j));
 						setModified(true);
