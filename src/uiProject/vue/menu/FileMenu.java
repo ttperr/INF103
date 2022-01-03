@@ -12,10 +12,12 @@ import uiProject.vue.MazeApp;
 public class FileMenu extends JMenu {
 	private static final long serialVersionUID = 1L;
 	private final ExportMenuItem exportMenuItem;
+	private final ImportMenuItem importMenuItem;
 	
 	public FileMenu(MazeApp mazeApp) {
 		super("File");
 		add(exportMenuItem = new ExportMenuItem(mazeApp));
+		add(importMenuItem = new ImportMenuItem(mazeApp));
 	}
 
 }

@@ -14,6 +14,7 @@ import algo.maze.DepartureArrivalException;
 import algo.maze.EBox;
 import algo.maze.MBox;
 import algo.maze.Maze;
+import algo.maze.MazeReadingException;
 import algo.maze.NoPathException;
 import algo.maze.PBox;
 
@@ -95,6 +96,20 @@ public class MazeAppModel {
 	}
 
 	/**
+	 * @return the exported
+	 */
+	public boolean isExported() {
+		return exported;
+	}
+
+	/**
+	 * @param exported the exported to set
+	 */
+	public void setExported(boolean exported) {
+		this.exported = exported;
+	}
+
+	/**
 	 * Reset the maze to an empty maze
 	 * 
 	 * @param width  The new width
@@ -111,8 +126,15 @@ public class MazeAppModel {
 		setMaze(rMaze);
 	}
 
+	public final void initMazeFromTextFile(String fileName) throws MazeReadingException {
+		maze.initFromTextFile(fileName);
+		setModified(true);
+		stateChanges();
+	}
+
 	/**
 	 * Save the maze to a text file
+	 * 
 	 * @param fileName the file name of the exported file
 	 */
 	public final void exportMazeToTextFile(String fileName) {
@@ -177,17 +199,4 @@ public class MazeAppModel {
 		}
 	}
 
-	/**
-	 * @return the exported
-	 */
-	public boolean isExported() {
-		return exported;
-	}
-
-	/**
-	 * @param exported the exported to set
-	 */
-	public void setExported(boolean exported) {
-		this.exported = exported;
-	}
 }
