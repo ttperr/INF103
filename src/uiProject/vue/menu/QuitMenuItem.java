@@ -39,7 +39,9 @@ public class QuitMenuItem extends JMenuItem implements ActionListener {
 			case JOptionPane.CANCEL_OPTION:
 				return;
 			case JOptionPane.OK_OPTION:
-				mazeAppModel.exportMazeToTextFile();
+				String fileName = JOptionPane.showInputDialog(mazeApp, "Text file name :");
+				mazeAppModel.exportMazeToTextFile(fileName);
+				JOptionPane.showMessageDialog(mazeApp, "File exported !");
 				mazeAppModel.setExported(true);
 				break;
 			case JOptionPane.NO_OPTION:
