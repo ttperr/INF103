@@ -41,8 +41,10 @@ public class QuitMenuItem extends JMenuItem implements ActionListener {
 			case JOptionPane.OK_OPTION:
 				String fileName = JOptionPane.showInputDialog(mazeApp, "Text file name :");
 				while (fileName.equals("") || fileName.equals(null)) {
-					fileName = JOptionPane.showInputDialog(mazeApp, "File name cannot be empty ! Text file name :", "export");
+					fileName = JOptionPane.showInputDialog(mazeApp, "File name cannot be empty ! Text file name :",
+							"export");
 				}
+				mazeAppModel.exportMazeToTextFile(fileName);
 				JOptionPane.showMessageDialog(mazeApp, "File exported !");
 				mazeAppModel.setExported(true);
 				break;
