@@ -16,8 +16,8 @@ public class FileMenu extends JMenu {
 	
 	public FileMenu(MazeApp mazeApp) {
 		super("File");
-		add(exportMenuItem = new ExportMenuItem(mazeApp));
 		add(importMenuItem = new ImportMenuItem(mazeApp));
+		add(exportMenuItem = new ExportMenuItem(mazeApp));
 	}
 
 }
