@@ -113,10 +113,11 @@ public class MazeAppModel {
 
 	/**
 	 * Save the maze to a text file
+	 * @param fileName the file name of the exported file
 	 */
-	public final void exportMazeToTextFile() {
+	public final void exportMazeToTextFile(String fileName) {
 		try {
-			PrintWriter textF = new PrintWriter(new FileOutputStream("data/export.txt"));
+			PrintWriter textF = new PrintWriter(new FileOutputStream("data/" + fileName + ".txt"));
 			for (MBox[] listMBox : maze.getMaze()) {
 				for (MBox box : listMBox) {
 					textF.print(box.getLabel());

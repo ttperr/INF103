@@ -28,7 +28,8 @@ public class ExportMenuItem extends JMenuItem implements ActionListener {
 	 * Export the maze to text file when the button is clicked
 	 */
 	public void actionPerformed(ActionEvent e) {
-		mazeApp.getMazeAppModel().exportMazeToTextFile();
+		String fileName = JOptionPane.showInputDialog(mazeApp, "Text file name :");
+		mazeApp.getMazeAppModel().exportMazeToTextFile(fileName);
 		JOptionPane.showMessageDialog(mazeApp, "File exported !");
 	}
 }
