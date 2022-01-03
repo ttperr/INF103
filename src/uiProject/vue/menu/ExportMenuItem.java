@@ -36,7 +36,11 @@ public class ExportMenuItem extends JMenuItem implements ActionListener {
 		jFileChooser.addChoosableFileFilter(new FileNameExtensionFilter("*.txt", "txt"));
 		int response = jFileChooser.showSaveDialog(mazeApp);
 		if (response == JFileChooser.APPROVE_OPTION) {
-			mazeAppModel.exportMazeToTextFile(jFileChooser.getSelectedFile().getAbsolutePath());
+			String filePath = jFileChooser.getSelectedFile().getAbsolutePath();
+			if (!filePath.endsWith(".txt")) {
+				filePath = filePath + ".txt";
+			}
+			mazeAppModel.exportMazeToTextFile(filePath);
 			JOptionPane.showMessageDialog(mazeApp, "File exported !");
 			mazeAppModel.setExported(true);
 		}

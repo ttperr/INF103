@@ -35,8 +35,9 @@ public class QuitMenuItem extends JMenuItem implements ActionListener {
 		MazeAppModel mazeAppModel = mazeApp.getMazeAppModel();
 
 		if (!mazeAppModel.isExported()) {
-			int response = JOptionPane.showInternalOptionDialog(mazeApp, "Maze not saved. Export it ?", "Quit application",
-					JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE, null, null, null);
+			int response = JOptionPane.showInternalOptionDialog(mazeApp, "Maze not saved. Export it ?",
+					"Quit application", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE, null, null,
+					null);
 			switch (response) {
 			case JOptionPane.CANCEL_OPTION:
 				return;
@@ -44,8 +45,12 @@ public class QuitMenuItem extends JMenuItem implements ActionListener {
 				JFileChooser jFileChooser = new JFileChooser("data/");
 				jFileChooser.addChoosableFileFilter(new FileNameExtensionFilter("*.txt", "txt"));
 				int fileResponse = jFileChooser.showSaveDialog(mazeApp);
-				if(fileResponse == JFileChooser.APPROVE_OPTION) {
-					mazeAppModel.exportMazeToTextFile(jFileChooser.getSelectedFile().getAbsolutePath());
+				if (fileResponse == JFileChooser.APPROVE_OPTION) {
+					String filePath = jFileChooser.getSelectedFile().getAbsolutePath();
+					if (!filePath.endsWith(".txt")) {
+						filePath = filePath + ".txt";
+					}
+					mazeAppModel.exportMazeToTextFile(filePath);
 					JOptionPane.showMessageDialog(mazeApp, "File exported !");
 					mazeAppModel.setExported(true);
 				}

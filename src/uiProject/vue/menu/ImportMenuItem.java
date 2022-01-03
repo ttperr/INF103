@@ -31,7 +31,11 @@ public class ImportMenuItem extends JMenuItem implements ActionListener {
 			jFileChooser.addChoosableFileFilter(new FileNameExtensionFilter("*.txt", "txt"));
 			int response = jFileChooser.showOpenDialog(mazeApp);
 			if (response == JFileChooser.APPROVE_OPTION) {
-				mazeAppModel.initMazeFromTextFile(jFileChooser.getSelectedFile().getAbsolutePath());
+				String filePath = jFileChooser.getSelectedFile().getAbsolutePath();
+				if (!filePath.endsWith(".txt")) {
+					filePath = filePath + ".txt";
+				}
+				mazeAppModel.initMazeFromTextFile(filePath);
 			}
 		} catch (Exception e) {
 			JOptionPane.showInternalOptionDialog(this, e.getMessage(), "Error", JOptionPane.CANCEL_OPTION,
