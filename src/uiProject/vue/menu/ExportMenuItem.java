@@ -31,6 +31,9 @@ public class ExportMenuItem extends JMenuItem implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		MazeAppModel mazeAppModel = mazeApp.getMazeAppModel();
 		String fileName = JOptionPane.showInputDialog(mazeApp, "Text file name :");
+		while (fileName.equals("")) {
+			fileName = JOptionPane.showInputDialog(mazeApp, "File name cannot be empty ! Text file name :");
+		}
 		mazeAppModel.exportMazeToTextFile(fileName);
 		JOptionPane.showMessageDialog(mazeApp, "File exported !");
 		mazeAppModel.setExported(true);
