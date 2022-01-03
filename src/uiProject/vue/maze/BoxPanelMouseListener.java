@@ -17,34 +17,37 @@ import uiProject.vue.MazeApp;
  * @author Tristan Perrot
  *
  */
-public class BoxPanelMouseListener extends MouseAdapter implements MouseListener{
+public class BoxPanelMouseListener extends MouseAdapter implements MouseListener {
 	MazeApp mazeApp;
 
 	public BoxPanelMouseListener(MazeApp mazeApp) {
 		super();
 		this.mazeApp = mazeApp;
 	}
-	
+
 	/**
 	 * Action to do when mouse click is released
 	 */
 	@Override
-	public final void mouseReleased(MouseEvent e) {
-		MazeAppModel mazeAppModel = mazeApp.getMazeAppModel();
-		String selectedBoxLabel = mazeAppModel.getSelectedBoxLabel();
-		BoxPanel boxPanel = (BoxPanel) e.getSource();
-		if (selectedBoxLabel.equals("Arrival")) {
-			ABox box = new ABox(boxPanel.getBox().getRow(), boxPanel.getBox().getColumn());
-			mazeAppModel.setBox(box);
-		} else if (selectedBoxLabel.equals("Departure")) {
-			DBox box = new DBox(boxPanel.getBox().getRow(), boxPanel.getBox().getColumn());
-			mazeAppModel.setBox(box);
-		} else if (selectedBoxLabel.equals("Empty")) {
-			EBox box = new EBox(boxPanel.getBox().getRow(), boxPanel.getBox().getColumn());
-			mazeAppModel.setBox(box);
-		} else if (selectedBoxLabel.equals("Wall")) {
-			WBox box = new WBox(boxPanel.getBox().getRow(), boxPanel.getBox().getColumn());
-			mazeAppModel.setBox(box);
+	public final void mouseReleased(MouseEvent event) {
+		try {
+			MazeAppModel mazeAppModel = mazeApp.getMazeAppModel();
+			String selectedBoxLabel = mazeAppModel.getSelectedBoxLabel();
+			BoxPanel boxPanel = (BoxPanel) event.getSource();
+			if (selectedBoxLabel.equals("Arrival")) {
+				ABox box = new ABox(boxPanel.getBox().getRow(), boxPanel.getBox().getColumn());
+				mazeAppModel.setBox(box);
+			} else if (selectedBoxLabel.equals("Departure")) {
+				DBox box = new DBox(boxPanel.getBox().getRow(), boxPanel.getBox().getColumn());
+				mazeAppModel.setBox(box);
+			} else if (selectedBoxLabel.equals("Empty")) {
+				EBox box = new EBox(boxPanel.getBox().getRow(), boxPanel.getBox().getColumn());
+				mazeAppModel.setBox(box);
+			} else if (selectedBoxLabel.equals("Wall")) {
+				WBox box = new WBox(boxPanel.getBox().getRow(), boxPanel.getBox().getColumn());
+				mazeAppModel.setBox(box);
+			}
+		} catch (ClassCastException e) {
 		}
 	}
 }
