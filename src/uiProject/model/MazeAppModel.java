@@ -21,6 +21,7 @@ public class MazeAppModel {
 	private Maze maze;
 	private String selectedBoxLabel = "Empty";
 	private boolean modified = false;
+	private boolean exported = false;
 	private ArrayList<ChangeListener> listeners = new ArrayList<ChangeListener>();
 
 	public MazeAppModel() {
@@ -168,9 +169,24 @@ public class MazeAppModel {
 	}
 
 	public void stateChanges() {
+		setExported(false);
 		ChangeEvent evt = new ChangeEvent(this);
 		for (ChangeListener listener : listeners) {
 			listener.stateChanged(evt);
 		}
+	}
+
+	/**
+	 * @return the exported
+	 */
+	public boolean isExported() {
+		return exported;
+	}
+
+	/**
+	 * @param exported the exported to set
+	 */
+	public void setExported(boolean exported) {
+		this.exported = exported;
 	}
 }
