@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JFileChooser;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 import uiProject.model.MazeAppModel;
 import uiProject.vue.MazeApp;
@@ -13,7 +14,7 @@ import uiProject.vue.MazeApp;
 /**
  * Export item class in the menu
  * 
- * @author ttper
+ * @author Tristan Perrot
  *
  */
 public class ExportMenuItem extends JMenuItem implements ActionListener {
@@ -33,9 +34,9 @@ public class ExportMenuItem extends JMenuItem implements ActionListener {
 		MazeAppModel mazeAppModel = mazeApp.getMazeAppModel();
 		JFileChooser jFileChooser = new JFileChooser("data/");
 		jFileChooser.addChoosableFileFilter(new FileNameExtensionFilter("*.txt", "txt"));
-		int response = jFileChooser.showSaveDialog(mazeApp, "Export your maze");
-		if(response == JFileChooser.APPROVE_OPTION) {
-			mazeAppModel.exportMazeToTextFile();
+		int response = jFileChooser.showSaveDialog(mazeApp);
+		if (response == JFileChooser.APPROVE_OPTION) {
+			mazeAppModel.exportMazeToTextFile(jFileChooser.getSelectedFile().getAbsolutePath());
 			JOptionPane.showMessageDialog(mazeApp, "File exported !");
 			mazeAppModel.setExported(true);
 		}
