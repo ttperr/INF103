@@ -199,24 +199,16 @@ public final class Maze implements GraphInterface {
 				MBox[] boxesLine = new MBox[lineLength];
 				for (int column = 0; column < lineLength; column++) {
 					if (line.length() == lineLength) {
-						switch (line.charAt(column)) {
-						case 'E':
+						char charAt = line.charAt(column);
+						if (charAt == 'E') {
 							boxesLine[column] = new EBox(row, column);
-							break;
-
-						case 'W':
+						} else if (charAt == 'W') {
 							boxesLine[column] = new WBox(row, column);
-							break;
-
-						case 'A':
+						} else if (charAt == 'A') {
 							boxesLine[column] = new ABox(row, column);
-							break;
-
-						case 'D':
+						} else if (charAt == 'D') {
 							boxesLine[column] = new DBox(row, column);
-							break;
-
-						default:
+						} else {
 							throw new MazeReadingException(fileName, row, column, "Unknown character readed");
 						}
 					} else {

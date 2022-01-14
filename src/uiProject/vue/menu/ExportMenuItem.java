@@ -34,6 +34,7 @@ public class ExportMenuItem extends JMenuItem implements ActionListener {
 		MazeAppModel mazeAppModel = mazeApp.getMazeAppModel();
 		JFileChooser jFileChooser = new JFileChooser("data/");
 		jFileChooser.addChoosableFileFilter(new FileNameExtensionFilter("*.txt", "txt"));
+		jFileChooser.setAcceptAllFileFilterUsed(false);
 		int response = jFileChooser.showSaveDialog(mazeApp);
 		if (response == JFileChooser.APPROVE_OPTION) {
 			String filePath = jFileChooser.getSelectedFile().getAbsolutePath();

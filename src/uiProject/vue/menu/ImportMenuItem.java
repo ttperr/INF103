@@ -27,18 +27,30 @@ public class ImportMenuItem extends JMenuItem implements ActionListener {
 	public void actionPerformed(ActionEvent event) {
 		try {
 			String filePath = null;
+			MazeAppModel mazeAppModel = mazeApp.getMazeAppModel();
+			JFileChooser jFileChooser = new JFileChooser("data/");
+			jFileChooser.addChoosableFileFilter(new FileNameExtensionFilter("*.txt", "txt"));
+			jFileChooser.setAcceptAllFileFilterUsed(false);
 			while (true) {
-				MazeAppModel mazeAppModel = mazeApp.getMazeAppModel();
-				JFileChooser jFileChooser = new JFileChooser("data/");
-				jFileChooser.addChoosableFileFilter(new FileNameExtensionFilter("*.txt", "txt"));
 				int response = jFileChooser.showOpenDialog(mazeApp);
 				if (response == JFileChooser.APPROVE_OPTION) {
 					filePath = jFileChooser.getSelectedFile().getAbsolutePath();
 					if (!filePath.endsWith(".txt")) {
 						filePath = filePath + ".txt";
 					}
-					if(filePath.endsWith(".txt")) {break;}
+					if (filePath.endsWith(".txt")) {
+						break;
+					}
+				} else if (response == JFileChooser.CANCEL_OPTION) {
+					int responseBis = JOptionPane.showInternalOptionDialog(this,
+							"No maze where selected, do you want to select one ?", "No maze selected",
+							JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
+					if (responseBis == JOptionPane.NO_OPTION) {
+						break;
+					}
 				}
+			}
+			if (filePath != null) {
 				mazeAppModel.initMazeFromTextFile(filePath);
 			}
 		} catch (Exception e) {

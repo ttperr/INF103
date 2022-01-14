@@ -35,15 +35,15 @@ public class QuitMenuItem extends JMenuItem implements ActionListener {
 		MazeAppModel mazeAppModel = mazeApp.getMazeAppModel();
 
 		if (!mazeAppModel.isExported()) {
-			int response = JOptionPane.showInternalOptionDialog(mazeApp, "Maze not saved. Export it ?",
+			int response = JOptionPane.showInternalOptionDialog(this, "Maze not saved. Export it ?",
 					"Quit application", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE, null, null,
 					null);
-			switch (response) {
-			case JOptionPane.CANCEL_OPTION:
+			if (response == JOptionPane.CANCEL_OPTION) {
 				return;
-			case JOptionPane.OK_OPTION:
+			} else if (response == JOptionPane.OK_OPTION) {
 				JFileChooser jFileChooser = new JFileChooser("data/");
 				jFileChooser.addChoosableFileFilter(new FileNameExtensionFilter("*.txt", "txt"));
+				jFileChooser.setAcceptAllFileFilterUsed(false);
 				int fileResponse = jFileChooser.showSaveDialog(mazeApp);
 				if (fileResponse == JFileChooser.APPROVE_OPTION) {
 					String filePath = jFileChooser.getSelectedFile().getAbsolutePath();
@@ -54,9 +54,7 @@ public class QuitMenuItem extends JMenuItem implements ActionListener {
 					JOptionPane.showMessageDialog(mazeApp, "File exported !");
 					mazeAppModel.setExported(true);
 				}
-				break;
-			case JOptionPane.NO_OPTION:
-				break;
+			} else if (response == JOptionPane.NO_OPTION) {
 			}
 		}
 		System.exit(0);
