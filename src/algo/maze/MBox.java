@@ -37,6 +37,7 @@ public abstract class MBox implements VertexInterface {
 	/**
 	 * @return The box label
 	 */
+	@Override
 	public String getLabel() {
 		return label;
 	}
@@ -44,6 +45,7 @@ public abstract class MBox implements VertexInterface {
 	/**
 	 * @return The equality test between two vertices
 	 */
+	@Override
 	public Boolean isEqualTo(VertexInterface vertex) {
 		MBox box = (MBox) vertex;
 		return row == box.getRow() && column == box.getColumn();

@@ -23,6 +23,7 @@ public class Previous extends Hashtable<VertexInterface, VertexInterface> implem
 	 * @param vertex   The son vertex
 	 * @param previous The father vertex
 	 **/
+	@Override
 	public final void setPrevious(VertexInterface x, VertexInterface previous) {
 		this.put(x, previous);
 	}
@@ -33,6 +34,7 @@ public class Previous extends Hashtable<VertexInterface, VertexInterface> implem
 	 * @param vertex The son vertex
 	 * @return The father vertex
 	 **/
+	@Override
 	public final VertexInterface getPrevious(VertexInterface x) {
 		return this.get(x);
 	}
@@ -43,6 +45,7 @@ public class Previous extends Hashtable<VertexInterface, VertexInterface> implem
 	 * @param vertex The arrival vertex
 	 * @return The vertices list who represent the path to the vertex
 	 */
+	@Override
 	public ArrayList<VertexInterface> getShortestPathTo(VertexInterface vertex) {
 		ArrayList<VertexInterface> path = new ArrayList<VertexInterface>();
 		while (vertex != null) {

@@ -93,6 +93,7 @@ public final class Maze implements GraphInterface {
 	 * 
 	 * @return The list of all the vertices
 	 **/
+	@Override
 	public final ArrayList<VertexInterface> getAllVertices() {
 		ArrayList<VertexInterface> vertices = new ArrayList<VertexInterface>();
 
@@ -128,6 +129,7 @@ public final class Maze implements GraphInterface {
 	 * @param vertex The vertex whose neighbors we are looking for
 	 * @return The neighbors list
 	 **/
+	@Override
 	public final ArrayList<VertexInterface> getSuccessors(VertexInterface vertex) {
 		ArrayList<VertexInterface> successors = new ArrayList<VertexInterface>();
 
@@ -164,6 +166,7 @@ public final class Maze implements GraphInterface {
 	 * @param dst The arrival vertex
 	 * @returnThe weight of the edge src-dst
 	 **/
+	@Override
 	public final Double getWeight(VertexInterface src, VertexInterface dst) {
 		MBox srcBox = (MBox) src;
 		MBox dstBox = (MBox) dst;
