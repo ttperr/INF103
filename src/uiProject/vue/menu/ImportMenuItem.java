@@ -26,14 +26,18 @@ public class ImportMenuItem extends JMenuItem implements ActionListener {
 	 */
 	public void actionPerformed(ActionEvent event) {
 		try {
-			MazeAppModel mazeAppModel = mazeApp.getMazeAppModel();
-			JFileChooser jFileChooser = new JFileChooser("data/");
-			jFileChooser.addChoosableFileFilter(new FileNameExtensionFilter("*.txt", "txt"));
-			int response = jFileChooser.showOpenDialog(mazeApp);
-			if (response == JFileChooser.APPROVE_OPTION) {
-				String filePath = jFileChooser.getSelectedFile().getAbsolutePath();
-				if (!filePath.endsWith(".txt")) {
-					filePath = filePath + ".txt";
+			String filePath = null;
+			while (true) {
+				MazeAppModel mazeAppModel = mazeApp.getMazeAppModel();
+				JFileChooser jFileChooser = new JFileChooser("data/");
+				jFileChooser.addChoosableFileFilter(new FileNameExtensionFilter("*.txt", "txt"));
+				int response = jFileChooser.showOpenDialog(mazeApp);
+				if (response == JFileChooser.APPROVE_OPTION) {
+					filePath = jFileChooser.getSelectedFile().getAbsolutePath();
+					if (!filePath.endsWith(".txt")) {
+						filePath = filePath + ".txt";
+					}
+					if(filePath.endsWith(".txt")) {break;}
 				}
 				mazeAppModel.initMazeFromTextFile(filePath);
 			}
