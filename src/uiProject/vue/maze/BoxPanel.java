@@ -40,6 +40,12 @@ public class BoxPanel extends JPanel {
 		}
 	}
 
+	/**
+	 * Create and add the mouse listener for the box
+	 * 
+	 * @param mazeApp The frame
+	 * @param box The box clicked on
+	 */
 	public BoxPanel(MazeApp mazeApp, MBox box) {
 		this.box = box;
 		mazePanelMouseListener = new BoxPanelMouseListener(mazeApp);
@@ -53,8 +59,12 @@ public class BoxPanel extends JPanel {
 		return box;
 	}
 
+	/**
+	 * Modify the current picture of the box clicked
+	 */
 	@Override
 	public void paintComponent(Graphics g) {
+		
 		// Paint the background
 		super.paintComponent(g);
 

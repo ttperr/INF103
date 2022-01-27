@@ -12,6 +12,12 @@ import algo.maze.Maze;
 import algo.maze.MazeReadingException;
 import algo.maze.NoPathException;
 
+/**
+ * Main class to solve a maze without UI
+ * 
+ * @author Tristan
+ *
+ */
 public class Main {
 
 	public static void main(String[] args)

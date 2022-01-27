@@ -22,6 +22,11 @@ public class MazePanel extends JPanel {
 	private final MazeApp mazeApp;
 	private final GridLayout gridLayout;
 
+	/**
+	 * Create and add the maze in the mazeApp
+	 * 
+	 * @param mazeApp The frame
+	 */
 	public MazePanel(MazeApp mazeApp) {
 		this.mazeApp = mazeApp;
 		MazeAppModel MazeAppModel = mazeApp.getMazeAppModel();
@@ -52,7 +57,7 @@ public class MazePanel extends JPanel {
 	}
 
 	/**
-	 * fill the grid layout with the maze of MazeApp
+	 * Fill the grid layout with the maze of MazeApp
 	 */
 	public void fillGrid() {
 		this.removeAll();

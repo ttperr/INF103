@@ -15,6 +15,11 @@ public class ImportMenuItem extends JMenuItem implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	private final MazeApp mazeApp;
 
+	/**
+	 * Create and add the import menu item in the mazeApp
+	 * 
+	 * @param mazeApp The frame
+	 */
 	public ImportMenuItem(MazeApp mazeApp) {
 		super("Import");
 		this.mazeApp = mazeApp;

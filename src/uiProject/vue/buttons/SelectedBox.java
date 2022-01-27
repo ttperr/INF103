@@ -7,6 +7,12 @@ import javax.swing.JPanel;
 import uiProject.model.MazeAppModel;
 import uiProject.vue.MazeApp;
 
+/**
+ * The selected box class
+ * 
+ * @author Tristan Perrot
+ *
+ */
 public class SelectedBox extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private final MazeApp mazeApp;
@@ -17,6 +23,9 @@ public class SelectedBox extends JPanel {
 		this.selectedBoxLabel = mazeApp.getMazeAppModel().getSelectedBoxLabel();
 	}
 
+	/**
+	 * Show the current box selected
+	 */
 	@Override
 	protected final void paintComponent(Graphics g) {
 		MazeAppModel mazeAppModel = mazeApp.getMazeAppModel();
@@ -37,6 +46,9 @@ public class SelectedBox extends JPanel {
 
 	}
 
+	/**
+	 * Action to do if there is an update of the box
+	 */
 	public void notifyForUpdate() {
 		MazeAppModel mazeAppModel = mazeApp.getMazeAppModel();
 		if (mazeAppModel.isModified()) {

@@ -17,6 +17,11 @@ public class ResetMenuItem extends JMenuItem implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	private final MazeApp mazeApp;
 
+	/**
+	 * Create and add the reset menu item in the mazeApp
+	 * 
+	 * @param mazeApp The frame
+	 */
 	public ResetMenuItem(MazeApp mazeApp) {
 		super("Reset");
 		this.mazeApp = mazeApp;

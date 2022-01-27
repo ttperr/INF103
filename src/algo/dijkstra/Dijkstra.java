@@ -3,7 +3,7 @@ package algo.dijkstra;
 import java.util.ArrayList;
 
 /**
- * Classe de l'algorithme Dijkstra
+ * Class of Dijkstra algorithm
  * 
  * @author Tristan Perrot
  *

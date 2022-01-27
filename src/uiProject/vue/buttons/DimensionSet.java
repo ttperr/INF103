@@ -13,6 +13,12 @@ import javax.swing.JPanel;
 import uiProject.model.MazeAppModel;
 import uiProject.vue.MazeApp;
 
+/**
+ * The dimension set class
+ * 
+ * @author Tristan Perrot
+ *
+ */
 public class DimensionSet extends JPanel implements PropertyChangeListener {
 	private static final long serialVersionUID = 1L;
 	private int width;
@@ -29,29 +35,38 @@ public class DimensionSet extends JPanel implements PropertyChangeListener {
 
 	private final MazeApp mazeApp;
 
+	/**
+	 * Create and add the dimension button in the mazeApp
+	 * 
+	 * @param mazeApp The frame
+	 */
 	public DimensionSet(MazeApp mazeApp) {
 		this.mazeApp = mazeApp;
 		this.width = mazeApp.getMazeAppModel().getMaze().getWidth();
 		this.height = mazeApp.getMazeAppModel().getMaze().getHeight();
 
 		setLayout(new BorderLayout());
-
+		
+		// Create the width field
 		widthLabel = new JLabel("Width : ");
 		widthField = new JFormattedTextField(widthFormat);
 		widthField.setValue(width);
 		widthLabel.setLabelFor(widthField);
 		widthField.addPropertyChangeListener("value", this);
-
+		
+		// Create the height field
 		heightLabel = new JLabel("Height : ");
 		heightField = new JFormattedTextField(heightFormat);
 		heightField.setValue(height);
 		heightLabel.setLabelFor(heightField);
 		heightField.addPropertyChangeListener("value", this);
-
+		
+		// Add the label
 		JPanel labelPane = new JPanel(new GridLayout(0, 1));
 		labelPane.add(widthLabel);
 		labelPane.add(heightLabel);
 
+		// Add the field
 		JPanel fieldPane = new JPanel(new GridLayout(0, 1));
 		fieldPane.add(widthField);
 		fieldPane.add(heightField);
@@ -60,6 +75,9 @@ public class DimensionSet extends JPanel implements PropertyChangeListener {
 		add(fieldPane, BorderLayout.CENTER);
 	}
 
+	/**
+	 * Modify the maze when there is new values
+	 */
 	public void propertyChange(PropertyChangeEvent evt) {
 		MazeAppModel mazeAppModel = mazeApp.getMazeAppModel();
 		int nwidth = (int) ((Number) widthField.getValue()).doubleValue();

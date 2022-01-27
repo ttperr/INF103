@@ -17,6 +17,7 @@ public class MazeMenuBar extends JMenuBar{
 
 	/**
 	 * Create and add menu in MazeApp
+	 * 
 	 * @param MazeApp The frame
 	 */
 	public MazeMenuBar(MazeApp MazeApp) {

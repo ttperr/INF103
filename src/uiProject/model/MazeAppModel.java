@@ -18,13 +18,22 @@ import algo.maze.MazeReadingException;
 import algo.maze.NoPathException;
 import algo.maze.PBox;
 
+/**
+ * The Model class for the UI
+ * 
+ * @author Tristan
+ *
+ */
 public class MazeAppModel {
 	private Maze maze;
 	private String selectedBoxLabel = "Empty";
 	private boolean modified = false;
 	private boolean exported = false;
 	private ArrayList<ChangeListener> listeners = new ArrayList<ChangeListener>();
-
+	
+	/**
+	 * Initialize a 10x10 maze
+	 */
 	public MazeAppModel() {
 		int width = 10;
 		int height = 10;
@@ -186,11 +195,19 @@ public class MazeAppModel {
 			}
 		}
 	}
-
+	
+	/**
+	 * Add a listener for the UI
+	 * 
+	 * @param listener the listener to add
+	 */
 	public void addObserver(ChangeListener listener) {
 		listeners.add(listener);
 	}
-
+	
+	/**
+	 * Execute the changes
+	 */
 	public void stateChanges() {
 		setExported(false);
 		ChangeEvent evt = new ChangeEvent(this);

@@ -8,16 +8,30 @@ import algo.maze.NoPathException;
 import uiProject.vue.MazeApp;
 import java.awt.event.*;
 
+/**
+ * The solve button class
+ * 
+ * @author Tristan Perrot
+ *
+ */
 public class SolveButton extends JButton implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	private final MazeApp mazeApp;
 	
+	/**
+	 * Create and add button in the mazeApp
+	 * 
+	 * @param mazeApp The frame
+	 */
 	public SolveButton(MazeApp mazeApp) {
 		super("Solve");
 		this.mazeApp = mazeApp;
 		addActionListener(this);
 	}
 
+	/**
+	 * Solve the maze when it's clicked
+	 */
 	public void actionPerformed(ActionEvent evt) {
 		try {
 			mazeApp.getMazeAppModel().solve();

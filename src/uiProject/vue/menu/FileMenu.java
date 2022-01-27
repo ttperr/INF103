@@ -14,6 +14,11 @@ public class FileMenu extends JMenu {
 	private final ExportMenuItem exportMenuItem;
 	private final ImportMenuItem importMenuItem;
 	
+	/**
+	 * Create and add menu items to mazeApp
+	 * 
+	 * @param mazeApp The current used app
+	 */
 	public FileMenu(MazeApp mazeApp) {
 		super("File");
 		add(importMenuItem = new ImportMenuItem(mazeApp));

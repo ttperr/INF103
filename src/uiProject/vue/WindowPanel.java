@@ -19,7 +19,10 @@ public class WindowPanel extends JPanel {
 	private final MazePanel MazePanel;
 	private final ButtonsPanel buttonsPanel;
 	private final SelectBoxPanel selectBoxPanel;
-
+	
+	/**
+	 * Create and add everything to the main frame
+	 */
 	public WindowPanel(MazeApp drawingApp) {
 		setLayout(new BorderLayout());
 
@@ -29,7 +32,7 @@ public class WindowPanel extends JPanel {
 	}
 
 	/**
-	 * The message to send when there is an update
+	 * Notify when there is an update
 	 */
 	public void notifyForUpdate() {
 		MazePanel.notifyForUpdate();

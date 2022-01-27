@@ -21,6 +21,11 @@ public class ExportMenuItem extends JMenuItem implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	private final MazeApp mazeApp;
 
+	/**
+	 * Create and add the export menu item in the mazeApp
+	 * 
+	 * @param mazeApp The frame
+	 */
 	public ExportMenuItem(MazeApp mazeApp) {
 		super("Export");
 		this.mazeApp = mazeApp;

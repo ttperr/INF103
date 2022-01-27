@@ -21,6 +21,11 @@ public class QuitMenuItem extends JMenuItem implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	private final MazeApp mazeApp;
 
+	/**
+	 * Create and add the quit menu item in the mazeApp
+	 * 
+	 * @param mazeApp The frame
+	 */
 	public QuitMenuItem(MazeApp mazeApp) {
 		super("Quit");
 		this.mazeApp = mazeApp;
