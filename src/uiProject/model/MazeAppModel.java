@@ -21,7 +21,7 @@ import algo.maze.PBox;
 /**
  * The Model class for the UI
  * 
- * @author Tristan
+ * @author Tristan Perrot
  *
  */
 public class MazeAppModel {

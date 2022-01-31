@@ -184,7 +184,7 @@ public final class Maze implements GraphInterface {
 	/**
 	 * Initialize a Maze from a text file
 	 * 
-	 * @param fileName File adress
+	 * @param fileName File address
 	 * @throws MazeReadingException Exception link to the file reading
 	 */
 	public final void initFromTextFile(String fileName) throws MazeReadingException {

@@ -14,7 +14,7 @@ public class MazeReadingException extends Exception {
 	 * Return the detail of the reading file exception like the position and the
 	 * nature
 	 * 
-	 * @param fileName File adress
+	 * @param fileName File address
 	 * @param row      Line number
 	 * @param column   Column number
 	 * @param error    Error nature

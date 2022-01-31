@@ -13,7 +13,7 @@ import algo.maze.MazeReadingException;
 import algo.maze.NoPathException;
 
 /**
- * Main class to solve a maze without UI
+ * Main class to solve a maze without UI with 2 examples
  * 
  * @author Tristan
  *

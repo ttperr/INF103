@@ -3,7 +3,7 @@ package algo.maze;
 /**
  * Exception throwed when there is no path for the maze
  * 
- * @author Tristan
+ * @author Tristan Perrot
  *
  */
 public class NoPathException extends Exception {

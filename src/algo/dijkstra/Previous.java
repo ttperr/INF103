@@ -40,7 +40,7 @@ public class Previous extends Hashtable<VertexInterface, VertexInterface> implem
 	}
 
 	/**
-	 * Return the shortest path to a vertex given reprensatative list
+	 * Return the shortest path to a vertex by vertex list from beginning to end
 	 * 
 	 * @param vertex The arrival vertex
 	 * @return The vertices list who represent the path to the vertex
