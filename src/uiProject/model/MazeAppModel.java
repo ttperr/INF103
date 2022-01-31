@@ -30,7 +30,7 @@ public class MazeAppModel {
 	private boolean modified = false;
 	private boolean exported = false;
 	private ArrayList<ChangeListener> listeners = new ArrayList<ChangeListener>();
-	
+
 	/**
 	 * Initialize a 10x10 maze
 	 */
@@ -195,7 +195,7 @@ public class MazeAppModel {
 			}
 		}
 	}
-	
+
 	/**
 	 * Add a listener for the UI
 	 * 
@@ -204,7 +204,7 @@ public class MazeAppModel {
 	public void addObserver(ChangeListener listener) {
 		listeners.add(listener);
 	}
-	
+
 	/**
 	 * Execute the changes
 	 */

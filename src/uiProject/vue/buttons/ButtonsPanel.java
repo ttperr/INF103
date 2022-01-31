@@ -24,10 +24,14 @@ public class ButtonsPanel extends JPanel {
 	 */
 	public ButtonsPanel(MazeApp mazeApp) {
 		setLayout(new GridLayout(1, 2));
-		add(dimensionPanel = new DimensionPanel(mazeApp));
-		add(optionPanel = new OptionPanel(mazeApp));
+
+		dimensionPanel = new DimensionPanel(mazeApp);
+		optionPanel = new OptionPanel(mazeApp);
+
+		add(dimensionPanel);
+		add(optionPanel);
 	}
-	
+
 	/**
 	 * Notify when there is an update
 	 */

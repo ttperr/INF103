@@ -130,7 +130,7 @@ public class DrawingAppModel {
 
 	public void saveToFile() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

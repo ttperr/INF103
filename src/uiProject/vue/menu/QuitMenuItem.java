@@ -40,9 +40,8 @@ public class QuitMenuItem extends JMenuItem implements ActionListener {
 		MazeAppModel mazeAppModel = mazeApp.getMazeAppModel();
 
 		if (!mazeAppModel.isExported()) {
-			int response = JOptionPane.showInternalOptionDialog(this, "Maze not saved. Export it ?",
-					"Quit application", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE, null, null,
-					null);
+			int response = JOptionPane.showInternalOptionDialog(this, "Maze not saved. Export it ?", "Quit application",
+					JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE, null, null, null);
 			if (response == JOptionPane.CANCEL_OPTION) {
 				return;
 			} else if (response == JOptionPane.OK_OPTION) {

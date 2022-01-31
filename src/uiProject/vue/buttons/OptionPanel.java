@@ -16,7 +16,7 @@ public class OptionPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private final SelectedBox selectedBox;
 	private final SolveButton solveButton;
-	
+
 	/**
 	 * Create and add the option buttons in the mazeApp
 	 * 
@@ -24,8 +24,12 @@ public class OptionPanel extends JPanel {
 	 */
 	public OptionPanel(MazeApp mazeApp) {
 		setLayout(new GridLayout(2, 1));
-		add(selectedBox = new SelectedBox(mazeApp));
-		add(solveButton = new SolveButton(mazeApp));
+
+		selectedBox = new SelectedBox(mazeApp);
+		solveButton = new SolveButton(mazeApp);
+
+		add(selectedBox);
+		add(solveButton);
 	}
 
 	/**

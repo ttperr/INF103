@@ -22,7 +22,11 @@ public class OptionsMenu extends JMenu {
 	 */
 	public OptionsMenu(MazeApp mazeApp) {
 		super("Options");
-		add(resetMenuItem = new ResetMenuItem(mazeApp));
-		add(quitMenuItem = new QuitMenuItem(mazeApp));
+
+		resetMenuItem = new ResetMenuItem(mazeApp);
+		quitMenuItem = new QuitMenuItem(mazeApp);
+
+		add(resetMenuItem);
+		add(quitMenuItem);
 	}
 }

@@ -11,15 +11,15 @@ public class EraseSegmentButton extends JButton implements ActionListener {
 	public EraseSegmentButton(DrawingApp drawingApp) {
 		super("Erase segment"); // Button's text
 		this.drawingApp = drawingApp;
-		
+
 		addActionListener(this);
 	}
-	
+
 	public final void actionPerformed(ActionEvent evt) {
 		// Operation delegated to the model
-		drawingApp.getDrawingAppModel().removeSelectedSegment() ;
+		drawingApp.getDrawingAppModel().removeSelectedSegment();
 	}
-	
+
 	public void notifyForUpdate() {
 		Segment selected = drawingApp.getDrawingAppModel().getSelectedSegment();
 

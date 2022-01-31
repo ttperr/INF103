@@ -23,6 +23,9 @@ public class DimensionPanel extends JPanel {
 	 */
 	public DimensionPanel(MazeApp mazeApp) {
 		setLayout(new BorderLayout());
-		add(dimensionSet = new DimensionSet(mazeApp), BorderLayout.CENTER);
+
+		dimensionSet = new DimensionSet(mazeApp);
+
+		add(dimensionSet, BorderLayout.CENTER);
 	}
 }

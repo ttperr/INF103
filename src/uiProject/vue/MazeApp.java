@@ -18,15 +18,18 @@ public class MazeApp extends JFrame implements ChangeListener {
 	private final WindowPanel windowPanel;
 
 	private MazeAppModel mazeAppModel = new MazeAppModel();
-	
+
 	/**
 	 * Create and add a menu bar and the content main pane
 	 */
 	public MazeApp() {
 		super("Solveur de labyrinthe");
 
-		setJMenuBar(mazeMenuBar = new MazeMenuBar(this));
-		setContentPane(windowPanel = new WindowPanel(this));
+		mazeMenuBar = new MazeMenuBar(this);
+		windowPanel = new WindowPanel(this);
+
+		setJMenuBar(mazeMenuBar);
+		setContentPane(windowPanel);
 
 		mazeAppModel.addObserver(this);
 
@@ -50,7 +53,7 @@ public class MazeApp extends JFrame implements ChangeListener {
 	public void setMazeAppModel(MazeAppModel mazeAppModel) {
 		this.mazeAppModel = mazeAppModel;
 	}
-	
+
 	/**
 	 * Notify when there is an update
 	 */

@@ -17,7 +17,7 @@ import java.awt.event.*;
 public class SolveButton extends JButton implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	private final MazeApp mazeApp;
-	
+
 	/**
 	 * Create and add button in the mazeApp
 	 * 
@@ -36,9 +36,9 @@ public class SolveButton extends JButton implements ActionListener {
 		try {
 			mazeApp.getMazeAppModel().solve();
 		} catch (DepartureArrivalException | NoPathException e) {
-			JOptionPane.showInternalOptionDialog(null, e.getMessage(), "Error",
-					JOptionPane.CANCEL_OPTION, JOptionPane.ERROR_MESSAGE, null, null, null);
+			JOptionPane.showInternalOptionDialog(null, e.getMessage(), "Error", JOptionPane.CANCEL_OPTION,
+					JOptionPane.ERROR_MESSAGE, null, null, null);
 		}
 	}
-	
+
 }

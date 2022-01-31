@@ -46,21 +46,21 @@ public class DimensionSet extends JPanel implements PropertyChangeListener {
 		this.height = mazeApp.getMazeAppModel().getMaze().getHeight();
 
 		setLayout(new BorderLayout());
-		
+
 		// Create the width field
 		widthLabel = new JLabel("Width : ");
 		widthField = new JFormattedTextField(widthFormat);
 		widthField.setValue(width);
 		widthLabel.setLabelFor(widthField);
 		widthField.addPropertyChangeListener("value", this);
-		
+
 		// Create the height field
 		heightLabel = new JLabel("Height : ");
 		heightField = new JFormattedTextField(heightFormat);
 		heightField.setValue(height);
 		heightLabel.setLabelFor(heightField);
 		heightField.addPropertyChangeListener("value", this);
-		
+
 		// Add the label
 		JPanel labelPane = new JPanel(new GridLayout(0, 1));
 		labelPane.add(widthLabel);

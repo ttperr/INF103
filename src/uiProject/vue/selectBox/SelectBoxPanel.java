@@ -15,9 +15,15 @@ public class SelectBoxPanel extends JPanel {
 
 	public SelectBoxPanel(MazeApp mazeApp) {
 		setLayout(new GridLayout(4, 1));
-		add(eTypeButton = new TypeBoxButton(mazeApp, "Empty"));
-		add(wTypeButton = new TypeBoxButton(mazeApp, "Wall"));
-		add(aTypeButton = new TypeBoxButton(mazeApp, "Arrival"));
-		add(dTypeButton = new TypeBoxButton(mazeApp, "Departure"));
+
+		eTypeButton = new TypeBoxButton(mazeApp, "Empty");
+		wTypeButton = new TypeBoxButton(mazeApp, "Wall");
+		aTypeButton = new TypeBoxButton(mazeApp, "Arrival");
+		dTypeButton = new TypeBoxButton(mazeApp, "Departure");
+
+		add(eTypeButton);
+		add(wTypeButton);
+		add(aTypeButton);
+		add(dTypeButton);
 	}
 }

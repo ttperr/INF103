@@ -19,16 +19,20 @@ public class WindowPanel extends JPanel {
 	private final MazePanel MazePanel;
 	private final ButtonsPanel buttonsPanel;
 	private final SelectBoxPanel selectBoxPanel;
-	
+
 	/**
 	 * Create and add everything to the main frame
 	 */
 	public WindowPanel(MazeApp drawingApp) {
 		setLayout(new BorderLayout());
 
-		add(MazePanel = new MazePanel(drawingApp), BorderLayout.CENTER);
-		add(buttonsPanel = new ButtonsPanel(drawingApp), BorderLayout.SOUTH);
-		add(selectBoxPanel = new SelectBoxPanel(drawingApp), BorderLayout.EAST);
+		MazePanel = new MazePanel(drawingApp);
+		buttonsPanel = new ButtonsPanel(drawingApp);
+		selectBoxPanel = new SelectBoxPanel(drawingApp);
+
+		add(MazePanel, BorderLayout.CENTER);
+		add(buttonsPanel, BorderLayout.SOUTH);
+		add(selectBoxPanel, BorderLayout.EAST);
 	}
 
 	/**

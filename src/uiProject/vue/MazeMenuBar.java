@@ -10,7 +10,7 @@ import uiProject.vue.menu.*;
  * @author Tristan Perrot
  *
  */
-public class MazeMenuBar extends JMenuBar{
+public class MazeMenuBar extends JMenuBar {
 	private static final long serialVersionUID = 1L;
 	private final FileMenu fileMenu;
 	private final OptionsMenu optionsMenu;
@@ -24,7 +24,10 @@ public class MazeMenuBar extends JMenuBar{
 		super();
 
 		// Create and add menus
-		add(fileMenu = new FileMenu(MazeApp));
-		add(optionsMenu = new OptionsMenu(MazeApp));
+		fileMenu = new FileMenu(MazeApp);
+		optionsMenu = new OptionsMenu(MazeApp);
+
+		add(fileMenu);
+		add(optionsMenu);
 	}
 }
