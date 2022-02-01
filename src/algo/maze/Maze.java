@@ -305,7 +305,7 @@ public final class Maze implements GraphInterface {
 				textF.close();
 			}
 		} catch (NoPathException | DepartureArrivalException e) {
-			System.out.println(e);
+			System.err.println(e);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
