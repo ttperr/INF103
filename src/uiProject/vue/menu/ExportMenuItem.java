@@ -17,8 +17,9 @@ import uiProject.vue.MazeApp;
  * @author Tristan Perrot
  *
  */
-public class ExportMenuItem extends JMenuItem implements ActionListener {
+public final class ExportMenuItem extends JMenuItem implements ActionListener {
 	private static final long serialVersionUID = 1L;
+	
 	private final MazeApp mazeApp;
 
 	/**
@@ -35,7 +36,7 @@ public class ExportMenuItem extends JMenuItem implements ActionListener {
 	/**
 	 * Export the maze to text file when the button is clicked
 	 */
-	public void actionPerformed(ActionEvent e) {
+	public final void actionPerformed(ActionEvent e) {
 		MazeAppModel mazeAppModel = mazeApp.getMazeAppModel();
 		JFileChooser jFileChooser = new JFileChooser("data/");
 		jFileChooser.addChoosableFileFilter(new FileNameExtensionFilter("*.txt", "txt"));

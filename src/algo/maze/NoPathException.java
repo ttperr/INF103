@@ -6,7 +6,7 @@ package algo.maze;
  * @author Tristan Perrot
  *
  */
-public class NoPathException extends Exception {
+public final class NoPathException extends Exception {
 	private static final long serialVersionUID = 1L;
 
 	/**

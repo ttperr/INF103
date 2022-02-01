@@ -17,8 +17,8 @@ import uiProject.vue.MazeApp;
  * @author Tristan Perrot
  *
  */
-public class BoxPanelMouseListener extends MouseAdapter implements MouseListener {
-	MazeApp mazeApp;
+public final class BoxPanelMouseListener extends MouseAdapter implements MouseListener {
+	private final MazeApp mazeApp;
 
 	/**
 	 * Create the mouse listener for the mazeApp

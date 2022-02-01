@@ -6,8 +6,7 @@ package algo.maze;
  * @author Tristan Perrot
  *
  */
-public class DepartureArrivalException extends Exception {
-
+public final class DepartureArrivalException extends Exception {
 	private static final long serialVersionUID = 1L;
 
 	/**

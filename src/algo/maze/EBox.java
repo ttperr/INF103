@@ -6,7 +6,7 @@ package algo.maze;
  * @author Tristan Perrot
  *
  */
-public class EBox extends MBox {
+public final class EBox extends MBox {
 
 	public EBox(int i, int j) {
 		super(i, j, "E");

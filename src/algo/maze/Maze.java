@@ -75,7 +75,7 @@ public final class Maze implements GraphInterface {
 	 * @param j Column number
 	 * @return The (i, j) box
 	 */
-	public MBox getBox(int i, int j) {
+	public final MBox getBox(int i, int j) {
 		return maze[i][j];
 	}
 
@@ -84,7 +84,7 @@ public final class Maze implements GraphInterface {
 	 * 
 	 * @param box The new box
 	 */
-	public void setBox(MBox box) {
+	public final void setBox(MBox box) {
 		maze[box.getRow()][box.getColumn()] = box;
 	}
 

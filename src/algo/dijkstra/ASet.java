@@ -8,7 +8,7 @@ import java.util.HashSet;
  * @author Tristan Perrot
  * 
  */
-public class ASet extends HashSet<VertexInterface> implements ASetInterface {
+public final class ASet extends HashSet<VertexInterface> implements ASetInterface {
 	private static final long serialVersionUID = 1L;
 
 	public ASet() {
@@ -21,7 +21,7 @@ public class ASet extends HashSet<VertexInterface> implements ASetInterface {
 	 * @param vertex The vertex to add to A
 	 */
 	@Override
-	public void addVertex(VertexInterface vertex) {
+	public final void addVertex(VertexInterface vertex) {
 		this.add(vertex);
 	}
 
@@ -33,7 +33,7 @@ public class ASet extends HashSet<VertexInterface> implements ASetInterface {
 	 * @return true if vertex is in A, false if not
 	 */
 	@Override
-	public Boolean containsVertex(VertexInterface vertex) {
+	public final Boolean containsVertex(VertexInterface vertex) {
 		return this.contains(vertex);
 	}
 }

@@ -9,8 +9,7 @@ import java.util.Hashtable;
  * @author Tristan Perrot
  *
  */
-public class Previous extends Hashtable<VertexInterface, VertexInterface> implements PreviousInterface {
-
+public final class Previous extends Hashtable<VertexInterface, VertexInterface> implements PreviousInterface {
 	private static final long serialVersionUID = 1L;
 
 	public Previous() {
@@ -46,7 +45,7 @@ public class Previous extends Hashtable<VertexInterface, VertexInterface> implem
 	 * @return The vertices list who represent the path to the vertex
 	 */
 	@Override
-	public ArrayList<VertexInterface> getShortestPathTo(VertexInterface vertex) {
+	public final ArrayList<VertexInterface> getShortestPathTo(VertexInterface vertex) {
 		ArrayList<VertexInterface> path = new ArrayList<VertexInterface>();
 		while (vertex != null) {
 			path.add(vertex);

@@ -13,8 +13,9 @@ import uiProject.vue.MazeApp;
  * @author ttper
  *
  */
-public class ResetMenuItem extends JMenuItem implements ActionListener {
+public final class ResetMenuItem extends JMenuItem implements ActionListener {
 	private static final long serialVersionUID = 1L;
+	
 	private final MazeApp mazeApp;
 
 	/**
@@ -32,7 +33,7 @@ public class ResetMenuItem extends JMenuItem implements ActionListener {
 	 * Reset the maze when button is clicked
 	 */
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public final void actionPerformed(ActionEvent e) {
 		mazeApp.getMazeAppModel().reset(mazeApp.getMazeAppModel().getMaze().getHeight(),
 				mazeApp.getMazeAppModel().getMaze().getWidth());
 	}

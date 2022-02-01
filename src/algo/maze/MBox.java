@@ -9,7 +9,6 @@ import algo.dijkstra.VertexInterface;
  *
  */
 public abstract class MBox implements VertexInterface {
-
 	private final int row;
 	private final int column;
 	private final String label;
@@ -23,14 +22,14 @@ public abstract class MBox implements VertexInterface {
 	/**
 	 * @return Box line number
 	 */
-	public int getRow() {
+	public final int getRow() {
 		return row;
 	}
 
 	/**
 	 * @return Box column number
 	 */
-	public int getColumn() {
+	public final int getColumn() {
 		return column;
 	}
 
@@ -38,7 +37,7 @@ public abstract class MBox implements VertexInterface {
 	 * @return The box label
 	 */
 	@Override
-	public String getLabel() {
+	public final String getLabel() {
 		return label;
 	}
 
@@ -46,7 +45,7 @@ public abstract class MBox implements VertexInterface {
 	 * @return The equality test between two vertices
 	 */
 	@Override
-	public Boolean isEqualTo(VertexInterface vertex) {
+	public final Boolean isEqualTo(VertexInterface vertex) {
 		MBox box = (MBox) vertex;
 		return row == box.getRow() && column == box.getColumn();
 	}

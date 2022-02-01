@@ -14,8 +14,9 @@ import uiProject.vue.selectBox.SelectBoxPanel;
  * @author Tristan Perrot
  *
  */
-public class WindowPanel extends JPanel {
+public final class WindowPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
+	
 	private final MazePanel MazePanel;
 	private final ButtonsPanel buttonsPanel;
 	private final SelectBoxPanel selectBoxPanel;
@@ -38,7 +39,7 @@ public class WindowPanel extends JPanel {
 	/**
 	 * Notify when there is an update
 	 */
-	public void notifyForUpdate() {
+	public final void notifyForUpdate() {
 		MazePanel.notifyForUpdate();
 		buttonsPanel.notifyForUpdate();
 	}

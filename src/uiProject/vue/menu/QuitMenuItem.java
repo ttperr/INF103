@@ -17,8 +17,9 @@ import uiProject.vue.MazeApp;
  * @author Tristan Perrot
  *
  */
-public class QuitMenuItem extends JMenuItem implements ActionListener {
+public final class QuitMenuItem extends JMenuItem implements ActionListener {
 	private static final long serialVersionUID = 1L;
+	
 	private final MazeApp mazeApp;
 
 	/**
@@ -36,7 +37,7 @@ public class QuitMenuItem extends JMenuItem implements ActionListener {
 	 * Quit the app when the button is clicked
 	 */
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public final void actionPerformed(ActionEvent e) {
 		MazeAppModel mazeAppModel = mazeApp.getMazeAppModel();
 
 		if (!mazeAppModel.isExported()) {

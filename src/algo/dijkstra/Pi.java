@@ -8,8 +8,7 @@ import java.util.Hashtable;
  * @author Tristan Perrot
  *
  */
-public class Pi extends Hashtable<VertexInterface, Integer> implements PiInterface {
-
+public final class Pi extends Hashtable<VertexInterface, Integer> implements PiInterface {
 	private static final long serialVersionUID = 1L;
 
 	public Pi() {
@@ -23,7 +22,7 @@ public class Pi extends Hashtable<VertexInterface, Integer> implements PiInterfa
 	 * @param value  The value to give for pi(vertex)
 	 **/
 	@Override
-	public void setPi(VertexInterface vertex, Integer value) {
+	public final void setPi(VertexInterface vertex, Integer value) {
 		this.put(vertex, value);
 	}
 
@@ -34,7 +33,7 @@ public class Pi extends Hashtable<VertexInterface, Integer> implements PiInterfa
 	 * @return The value of pi(vertex)
 	 **/
 	@Override
-	public Integer getPi(VertexInterface vertex) {
+	public final Integer getPi(VertexInterface vertex) {
 		return this.get(vertex);
 	}
 }

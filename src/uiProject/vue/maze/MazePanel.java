@@ -16,8 +16,9 @@ import uiProject.vue.MazeApp;
  * @author Tristan Perrot
  *
  */
-public class MazePanel extends JPanel {
+public final class MazePanel extends JPanel {
 	private static final long serialVersionUID = 1L;
+	
 	private BoxPanel[][] boxes;
 	private final MazeApp mazeApp;
 	private final GridLayout gridLayout;
@@ -59,7 +60,7 @@ public class MazePanel extends JPanel {
 	/**
 	 * Fill the grid layout with the maze of MazeApp
 	 */
-	public void fillGrid() {
+	public final void fillGrid() {
 		this.removeAll();
 		MazeAppModel mazeAppModel = mazeApp.getMazeAppModel();
 		MBox[][] mazeModel = mazeAppModel.getMaze().getMaze();
@@ -78,7 +79,7 @@ public class MazePanel extends JPanel {
 	/**
 	 * Action to do if there is an update of the maze
 	 */
-	public void notifyForUpdate() {
+	public final void notifyForUpdate() {
 		MazeAppModel mazeAppModel = mazeApp.getMazeAppModel();
 		if (mazeAppModel.isModified()) {
 			int width = mazeAppModel.getMaze().getWidth();

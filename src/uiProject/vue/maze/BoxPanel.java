@@ -17,8 +17,9 @@ import uiProject.vue.MazeApp;
  * @author Tristan Perrot
  *
  */
-public class BoxPanel extends JPanel {
+public final class BoxPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
+	
 	private final MBox box;
 	private BoxPanelMouseListener mazePanelMouseListener;
 
@@ -55,7 +56,7 @@ public class BoxPanel extends JPanel {
 	/**
 	 * @return the box
 	 */
-	public MBox getBox() {
+	public final MBox getBox() {
 		return box;
 	}
 
@@ -63,7 +64,7 @@ public class BoxPanel extends JPanel {
 	 * Modify the current picture of the box clicked
 	 */
 	@Override
-	public void paintComponent(Graphics g) {
+	protected final void paintComponent(Graphics g) {
 
 		// Paint the background
 		super.paintComponent(g);
@@ -84,7 +85,7 @@ public class BoxPanel extends JPanel {
 	/**
 	 * Action to do if there is an update of the box
 	 */
-	public void notifyForUpdate() {
+	public final void notifyForUpdate() {
 		repaint();
 	}
 }

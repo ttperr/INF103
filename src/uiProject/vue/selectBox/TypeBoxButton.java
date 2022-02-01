@@ -8,8 +8,9 @@ import javax.swing.JButton;
 import uiProject.model.MazeAppModel;
 import uiProject.vue.MazeApp;
 
-public class TypeBoxButton extends JButton implements ActionListener {
+public final class TypeBoxButton extends JButton implements ActionListener {
 	private static final long serialVersionUID = 1L;
+	
 	private final MazeApp mazeApp;
 
 	public TypeBoxButton(MazeApp mazeApp, String label) {
@@ -18,7 +19,7 @@ public class TypeBoxButton extends JButton implements ActionListener {
 		addActionListener(this);
 	}
 
-	public void actionPerformed(ActionEvent evt) {
+	public final void actionPerformed(ActionEvent evt) {
 		MazeAppModel mazeAppModel = mazeApp.getMazeAppModel();
 		String label = this.getText();
 		mazeAppModel.setSelectedBoxLabel(label);

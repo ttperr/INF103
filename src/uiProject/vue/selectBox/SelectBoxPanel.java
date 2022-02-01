@@ -6,8 +6,9 @@ import javax.swing.JPanel;
 
 import uiProject.vue.MazeApp;
 
-public class SelectBoxPanel extends JPanel {
+public final class SelectBoxPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
+	
 	private final TypeBoxButton eTypeButton;
 	private final TypeBoxButton wTypeButton;
 	private final TypeBoxButton aTypeButton;

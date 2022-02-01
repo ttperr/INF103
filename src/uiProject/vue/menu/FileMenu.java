@@ -10,8 +10,9 @@ import uiProject.vue.MazeApp;
  * @author Tristan Perrot
  *
  */
-public class FileMenu extends JMenu {
+public final class FileMenu extends JMenu {
 	private static final long serialVersionUID = 1L;
+	
 	private final ExportMenuItem exportMenuItem;
 	private final ImportMenuItem importMenuItem;
 

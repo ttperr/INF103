@@ -12,8 +12,9 @@ import uiProject.vue.MazeApp;
  * @author Tristan Perrot
  *
  */
-public class ButtonsPanel extends JPanel {
+public final class ButtonsPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
+	
 	private final DimensionPanel dimensionPanel;
 	private final OptionPanel optionPanel;
 
@@ -35,7 +36,7 @@ public class ButtonsPanel extends JPanel {
 	/**
 	 * Notify when there is an update
 	 */
-	public void notifyForUpdate() {
+	public final void notifyForUpdate() {
 		optionPanel.notifyForUpdate();
 	}
 }

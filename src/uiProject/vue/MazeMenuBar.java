@@ -10,8 +10,9 @@ import uiProject.vue.menu.*;
  * @author Tristan Perrot
  *
  */
-public class MazeMenuBar extends JMenuBar {
+public final class MazeMenuBar extends JMenuBar {
 	private static final long serialVersionUID = 1L;
+	
 	private final FileMenu fileMenu;
 	private final OptionsMenu optionsMenu;
 

@@ -19,8 +19,9 @@ import uiProject.vue.MazeApp;
  * @author Tristan Perrot
  *
  */
-public class DimensionSet extends JPanel implements PropertyChangeListener {
+public final class DimensionSet extends JPanel implements PropertyChangeListener {
 	private static final long serialVersionUID = 1L;
+	
 	private int width;
 	private int height;
 
@@ -78,7 +79,7 @@ public class DimensionSet extends JPanel implements PropertyChangeListener {
 	/**
 	 * Modify the maze when there is new values
 	 */
-	public void propertyChange(PropertyChangeEvent evt) {
+	public final void propertyChange(PropertyChangeEvent evt) {
 		MazeAppModel mazeAppModel = mazeApp.getMazeAppModel();
 		int nwidth = (int) ((Number) widthField.getValue()).doubleValue();
 		int nheight = (int) ((Number) heightField.getValue()).doubleValue();

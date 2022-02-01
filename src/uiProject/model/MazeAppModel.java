@@ -24,7 +24,7 @@ import algo.maze.PBox;
  * @author Tristan Perrot
  *
  */
-public class MazeAppModel {
+public final class MazeAppModel {
 	private Maze maze;
 	private String selectedBoxLabel = "Empty";
 	private boolean modified = false;
@@ -49,14 +49,14 @@ public class MazeAppModel {
 	/**
 	 * @return The maze
 	 */
-	public Maze getMaze() {
+	public final Maze getMaze() {
 		return maze;
 	}
 
 	/**
 	 * @param maze The maze to set
 	 */
-	public void setMaze(MBox[][] maze) {
+	public final void setMaze(MBox[][] maze) {
 		if (this.getMaze().getMaze() != maze) {
 			this.maze = new Maze(maze);
 			setModified(true);
@@ -67,14 +67,14 @@ public class MazeAppModel {
 	/**
 	 * @return The selectedBoxLabel
 	 */
-	public String getSelectedBoxLabel() {
+	public final String getSelectedBoxLabel() {
 		return selectedBoxLabel;
 	}
 
 	/**
 	 * @param selectedBoxLabel The currentBoxLabel to set
 	 */
-	public void setSelectedBoxLabel(String selectedBoxLabel) {
+	public final void setSelectedBoxLabel(String selectedBoxLabel) {
 		if (!(this.selectedBoxLabel.equals(selectedBoxLabel))) {
 			this.selectedBoxLabel = selectedBoxLabel;
 			setModified(true);
@@ -82,7 +82,7 @@ public class MazeAppModel {
 		}
 	}
 
-	public void setBox(MBox box) {
+	public final void setBox(MBox box) {
 		if (!(maze.getBox(box.getRow(), box.getColumn()).getLabel().equals(box.getLabel()))) {
 			maze.setBox(box);
 			setModified(true);
@@ -93,28 +93,28 @@ public class MazeAppModel {
 	/**
 	 * @return if it's modified or not
 	 */
-	public boolean isModified() {
+	public final boolean isModified() {
 		return modified;
 	}
 
 	/**
 	 * @param modified the new modified value
 	 */
-	public void setModified(boolean modified) {
+	public final void setModified(boolean modified) {
 		this.modified = modified;
 	}
 
 	/**
 	 * @return the exported
 	 */
-	public boolean isExported() {
+	public final boolean isExported() {
 		return exported;
 	}
 
 	/**
 	 * @param exported the exported to set
 	 */
-	public void setExported(boolean exported) {
+	public final void setExported(boolean exported) {
 		this.exported = exported;
 	}
 
@@ -124,7 +124,7 @@ public class MazeAppModel {
 	 * @param width  The new width
 	 * @param height The new height
 	 */
-	public void reset(int width, int height) {
+	public final void reset(int width, int height) {
 		setSelectedBoxLabel("Empty");
 		MBox[][] rMaze = new MBox[height][width];
 		for (int i = 0; i < height; i++) {
@@ -201,14 +201,14 @@ public class MazeAppModel {
 	 * 
 	 * @param listener the listener to add
 	 */
-	public void addObserver(ChangeListener listener) {
+	public final void addObserver(ChangeListener listener) {
 		listeners.add(listener);
 	}
 
 	/**
 	 * Execute the changes
 	 */
-	public void stateChanges() {
+	public final void stateChanges() {
 		setExported(false);
 		ChangeEvent evt = new ChangeEvent(this);
 		for (ChangeListener listener : listeners) {

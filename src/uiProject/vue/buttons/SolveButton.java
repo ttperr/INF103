@@ -14,8 +14,9 @@ import java.awt.event.*;
  * @author Tristan Perrot
  *
  */
-public class SolveButton extends JButton implements ActionListener {
+public final class SolveButton extends JButton implements ActionListener {
 	private static final long serialVersionUID = 1L;
+	
 	private final MazeApp mazeApp;
 
 	/**
@@ -32,7 +33,7 @@ public class SolveButton extends JButton implements ActionListener {
 	/**
 	 * Solve the maze when it's clicked
 	 */
-	public void actionPerformed(ActionEvent evt) {
+	public final void actionPerformed(ActionEvent evt) {
 		try {
 			mazeApp.getMazeAppModel().solve();
 		} catch (DepartureArrivalException | NoPathException e) {

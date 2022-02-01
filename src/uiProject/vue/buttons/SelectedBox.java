@@ -13,8 +13,9 @@ import uiProject.vue.MazeApp;
  * @author Tristan Perrot
  *
  */
-public class SelectedBox extends JPanel {
+public final class SelectedBox extends JPanel {
 	private static final long serialVersionUID = 1L;
+	
 	private final MazeApp mazeApp;
 	private String selectedBoxLabel;
 
@@ -49,7 +50,7 @@ public class SelectedBox extends JPanel {
 	/**
 	 * Action to do if there is an update of the box
 	 */
-	public void notifyForUpdate() {
+	public final void notifyForUpdate() {
 		MazeAppModel mazeAppModel = mazeApp.getMazeAppModel();
 		if (mazeAppModel.isModified()) {
 			this.selectedBoxLabel = mazeAppModel.getSelectedBoxLabel();

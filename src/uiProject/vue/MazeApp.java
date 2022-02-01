@@ -12,8 +12,9 @@ import uiProject.model.MazeAppModel;
  * @author Tristan Perrot
  *
  */
-public class MazeApp extends JFrame implements ChangeListener {
+public final class MazeApp extends JFrame implements ChangeListener {
 	private static final long serialVersionUID = 1L;
+	
 	private final MazeMenuBar mazeMenuBar;
 	private final WindowPanel windowPanel;
 
@@ -41,7 +42,7 @@ public class MazeApp extends JFrame implements ChangeListener {
 	/**
 	 * @return the mazeAppModel
 	 */
-	public MazeAppModel getMazeAppModel() {
+	public final MazeAppModel getMazeAppModel() {
 		return mazeAppModel;
 	}
 
@@ -50,7 +51,7 @@ public class MazeApp extends JFrame implements ChangeListener {
 	 * 
 	 * @param mazeAppModel The mazeAppModel to set
 	 */
-	public void setMazeAppModel(MazeAppModel mazeAppModel) {
+	public final void setMazeAppModel(MazeAppModel mazeAppModel) {
 		this.mazeAppModel = mazeAppModel;
 	}
 
@@ -58,7 +59,7 @@ public class MazeApp extends JFrame implements ChangeListener {
 	 * Notify when there is an update
 	 */
 	@Override
-	public void stateChanged(ChangeEvent evt) {
+	public final void stateChanged(ChangeEvent evt) {
 		windowPanel.notifyForUpdate();
 	}
 
