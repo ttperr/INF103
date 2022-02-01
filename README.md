@@ -1,5 +1,4 @@
 # Projet INF103 de Tristan PERROT
-
 Développement de l'algorithme de Dijkstra et de son interface graphique pour résoudre des labyrinthes.
 
 ## Structure
@@ -27,3 +26,7 @@ Dans ce package se situent les fichiers java à exécuter pour lancer l'algorith
 ### [`uiTest`](./src/uiTest)
 
 Dans ce package se situe l'interface graphique vue en cours comme exemple. **Ce package n'est pas à prendre en compte pour la résolution des labyrinthes**
+
+## Diagramme de l'interface utilisateur
+
+![Diagramme](./UI_Diagram.svg)
