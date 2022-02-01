@@ -29,4 +29,4 @@ Dans ce package se situe l'interface graphique vue en cours comme exemple. **Ce 
 
 ## Diagramme de l'interface utilisateur
 
-![Diagramme](./UI_Diagram.svg)
+![Diagramme](./data/UI_Diagram.svg)
