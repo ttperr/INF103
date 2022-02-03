@@ -12,7 +12,7 @@ import uiProject.model.MazeAppModel;
  * @author Tristan Perrot
  *
  */
-public final class MazeApp extends JFrame implements ChangeListener {
+public class MazeApp extends JFrame implements ChangeListener {
 	private static final long serialVersionUID = 1L;
 	
 	private final MazeMenuBar mazeMenuBar;

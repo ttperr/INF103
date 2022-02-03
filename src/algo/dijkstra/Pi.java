@@ -8,7 +8,7 @@ import java.util.Hashtable;
  * @author Tristan Perrot
  *
  */
-public final class Pi extends Hashtable<VertexInterface, Integer> implements PiInterface {
+public class Pi extends Hashtable<VertexInterface, Integer> implements PiInterface {
 	private static final long serialVersionUID = 1L;
 
 	public Pi() {

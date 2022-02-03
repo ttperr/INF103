@@ -16,7 +16,7 @@ import uiProject.vue.MazeApp;
  * @author Tristan Perrot
  *
  */
-public final class MazePanel extends JPanel {
+public class MazePanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
 	private BoxPanel[][] boxes;

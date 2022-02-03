@@ -14,7 +14,7 @@ import java.awt.event.*;
  * @author Tristan Perrot
  *
  */
-public final class SolveButton extends JButton implements ActionListener {
+public class SolveButton extends JButton implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	
 	private final MazeApp mazeApp;

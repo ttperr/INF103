@@ -9,7 +9,7 @@ import java.util.Hashtable;
  * @author Tristan Perrot
  *
  */
-public final class Previous extends Hashtable<VertexInterface, VertexInterface> implements PreviousInterface {
+public class Previous extends Hashtable<VertexInterface, VertexInterface> implements PreviousInterface {
 	private static final long serialVersionUID = 1L;
 
 	public Previous() {

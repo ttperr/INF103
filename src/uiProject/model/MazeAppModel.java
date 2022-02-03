@@ -24,11 +24,12 @@ import algo.maze.PBox;
  * @author Tristan Perrot
  *
  */
-public final class MazeAppModel {
+public class MazeAppModel {
 	private Maze maze;
 	private String selectedBoxLabel = "Empty";
 	private boolean modified = false;
 	private boolean exported = false;
+	
 	private ArrayList<ChangeListener> listeners = new ArrayList<ChangeListener>();
 
 	/**

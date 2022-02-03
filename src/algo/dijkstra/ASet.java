@@ -8,7 +8,7 @@ import java.util.HashSet;
  * @author Tristan Perrot
  * 
  */
-public final class ASet extends HashSet<VertexInterface> implements ASetInterface {
+public class ASet extends HashSet<VertexInterface> implements ASetInterface {
 	private static final long serialVersionUID = 1L;
 
 	public ASet() {

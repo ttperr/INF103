@@ -17,7 +17,7 @@ import uiProject.vue.MazeApp;
  * @author Tristan Perrot
  *
  */
-public final class QuitMenuItem extends JMenuItem implements ActionListener {
+public class QuitMenuItem extends JMenuItem implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	
 	private final MazeApp mazeApp;

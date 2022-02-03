@@ -12,7 +12,7 @@ import uiProject.vue.MazeApp;
  * @author Tristan Perrot
  *
  */
-public final class ButtonsPanel extends JPanel {
+public class ButtonsPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
 	private final DimensionPanel dimensionPanel;

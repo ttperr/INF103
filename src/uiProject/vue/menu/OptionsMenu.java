@@ -10,7 +10,7 @@ import uiProject.vue.MazeApp;
  * @author Tristan Perrot
  *
  */
-public final class OptionsMenu extends JMenu {
+public class OptionsMenu extends JMenu {
 	private static final long serialVersionUID = 1L;
 	
 	private final QuitMenuItem quitMenuItem;

@@ -12,7 +12,7 @@ import uiProject.vue.MazeApp;
  * @author Tristan Perrot
  *
  */
-public final class OptionPanel extends JPanel {
+public class OptionPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
 	private final SelectedBox selectedBox;

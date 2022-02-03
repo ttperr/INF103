@@ -11,7 +11,14 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import uiProject.model.MazeAppModel;
 import uiProject.vue.MazeApp;
 
-public final class ImportMenuItem extends JMenuItem implements ActionListener {
+/**
+ * Import item menu class
+ * 
+ * 
+ * @author Tristan Perrot
+ *
+ */
+public class ImportMenuItem extends JMenuItem implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	
 	private final MazeApp mazeApp;

@@ -8,7 +8,7 @@ import javax.swing.JButton;
 import uiProject.model.MazeAppModel;
 import uiProject.vue.MazeApp;
 
-public final class TypeBoxButton extends JButton implements ActionListener {
+public class TypeBoxButton extends JButton implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	
 	private final MazeApp mazeApp;

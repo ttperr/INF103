@@ -6,7 +6,7 @@ package algo.maze;
  * @author Tristan Perrot
  *
  */
-public final class WBox extends MBox {
+public class WBox extends MBox {
 
 	public WBox(int i, int j) {
 		super(i, j, "W");

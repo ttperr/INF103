@@ -6,7 +6,7 @@ package algo.maze;
  * @author Tristan Perrot
  *
  */
-public class MazeReadingException extends Exception {
+public final class MazeReadingException extends Exception {
 	private static final long serialVersionUID = 1L;
 
 	/**
