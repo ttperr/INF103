@@ -2,7 +2,7 @@ package algo.maze;
 
 /**
  * Exception link to the initializing file reading
- * 
+ *
  * @author Tristan Perrot
  *
  */
@@ -12,7 +12,7 @@ public final class MazeReadingException extends Exception {
 	/**
 	 * Return the detail of the reading file exception like the position and the
 	 * nature
-	 * 
+	 *
 	 * @param fileName File address
 	 * @param row      Line number
 	 * @param column   Column number

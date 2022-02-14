@@ -8,7 +8,7 @@ import uiProject.vue.MazeApp;
 
 /**
  * The option panel class
- * 
+ *
  * @author Tristan Perrot
  *
  */
@@ -20,7 +20,7 @@ public class OptionPanel extends JPanel {
 
 	/**
 	 * Create and add the option buttons in the mazeApp
-	 * 
+	 *
 	 * @param mazeApp The frame
 	 */
 	public OptionPanel(MazeApp mazeApp) {

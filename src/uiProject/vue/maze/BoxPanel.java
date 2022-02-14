@@ -13,7 +13,7 @@ import uiProject.vue.MazeApp;
 
 /**
  * Box panel class
- * 
+ *
  * @author Tristan Perrot
  *
  */
@@ -43,7 +43,7 @@ public class BoxPanel extends JPanel {
 
 	/**
 	 * Create and add the mouse listener for the box
-	 * 
+	 *
 	 * @param mazeApp The frame
 	 * @param box     The box clicked on
 	 */

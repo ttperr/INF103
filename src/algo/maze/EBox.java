@@ -2,7 +2,7 @@ package algo.maze;
 
 /**
  * Empty box class
- * 
+ *
  * @author Tristan Perrot
  *
  */

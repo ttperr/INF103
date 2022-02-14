@@ -8,7 +8,7 @@ import uiProject.vue.MazeApp;
 
 /**
  * The buttons panel class
- * 
+ *
  * @author Tristan Perrot
  *
  */
@@ -20,7 +20,7 @@ public class ButtonsPanel extends JPanel {
 
 	/**
 	 * Create and add buttons in the mazeApp
-	 * 
+	 *
 	 * @param mazeApp The frame
 	 */
 	public ButtonsPanel(MazeApp mazeApp) {

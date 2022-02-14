@@ -13,7 +13,7 @@ import uiProject.vue.MazeApp;
 
 /**
  * Quit item class in the menu
- * 
+ *
  * @author Tristan Perrot
  *
  */
@@ -24,7 +24,7 @@ public class QuitMenuItem extends JMenuItem implements ActionListener {
 
 	/**
 	 * Create and add the quit menu item in the mazeApp
-	 * 
+	 *
 	 * @param mazeApp The frame
 	 */
 	public QuitMenuItem(MazeApp mazeApp) {

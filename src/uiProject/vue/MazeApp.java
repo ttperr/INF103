@@ -1,6 +1,7 @@
 package uiProject.vue;
 
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
@@ -8,7 +9,7 @@ import uiProject.model.MazeAppModel;
 
 /**
  * Maze App class
- * 
+ *
  * @author Tristan Perrot
  *
  */
@@ -34,7 +35,7 @@ public class MazeApp extends JFrame implements ChangeListener {
 
 		mazeAppModel.addObserver(this);
 
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		pack();
 		setVisible(true);
 	}
@@ -48,7 +49,7 @@ public class MazeApp extends JFrame implements ChangeListener {
 
 	/**
 	 * Set the mazeAppModel
-	 * 
+	 *
 	 * @param mazeAppModel The mazeAppModel to set
 	 */
 	public final void setMazeAppModel(MazeAppModel mazeAppModel) {

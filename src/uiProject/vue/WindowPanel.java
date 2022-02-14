@@ -10,7 +10,7 @@ import uiProject.vue.selectBox.SelectBoxPanel;
 
 /**
  * The window panel class
- * 
+ *
  * @author Tristan Perrot
  *
  */

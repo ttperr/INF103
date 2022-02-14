@@ -9,7 +9,7 @@ import uiProject.vue.MazeApp;
 
 /**
  * The selected box class
- * 
+ *
  * @author Tristan Perrot
  *
  */

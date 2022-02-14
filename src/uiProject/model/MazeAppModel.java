@@ -20,7 +20,7 @@ import algo.maze.PBox;
 
 /**
  * The Model class for the UI
- * 
+ *
  * @author Tristan Perrot
  *
  */
@@ -30,7 +30,7 @@ public class MazeAppModel {
 	private boolean modified = false;
 	private boolean exported = false;
 
-	private ArrayList<ChangeListener> listeners = new ArrayList<ChangeListener>();
+	private ArrayList<ChangeListener> listeners = new ArrayList<>();
 
 	/**
 	 * Initialize a 10x10 maze
@@ -121,7 +121,7 @@ public class MazeAppModel {
 
 	/**
 	 * Reset the maze to an empty maze
-	 * 
+	 *
 	 * @param width  The new width
 	 * @param height The new height
 	 */
@@ -144,7 +144,7 @@ public class MazeAppModel {
 
 	/**
 	 * Save the maze to a text file
-	 * 
+	 *
 	 * @param fileName the file name of the exported file
 	 */
 	public final void exportMazeToTextFile(String fileName) {
@@ -164,7 +164,7 @@ public class MazeAppModel {
 
 	/**
 	 * Solve the actual maze
-	 * 
+	 *
 	 * @throws DepartureArrivalException Throwed exception if there is not only one
 	 *                                   arrival and one departure
 	 */
@@ -199,7 +199,7 @@ public class MazeAppModel {
 
 	/**
 	 * Add a listener for the UI
-	 * 
+	 *
 	 * @param listener the listener to add
 	 */
 	public final void addObserver(ChangeListener listener) {

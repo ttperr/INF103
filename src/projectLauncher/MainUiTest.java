@@ -4,7 +4,7 @@ import uiTest.ui.DrawingApp;
 
 /**
  * Main class to show the UI test made in class
- * 
+ *
  * @author Tristan
  *
  */

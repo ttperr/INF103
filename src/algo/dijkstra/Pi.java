@@ -4,7 +4,7 @@ import java.util.Hashtable;
 
 /**
  * Pi function class of the Dijkstra algorithm
- * 
+ *
  * @author Tristan Perrot
  *
  */
@@ -17,7 +17,7 @@ public class Pi extends Hashtable<VertexInterface, Integer> implements PiInterfa
 
 	/**
 	 * Set a pi value for a vertex
-	 * 
+	 *
 	 * @param vertex The vertex considered
 	 * @param value  The value to give for pi(vertex)
 	 **/
@@ -28,7 +28,7 @@ public class Pi extends Hashtable<VertexInterface, Integer> implements PiInterfa
 
 	/**
 	 * Return the value of pi for a vertex
-	 * 
+	 *
 	 * @param vertex The vertex considered
 	 * @return The value of pi(vertex)
 	 **/

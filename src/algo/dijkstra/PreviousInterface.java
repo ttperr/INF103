@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Vertex previous interface
- * 
+ *
  * @author Tristan Perrot
  *
  */
@@ -12,7 +12,7 @@ public interface PreviousInterface {
 
 	/**
 	 * Define the succession link between two vertices
-	 * 
+	 *
 	 * @param vertex   The son vertex
 	 * @param previous The father vertex
 	 **/
@@ -20,7 +20,7 @@ public interface PreviousInterface {
 
 	/**
 	 * Return the father of a vertex
-	 * 
+	 *
 	 * @param vertex The son vertex
 	 * @return The father vertex
 	 **/
@@ -28,7 +28,7 @@ public interface PreviousInterface {
 
 	/**
 	 * Return the shortest path to a vertex by vertex list from beginning to end
-	 * 
+	 *
 	 * @param vertex The arrival vertex
 	 * @return The vertices list who represent the path to the vertex
 	 */

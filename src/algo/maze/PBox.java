@@ -2,7 +2,7 @@ package algo.maze;
 
 /**
  * Path box class, useful for the user interface
- * 
+ *
  * @author Tristan Perrot
  *
  */

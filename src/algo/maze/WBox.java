@@ -2,7 +2,7 @@ package algo.maze;
 
 /**
  * Wall box class
- * 
+ *
  * @author Tristan Perrot
  *
  */

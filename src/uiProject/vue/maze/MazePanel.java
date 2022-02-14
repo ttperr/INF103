@@ -12,7 +12,7 @@ import uiProject.vue.MazeApp;
 
 /**
  * Maze panel class
- * 
+ *
  * @author Tristan Perrot
  *
  */
@@ -25,7 +25,7 @@ public class MazePanel extends JPanel {
 
 	/**
 	 * Create and add the maze in the mazeApp
-	 * 
+	 *
 	 * @param mazeApp The frame
 	 */
 	public MazePanel(MazeApp mazeApp) {

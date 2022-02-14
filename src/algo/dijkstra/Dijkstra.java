@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Class of Dijkstra algorithm
- * 
+ *
  * @author Tristan Perrot
  *
  */
@@ -13,10 +13,10 @@ public final class Dijkstra {
 	/**
 	 * For a graph and a vertex given, return what contains the shortest path to the
 	 * origin vertex
-	 * 
+	 *
 	 * @param g The graph considered
 	 * @param r The origin vertex
-	 * 
+	 *
 	 * @return Previous
 	 **/
 	public final static PreviousInterface dijkstra(GraphInterface g, VertexInterface r) {

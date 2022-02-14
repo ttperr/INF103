@@ -15,7 +15,7 @@ import uiProject.vue.MazeApp;
 
 /**
  * The dimension set class
- * 
+ *
  * @author Tristan Perrot
  *
  */
@@ -38,7 +38,7 @@ public class DimensionSet extends JPanel implements PropertyChangeListener {
 
 	/**
 	 * Create and add the dimension button in the mazeApp
-	 * 
+	 *
 	 * @param mazeApp The frame
 	 */
 	public DimensionSet(MazeApp mazeApp) {
@@ -79,6 +79,7 @@ public class DimensionSet extends JPanel implements PropertyChangeListener {
 	/**
 	 * Modify the maze when there is new values
 	 */
+	@Override
 	public final void propertyChange(PropertyChangeEvent evt) {
 		MazeAppModel mazeAppModel = mazeApp.getMazeAppModel();
 		int nwidth = (int) ((Number) widthField.getValue()).doubleValue();

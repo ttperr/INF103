@@ -2,7 +2,7 @@ package algo.maze;
 
 /**
  * Arrival box class
- * 
+ *
  * @author Tristan Perrot
  *
  */

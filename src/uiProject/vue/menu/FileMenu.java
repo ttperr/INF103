@@ -6,7 +6,7 @@ import uiProject.vue.MazeApp;
 
 /**
  * File menu class
- * 
+ *
  * @author Tristan Perrot
  *
  */
@@ -18,7 +18,7 @@ public class FileMenu extends JMenu {
 
 	/**
 	 * Create and add menu items to mazeApp
-	 * 
+	 *
 	 * @param mazeApp The current used app
 	 */
 	public FileMenu(MazeApp mazeApp) {

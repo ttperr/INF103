@@ -8,7 +8,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 public class DrawingAppModel {
-	private final ArrayList<Segment> editedSegments = new ArrayList<Segment>(128);
+	private final ArrayList<Segment> editedSegments = new ArrayList<>(128);
 	private Color currentColor = Color.BLACK;
 	private Segment currentSegment = null;
 	private Segment selectedSegment = null;
@@ -69,7 +69,7 @@ public class DrawingAppModel {
 			currentSegment.paint(g, false, true);
 	}
 
-	private ArrayList<ChangeListener> listeners = new ArrayList<ChangeListener>();
+	private ArrayList<ChangeListener> listeners = new ArrayList<>();
 
 	public void addObserver(ChangeListener listener) {
 		listeners.add(listener);
@@ -105,7 +105,7 @@ public class DrawingAppModel {
 		if (currentSegment != null) {
 			float x1 = (float) currentSegment.getX1();
 			float y1 = (float) currentSegment.getY1();
-			if (Math.abs(x1 - (float) x2) >= 1.0f || Math.abs(y1 - (float) y2) >= 1.0f) {
+			if (Math.abs(x1 - x2) >= 1.0f || Math.abs(y1 - y2) >= 1.0f) {
 				currentSegment = null;
 				editedSegments.add(new Segment(x1, y1, x2, y2, currentColor));
 				stateChanges();
@@ -118,8 +118,8 @@ public class DrawingAppModel {
 	}
 
 	public final void setSelection(int x, int y) {
-		double xd = (double) x;
-		double yd = (double) y;
+		double xd = x;
+		double yd = y;
 
 		for (Segment s : editedSegments) {
 			if (s.ptLineDist(xd, yd) < 1.0) {

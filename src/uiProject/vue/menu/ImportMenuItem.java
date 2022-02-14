@@ -13,8 +13,8 @@ import uiProject.vue.MazeApp;
 
 /**
  * Import item menu class
- * 
- * 
+ *
+ *
  * @author Tristan Perrot
  *
  */
@@ -25,7 +25,7 @@ public class ImportMenuItem extends JMenuItem implements ActionListener {
 
 	/**
 	 * Create and add the import menu item in the mazeApp
-	 * 
+	 *
 	 * @param mazeApp The frame
 	 */
 	public ImportMenuItem(MazeApp mazeApp) {
@@ -37,6 +37,7 @@ public class ImportMenuItem extends JMenuItem implements ActionListener {
 	/**
 	 * Export the maze to text file when the button is clicked
 	 */
+	@Override
 	public final void actionPerformed(ActionEvent event) {
 		try {
 			String filePath = null;

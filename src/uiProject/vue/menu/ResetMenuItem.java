@@ -9,7 +9,7 @@ import uiProject.vue.MazeApp;
 
 /**
  * Reset item class in the menu
- * 
+ *
  * @author ttper
  *
  */
@@ -20,7 +20,7 @@ public class ResetMenuItem extends JMenuItem implements ActionListener {
 
 	/**
 	 * Create and add the reset menu item in the mazeApp
-	 * 
+	 *
 	 * @param mazeApp The frame
 	 */
 	public ResetMenuItem(MazeApp mazeApp) {

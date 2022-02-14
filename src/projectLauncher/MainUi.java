@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package projectLauncher;
 
@@ -7,7 +7,7 @@ import uiProject.vue.MazeApp;
 
 /**
  * Main class to solve a maze with the UI
- * 
+ *
  * @author Tristan Perrot
  *
  */

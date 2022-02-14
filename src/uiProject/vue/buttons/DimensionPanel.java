@@ -8,7 +8,7 @@ import uiProject.vue.MazeApp;
 
 /**
  * The dimension panel class
- * 
+ *
  * @author Tristan Perrot
  *
  */
@@ -19,7 +19,7 @@ public class DimensionPanel extends JPanel {
 
 	/**
 	 * Create and add the dimension buttons in the mazeApp
-	 * 
+	 *
 	 * @param mazeApp The frame
 	 */
 	public DimensionPanel(MazeApp mazeApp) {

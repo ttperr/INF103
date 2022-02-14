@@ -13,12 +13,12 @@ import algo.dijkstra.VertexInterface;
 
 /**
  * Maze class
- * 
+ *
  * A maze is represented by his vertices matrix (maze) and his dimensions
  * (width,height)
- * 
+ *
  * @author Tristan Perrot
- * 
+ *
  */
 public final class Maze implements GraphInterface {
 	private MBox[][] maze;
@@ -35,7 +35,7 @@ public final class Maze implements GraphInterface {
 
 	/**
 	 * Return the vertices matrix
-	 * 
+	 *
 	 * @return The vertices matrix
 	 */
 	public final MBox[][] getMaze() {
@@ -44,7 +44,7 @@ public final class Maze implements GraphInterface {
 
 	/**
 	 * Return the width
-	 * 
+	 *
 	 * @return Maze width
 	 */
 	public final int getWidth() {
@@ -57,7 +57,7 @@ public final class Maze implements GraphInterface {
 
 	/**
 	 * Return the height
-	 * 
+	 *
 	 * @return Maze height
 	 */
 	public final int getHeight() {
@@ -70,7 +70,7 @@ public final class Maze implements GraphInterface {
 
 	/**
 	 * Return the box of coordinates (i, j)
-	 * 
+	 *
 	 * @param i Line number
 	 * @param j Column number
 	 * @return The (i, j) box
@@ -81,7 +81,7 @@ public final class Maze implements GraphInterface {
 
 	/**
 	 * Replace a box in maze by a new box given
-	 * 
+	 *
 	 * @param box The new box
 	 */
 	public final void setBox(MBox box) {
@@ -90,12 +90,12 @@ public final class Maze implements GraphInterface {
 
 	/**
 	 * Return the set of all graph vertices
-	 * 
+	 *
 	 * @return The list of all the vertices
 	 **/
 	@Override
 	public final ArrayList<VertexInterface> getAllVertices() {
-		ArrayList<VertexInterface> vertices = new ArrayList<VertexInterface>();
+		ArrayList<VertexInterface> vertices = new ArrayList<>();
 
 		for (MBox[] listMBox : maze) {
 			for (MBox box : listMBox) {
@@ -108,7 +108,7 @@ public final class Maze implements GraphInterface {
 	/**
 	 * Add a nextVertex vertex to the successors list if it's reachable from the
 	 * vertex vertex
-	 * 
+	 *
 	 * @param vertex     The origin vertex
 	 * @param nextVertex The arrival vertex
 	 * @param successors The neighbors temporary list of the vertex
@@ -116,7 +116,7 @@ public final class Maze implements GraphInterface {
 	 **/
 	private final void addSuccessors(ArrayList<VertexInterface> successors, VertexInterface vertex,
 			VertexInterface nextVertex) {
-		Double posInf = Double.POSITIVE_INFINITY;
+		double posInf = Double.POSITIVE_INFINITY;
 		Double weight = getWeight(vertex, nextVertex);
 		if (weight < posInf) {
 			successors.add(nextVertex);
@@ -125,13 +125,13 @@ public final class Maze implements GraphInterface {
 
 	/**
 	 * Return the neighbor list of a vertex in the graph
-	 * 
+	 *
 	 * @param vertex The vertex whose neighbors we are looking for
 	 * @return The neighbors list
 	 **/
 	@Override
 	public final ArrayList<VertexInterface> getSuccessors(VertexInterface vertex) {
-		ArrayList<VertexInterface> successors = new ArrayList<VertexInterface>();
+		ArrayList<VertexInterface> successors = new ArrayList<>();
 
 		MBox box = (MBox) vertex;
 		int row = box.getRow();
@@ -161,7 +161,7 @@ public final class Maze implements GraphInterface {
 
 	/**
 	 * Return the weight in the graph of an edge between two vertices
-	 * 
+	 *
 	 * @param src The origin vertex
 	 * @param dst The arrival vertex
 	 * @returnThe weight of the edge src-dst
@@ -183,7 +183,7 @@ public final class Maze implements GraphInterface {
 
 	/**
 	 * Initialize a Maze from a text file
-	 * 
+	 *
 	 * @param fileName File address
 	 * @throws MazeReadingException Exception link to the file reading
 	 */
@@ -194,7 +194,7 @@ public final class Maze implements GraphInterface {
 			String line = br.readLine();
 			int lineLength = line.length();
 			int row = 0;
-			ArrayList<MBox[]> arrayMaze = new ArrayList<MBox[]>();
+			ArrayList<MBox[]> arrayMaze = new ArrayList<>();
 			do {
 				MBox[] boxesLine = new MBox[lineLength];
 				for (int column = 0; column < lineLength; column++) {
@@ -236,7 +236,7 @@ public final class Maze implements GraphInterface {
 
 	/**
 	 * Return the [departure box, arrival box] list of the maze
-	 * 
+	 *
 	 * @return The departure and arrival box list
 	 * @throws DepartureArrivalException
 	 */
@@ -269,7 +269,7 @@ public final class Maze implements GraphInterface {
 
 	/**
 	 * Show on the console the path and save the answer in a text file
-	 * 
+	 *
 	 * @param path     Departure to arrival path
 	 * @param fileName File name where the solution has to be saved
 	 * @throws DepartureArrivalException Throwed exception if there is not only one

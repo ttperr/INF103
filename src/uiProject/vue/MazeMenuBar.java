@@ -7,7 +7,7 @@ import uiProject.vue.menu.OptionsMenu;
 
 /**
  * Menu bar class of the MazeApp
- * 
+ *
  * @author Tristan Perrot
  *
  */
@@ -19,7 +19,7 @@ public class MazeMenuBar extends JMenuBar {
 
 	/**
 	 * Create and add menu in MazeApp
-	 * 
+	 *
 	 * @param MazeApp The frame
 	 */
 	public MazeMenuBar(MazeApp MazeApp) {

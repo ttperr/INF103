@@ -12,7 +12,7 @@ import uiProject.vue.MazeApp;
 
 /**
  * The solve button class
- * 
+ *
  * @author Tristan Perrot
  *
  */
@@ -23,7 +23,7 @@ public class SolveButton extends JButton implements ActionListener {
 
 	/**
 	 * Create and add button in the mazeApp
-	 * 
+	 *
 	 * @param mazeApp The frame
 	 */
 	public SolveButton(MazeApp mazeApp) {
@@ -35,6 +35,7 @@ public class SolveButton extends JButton implements ActionListener {
 	/**
 	 * Solve the maze when it's clicked
 	 */
+	@Override
 	public final void actionPerformed(ActionEvent evt) {
 		try {
 			mazeApp.getMazeAppModel().solve();

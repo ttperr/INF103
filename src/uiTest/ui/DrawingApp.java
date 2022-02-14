@@ -1,6 +1,7 @@
 package uiTest.ui;
 
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
@@ -19,7 +20,7 @@ public class DrawingApp extends JFrame implements ChangeListener {
 
 		drawingAppModel.addObserver(this);
 
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Explicit !
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); // Explicit !
 		pack(); // Components sizes and positions
 		setVisible(true); // The great show
 

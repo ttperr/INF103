@@ -20,6 +20,7 @@ public class ColorChooserButton extends JButton implements ActionListener {
 		addActionListener(this);
 	}
 
+	@Override
 	public void actionPerformed(ActionEvent evt) {
 		// Used twice
 		DrawingAppModel drawingAppModel = drawingApp.getDrawingAppModel();

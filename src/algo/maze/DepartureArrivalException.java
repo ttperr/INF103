@@ -2,7 +2,7 @@ package algo.maze;
 
 /**
  * Departure and Arrival Exception
- * 
+ *
  * @author Tristan Perrot
  *
  */
@@ -11,7 +11,7 @@ public final class DepartureArrivalException extends Exception {
 
 	/**
 	 * Throw an exception if there is not only one arrival and one departure
-	 * 
+	 *
 	 * @param message The error message
 	 */
 	public DepartureArrivalException(int row, int column, String message) {

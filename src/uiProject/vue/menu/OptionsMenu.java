@@ -6,7 +6,7 @@ import uiProject.vue.MazeApp;
 
 /**
  * Options menu class
- * 
+ *
  * @author Tristan Perrot
  *
  */
@@ -18,7 +18,7 @@ public class OptionsMenu extends JMenu {
 
 	/**
 	 * Create and add the options menu items in the mazeApp
-	 * 
+	 *
 	 * @param mazeApp The frame
 	 */
 	public OptionsMenu(MazeApp mazeApp) {

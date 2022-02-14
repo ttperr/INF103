@@ -19,6 +19,7 @@ public class TypeBoxButton extends JButton implements ActionListener {
 		addActionListener(this);
 	}
 
+	@Override
 	public final void actionPerformed(ActionEvent evt) {
 		MazeAppModel mazeAppModel = mazeApp.getMazeAppModel();
 		String label = this.getText();

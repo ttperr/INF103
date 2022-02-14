@@ -4,7 +4,7 @@ import algo.dijkstra.VertexInterface;
 
 /**
  * Maze boxes class
- * 
+ *
  * @author Tristan Perrot
  *
  */

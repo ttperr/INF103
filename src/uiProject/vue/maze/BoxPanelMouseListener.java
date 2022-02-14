@@ -13,7 +13,7 @@ import uiProject.vue.MazeApp;
 
 /**
  * Box panel mouse listener class
- * 
+ *
  * @author Tristan Perrot
  *
  */
@@ -22,7 +22,7 @@ public class BoxPanelMouseListener extends MouseAdapter implements MouseListener
 
 	/**
 	 * Create the mouse listener for the mazeApp
-	 * 
+	 *
 	 * @param mazeApp The frame
 	 */
 	public BoxPanelMouseListener(MazeApp mazeApp) {
