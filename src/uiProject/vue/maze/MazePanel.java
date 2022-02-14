@@ -18,7 +18,7 @@ import uiProject.vue.MazeApp;
  */
 public class MazePanel extends JPanel {
 	private static final long serialVersionUID = 1L;
-	
+
 	private BoxPanel[][] boxes;
 	private final MazeApp mazeApp;
 	private final GridLayout gridLayout;

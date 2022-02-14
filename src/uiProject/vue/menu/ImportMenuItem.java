@@ -20,7 +20,7 @@ import uiProject.vue.MazeApp;
  */
 public class ImportMenuItem extends JMenuItem implements ActionListener {
 	private static final long serialVersionUID = 1L;
-	
+
 	private final MazeApp mazeApp;
 
 	/**

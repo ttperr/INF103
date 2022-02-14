@@ -15,7 +15,7 @@ import uiProject.vue.MazeApp;
  */
 public class SelectedBox extends JPanel {
 	private static final long serialVersionUID = 1L;
-	
+
 	private final MazeApp mazeApp;
 	private String selectedBoxLabel;
 

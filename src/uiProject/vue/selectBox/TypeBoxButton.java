@@ -10,7 +10,7 @@ import uiProject.vue.MazeApp;
 
 public class TypeBoxButton extends JButton implements ActionListener {
 	private static final long serialVersionUID = 1L;
-	
+
 	private final MazeApp mazeApp;
 
 	public TypeBoxButton(MazeApp mazeApp, String label) {

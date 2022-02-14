@@ -15,7 +15,7 @@ import uiProject.vue.MazeApp;
  */
 public class ResetMenuItem extends JMenuItem implements ActionListener {
 	private static final long serialVersionUID = 1L;
-	
+
 	private final MazeApp mazeApp;
 
 	/**

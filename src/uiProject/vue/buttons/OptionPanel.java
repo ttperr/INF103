@@ -14,7 +14,7 @@ import uiProject.vue.MazeApp;
  */
 public class OptionPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
-	
+
 	private final SelectedBox selectedBox;
 	private final SolveButton solveButton;
 

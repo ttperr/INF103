@@ -19,7 +19,7 @@ import uiProject.vue.MazeApp;
  */
 public class BoxPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
-	
+
 	private final MBox box;
 	private BoxPanelMouseListener mazePanelMouseListener;
 

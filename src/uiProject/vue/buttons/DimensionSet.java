@@ -21,7 +21,7 @@ import uiProject.vue.MazeApp;
  */
 public class DimensionSet extends JPanel implements PropertyChangeListener {
 	private static final long serialVersionUID = 1L;
-	
+
 	private int width;
 	private int height;
 

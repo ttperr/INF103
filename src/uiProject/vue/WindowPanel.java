@@ -16,7 +16,7 @@ import uiProject.vue.selectBox.SelectBoxPanel;
  */
 public class WindowPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
-	
+
 	private final MazePanel MazePanel;
 	private final ButtonsPanel buttonsPanel;
 	private final SelectBoxPanel selectBoxPanel;

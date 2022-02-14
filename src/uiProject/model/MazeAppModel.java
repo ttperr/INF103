@@ -29,7 +29,7 @@ public class MazeAppModel {
 	private String selectedBoxLabel = "Empty";
 	private boolean modified = false;
 	private boolean exported = false;
-	
+
 	private ArrayList<ChangeListener> listeners = new ArrayList<ChangeListener>();
 
 	/**
