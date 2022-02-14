@@ -1,7 +1,8 @@
 package uiTest.ui;
 
-import java.awt.*;
-import javax.swing.*;
+import java.awt.GridLayout;
+
+import javax.swing.JPanel;
 
 public class ButtonsPanel extends JPanel {
 	private static final long serialVersionUID = 1L;

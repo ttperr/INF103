@@ -1,8 +1,11 @@
 package uiTest.ui;
 
-import javax.swing.*;
-import java.awt.event.*;
-import uiTest.model.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+
+import uiTest.model.Segment;
 
 public class EraseSegmentButton extends JButton implements ActionListener {
 	private static final long serialVersionUID = 1L;

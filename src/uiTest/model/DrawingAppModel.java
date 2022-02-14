@@ -1,8 +1,11 @@
 package uiTest.model;
 
-import java.awt.*;
-import java.util.*;
-import javax.swing.event.*;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.util.ArrayList;
+
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 public class DrawingAppModel {
 	private final ArrayList<Segment> editedSegments = new ArrayList<Segment>(128);

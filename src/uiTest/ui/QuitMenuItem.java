@@ -1,10 +1,12 @@
 package uiTest.ui;
 
-import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 
 import uiTest.model.DrawingAppModel;
-
-import java.awt.event.*;
 
 public class QuitMenuItem extends JMenuItem implements ActionListener {
 	private static final long serialVersionUID = 1L;

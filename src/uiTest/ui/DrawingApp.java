@@ -1,8 +1,10 @@
 package uiTest.ui;
 
-import javax.swing.*;
-import javax.swing.event.*;
-import uiTest.model.*;
+import javax.swing.JFrame;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
+import uiTest.model.DrawingAppModel;
 
 public class DrawingApp extends JFrame implements ChangeListener {
 	private static final long serialVersionUID = 1L;

@@ -1,7 +1,10 @@
 package uiTest.ui;
 
-import java.awt.*;
-import javax.swing.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+
+import javax.swing.JPanel;
 
 public class ColorIndicator extends JPanel {
 	private static final long serialVersionUID = 1L;

@@ -2,7 +2,8 @@ package uiProject.vue;
 
 import javax.swing.JMenuBar;
 
-import uiProject.vue.menu.*;
+import uiProject.vue.menu.FileMenu;
+import uiProject.vue.menu.OptionsMenu;
 
 /**
  * Menu bar class of the MazeApp
