@@ -279,8 +279,7 @@ public final class Maze implements GraphInterface {
 	 * @throws NoPathException           Throwed exception when the maze has no
 	 *                                   solution
 	 */
-	public final void showPath(ArrayList<VertexInterface> path, String fileName)
-			throws DepartureArrivalException, FileNotFoundException, NoPathException {
+	public final void showPath(ArrayList<VertexInterface> path, String fileName) {
 		try {
 			MBox[] startAndEnd = findStartAndEnd();
 			MBox start = startAndEnd[0];
@@ -304,10 +303,8 @@ public final class Maze implements GraphInterface {
 				}
 				textF.close();
 			}
-		} catch (NoPathException | DepartureArrivalException e) {
+		} catch (NoPathException | DepartureArrivalException | FileNotFoundException e) {
 			System.err.println(e);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
 		}
 	}
 }
