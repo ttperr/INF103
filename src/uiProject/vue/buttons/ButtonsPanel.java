@@ -3,6 +3,7 @@ package uiProject.vue.buttons;
 import java.awt.GridLayout;
 
 import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 
 import uiProject.vue.MazeApp;
 
@@ -24,6 +25,8 @@ public class ButtonsPanel extends JPanel {
 	 * @param mazeApp The frame
 	 */
 	public ButtonsPanel(MazeApp mazeApp) {
+		setBorder(new EmptyBorder(5, 5, 5, 5));
+		
 		setLayout(new GridLayout(1, 2));
 
 		dimensionPanel = new DimensionPanel(mazeApp);

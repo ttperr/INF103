@@ -3,6 +3,7 @@ package uiProject.vue.selectBox;
 import java.awt.GridLayout;
 
 import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 
 import uiProject.vue.MazeApp;
 
@@ -15,6 +16,8 @@ public class SelectBoxPanel extends JPanel {
 	private final TypeBoxButton dTypeButton;
 
 	public SelectBoxPanel(MazeApp mazeApp) {
+		setBorder(new EmptyBorder(5, 5, 5, 5));
+		
 		setLayout(new GridLayout(4, 1));
 
 		eTypeButton = new TypeBoxButton(mazeApp, "Empty");

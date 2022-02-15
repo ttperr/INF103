@@ -19,6 +19,6 @@ public final class MazeReadingException extends Exception {
 	 * @param error    Error nature
 	 */
 	public MazeReadingException(String fileName, int row, int column, String error) {
-		super("Error detected when reading the file  " + fileName + "(" + row + "," + column + ") : " + error);
+		super("Error detected when reading the file  " + fileName + " at row " + row + " and column " + column + " : " + error);
 	}
 }

@@ -70,6 +70,12 @@ public class ImportMenuItem extends JMenuItem implements ActionListener {
 		} catch (Exception e) {
 			JOptionPane.showInternalOptionDialog(this, e.getMessage(), "Error", JOptionPane.CANCEL_OPTION,
 					JOptionPane.ERROR_MESSAGE, null, null, null);
+			int responseBis = JOptionPane.showInternalOptionDialog(this,
+					"No maze where selected, do you want to select one ?", "No maze selected",
+					JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
+			if (responseBis == JOptionPane.YES_OPTION) {
+				actionPerformed(event);
+			}
 		}
 	}
 }

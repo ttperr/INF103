@@ -9,6 +9,7 @@ import java.text.NumberFormat;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 
 import uiProject.model.MazeAppModel;
 import uiProject.vue.MazeApp;
@@ -46,6 +47,8 @@ public class DimensionSet extends JPanel implements PropertyChangeListener {
 		this.width = mazeApp.getMazeAppModel().getMaze().getWidth();
 		this.height = mazeApp.getMazeAppModel().getMaze().getHeight();
 
+		setBorder(new EmptyBorder(5, 5, 5, 5));
+		
 		setLayout(new BorderLayout());
 
 		// Create the width field

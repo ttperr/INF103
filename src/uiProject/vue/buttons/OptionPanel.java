@@ -3,6 +3,7 @@ package uiProject.vue.buttons;
 import java.awt.GridLayout;
 
 import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 
 import uiProject.vue.MazeApp;
 
@@ -24,6 +25,8 @@ public class OptionPanel extends JPanel {
 	 * @param mazeApp The frame
 	 */
 	public OptionPanel(MazeApp mazeApp) {
+		setBorder(new EmptyBorder(5, 5, 5, 5));
+
 		setLayout(new GridLayout(2, 1));
 
 		selectedBox = new SelectedBox(mazeApp);

@@ -3,6 +3,7 @@ package uiProject.vue;
 import java.awt.BorderLayout;
 
 import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 
 import uiProject.vue.buttons.ButtonsPanel;
 import uiProject.vue.maze.MazePanel;
@@ -25,6 +26,8 @@ public class WindowPanel extends JPanel {
 	 * Create and add everything to the main frame
 	 */
 	public WindowPanel(MazeApp drawingApp) {
+		setBorder(new EmptyBorder(10, 10, 10, 10));
+		
 		setLayout(new BorderLayout());
 
 		MazePanel = new MazePanel(drawingApp);
