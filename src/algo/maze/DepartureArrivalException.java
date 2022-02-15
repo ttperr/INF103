@@ -18,7 +18,7 @@ public final class DepartureArrivalException extends Exception {
 		super("Error when researching an arrival and departure point on the row " + row + " and the column " + column
 				+ " : " + message);
 	}
-	
+
 	/**
 	 * Throw an exception if there is less than one arrival or one departure
 	 *
