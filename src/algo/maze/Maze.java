@@ -264,7 +264,7 @@ public final class Maze implements GraphInterface {
 		}
 		if (startAndEnd[0] == null) {
 			throw new DepartureArrivalException("No start box");
-		} 
+		}
 		if (startAndEnd[1] == null) {
 			throw new DepartureArrivalException("No end box");
 		}
