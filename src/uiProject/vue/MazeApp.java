@@ -1,5 +1,8 @@
 package uiProject.vue;
 
+import java.awt.Image;
+import java.awt.Toolkit;
+
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 import javax.swing.event.ChangeEvent;
@@ -25,7 +28,7 @@ public class MazeApp extends JFrame implements ChangeListener {
 	 * Create and add a menu bar and the content main pane
 	 */
 	public MazeApp() {
-		super("Solveur de labyrinthe");
+		super("Maze solver");
 
 		mazeMenuBar = new MazeMenuBar(this);
 		windowPanel = new WindowPanel(this);
@@ -34,6 +37,9 @@ public class MazeApp extends JFrame implements ChangeListener {
 		setContentPane(windowPanel);
 
 		mazeAppModel.addObserver(this);
+		
+		Image icon = Toolkit.getDefaultToolkit().getImage("data/icon.png");  
+	    setIconImage(icon);
 
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		pack();
