@@ -8,6 +8,7 @@ import java.text.NumberFormat;
 
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -22,7 +23,9 @@ import uiProject.vue.MazeApp;
  */
 public class DimensionSet extends JPanel implements PropertyChangeListener {
 	private static final long serialVersionUID = 1L;
-
+	
+	private static int defaultValue = 10;
+	
 	private int width;
 	private int height;
 
@@ -87,6 +90,16 @@ public class DimensionSet extends JPanel implements PropertyChangeListener {
 		MazeAppModel mazeAppModel = mazeApp.getMazeAppModel();
 		int nwidth = (int) ((Number) widthField.getValue()).doubleValue();
 		int nheight = (int) ((Number) heightField.getValue()).doubleValue();
+		if (0 >= nwidth || nwidth > 100) {
+			JOptionPane.showInternalOptionDialog(null, "Width must be in [| 1 ; 100 |]", "Width warning !", JOptionPane.CANCEL_OPTION,
+					JOptionPane.WARNING_MESSAGE, null, null, null);
+			widthField.setValue(defaultValue);
+		} else if (0 >= nheight || nheight > 100) {
+			JOptionPane.showInternalOptionDialog(null, "Height must be in [| 1 ; 100 |]","Height warning !", JOptionPane.CANCEL_OPTION,
+					JOptionPane.WARNING_MESSAGE, null, null, null);
+			heightField.setValue(defaultValue);
+		} else {
 		mazeAppModel.reset(nwidth, nheight);
+		}
 	}
 }
