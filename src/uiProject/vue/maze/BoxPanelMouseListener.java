@@ -2,7 +2,6 @@ package uiProject.vue.maze;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 import algo.maze.ABox;
 import algo.maze.DBox;
@@ -17,7 +16,7 @@ import uiProject.vue.MazeApp;
  * @author Tristan Perrot
  *
  */
-public class BoxPanelMouseListener extends MouseAdapter implements MouseListener {
+public class BoxPanelMouseListener extends MouseAdapter {
 	private final MazeApp mazeApp;
 
 	/**
