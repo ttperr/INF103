@@ -51,7 +51,8 @@ public class BoxPanelMouseListener extends MouseAdapter {
 				WBox box = new WBox(boxPanel.getBox().getRow(), boxPanel.getBox().getColumn());
 				mazeAppModel.setBox(box);
 			}
-		} catch (ClassCastException e) {
+		} catch (Exception e) {
+			System.err.print(e);
 		}
 	}
 }
