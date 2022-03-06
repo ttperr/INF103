@@ -31,6 +31,8 @@ public class BoxPanelMouseListener extends MouseAdapter {
 
 	/**
 	 * Action to do when mouse click is released
+	 * 
+	 * @param event The event when the mouse click is released
 	 */
 	@Override
 	public final void mouseReleased(MouseEvent event) {
@@ -51,8 +53,8 @@ public class BoxPanelMouseListener extends MouseAdapter {
 				WBox box = new WBox(boxPanel.getBox().getRow(), boxPanel.getBox().getColumn());
 				mazeAppModel.setBox(box);
 			}
-		} catch (Exception e) {
-			System.err.print(e);
+		} catch (ClassCastException e) {
+			/* do nothing when clicking between two BoxPanel */
 		}
 	}
 }
